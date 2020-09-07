@@ -29,7 +29,7 @@
     </div>
 
     <div class="content-container text-center">
-        <img class="logo" src="./images/kiosk-white.svg" alt="Kiosk logo">
+        <img class="logo" src="./images/kiosk-white.svg" alt="Kiosk logo"> 
         <p class="subtext">Your next generation home hub</p>
         <a class="show-access-code">Enter access code</a>
 
