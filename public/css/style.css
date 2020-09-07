@@ -1,0 +1,214 @@
+* {
+    border: none;
+    margin: 0;
+  }
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+   .splash {
+    background: black;
+    overflow: hidden;
+   }
+  
+   .about-content {
+    margin-top: 80px;
+   }
+  
+  /* Splash screen content */
+  .content-container {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    height: 100px;
+  }
+  
+  img.logo {
+    display: block;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  
+  p.subtext {
+    color: #BFBFBF;
+    font-size: 20px;
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .bg-dark {
+    background: black !important;
+  }
+  
+  .show-access-code {
+    cursor: pointer;
+  }
+  
+  .footer {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* CSS background effect */
+  canvas {
+    background: white;
+    background: radial-gradient(#FFF, #DDD);
+    transform-origin: 0 0;
+    width: 100%;
+    height: 100%;
+  }
+  .ui {
+    display: none;
+    position: fixed;
+    z-index: 5;
+    bottom: 0;
+    left: 0;
+    width: 120px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.7);
+  }
+  .ui p {
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .ui p.zoom {
+    margin-bottom: 5px;
+  }
+  .ui p.zoom span {
+    margin-right: 5px;
+    border: solid 1px #777;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+  .ui p.zoom span.zoomin {
+    padding: 2px 5px;
+  }
+  .ui p.zoom span.zoomout {
+    padding: 2px 8px;
+  }
+  .ui p.zoom span:hover {
+    background: black;
+    color: white;
+  }
+  
+  /* The side navigation menu */
+  .burger-nav {
+    position: absolute;
+    top: 17px;
+    left: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+  }
+  
+  .sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1100; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.1s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    color: #aaaaaa;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #ffffff;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    margin-left: 50px;
+    padding: 0;
+    font-size: 1.5em;
+  }
+  
+  /* Code unlock */
+  form {
+    width: auto;
+    display: inline-block;
+  }
+  
+  form.code-error input {
+    border: 1px solid #dc3545;
+  }
+  
+  input {
+    font-weight: 200;
+    width: 40px;
+    height: 40px;
+    display: block;
+    float: left;
+    margin-right: 10px;
+    outline: 0;
+    font-size: 20px;
+    color: #333333;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.75);
+  }
+  input:last-child {
+    margin-right: 0;
+  }
+  input:hover {
+    background: rgba(255,255,255,1);
+  }
+  input:focus {
+    background: rgba(255,255,255,1);
+  }
+  
+  .hint, .code-success {
+    display: none;
+  }
+  
+  ul {
+    padding-top: 2em;
+    clear: both;
+  }
+  ul li {
+    list-style-type: none;
+  }
+  
+  strong {
+    color: #777;
+    font-weight: 200;
+  }
+  
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+  
+  
+  /* This only changes this particular animation duration */
+  .animate__animated.animate__bounceInUp {
+    --animate-duration: 4s;
+  }
