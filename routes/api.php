@@ -24,5 +24,8 @@ Route::get('/getuser/{id}', 'Api\KioskController@getuser');
 
 Route::get('/verify/{email}/{password}', 'Api\KioskController@verify');
 
+Route::get('/adduser/{email}/{password}', 'Api\KioskController@adduser');
+
+
 
 

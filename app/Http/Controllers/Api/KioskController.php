@@ -26,5 +26,25 @@ class KioskController extends Controller
         
     }
 
+    public function adduser(Request $request){
+        $html = "Email ".$request->email."\n";
+        $html .= "Password ".$request->password."\n";
 
+        $email = $request->email;
+        $password = $request->password;
+
+        if($email !='' && $password != ''){
+            $data = array("username"=>$email, "email"=>$email,"password"=>$password);
+ 
+            // Insert
+            $value = KioskModel::insertData($data);
+            if($value){
+                return response()->json(KioskModel::get()->where('user_id', $value),200);
+            }else{
+                return response()->json(['user already exists']);
+            }
+ 
+        }
+        
+    }
 }
