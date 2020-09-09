@@ -19,3 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('kiosklist', 'Api\KioskController@kiosklist');
+
+Route::get('/getuser/{id}', 'Api\KioskController@getuser');
+
+Route::get('/verify/{email}/{password}', 'Api\KioskController@verify');
+
+
+
