@@ -20,7 +20,7 @@ class KioskController extends Controller
     public function verify(Request $request){
         $html = "Email ".$request->email."\n";
         $html .= "Password ".$request->password."\n";
-        echo $html;
+        #echo $html;
         return response()->json(
             KioskModel::get()->where('email', '=', $request->email)-> where('password', '=',$request->password),200);
         
