@@ -47,4 +47,10 @@ class KioskController extends Controller
         }
         
     }
+
+    public function deleteuser(Request $request){        
+        $value = KioskModel::deleteuser($request->id);
+        return response()->json(['user deleted']);        
+    }
+
 }

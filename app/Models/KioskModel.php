@@ -19,6 +19,10 @@ class KioskModel extends Model
          }
      
     }
+
+    public static function deleteuser($id){
+        DB::delete('delete from users where user_id = ?',[$id]);
+    }
     
     
 }
