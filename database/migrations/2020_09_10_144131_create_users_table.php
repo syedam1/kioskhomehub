@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration {
 			$table->integer('user_id', true);
 			$table->string('username', 50);
 			$table->string('email', 50)->unique('unique_email');
-			$table->string('password', 50);
+			$table->string('password', 255);
 			$table->timestamp('created_date')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->timestamp('update_date')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->integer('disabled')->default(0);

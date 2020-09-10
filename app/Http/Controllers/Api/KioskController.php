@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Http\Request;
 use App\Models\KioskModel;
 use Illuminate\Support\Facades\Storage;
@@ -45,16 +46,18 @@ class KioskController extends Controller
         $email = $request->email;
         $password = $request->password;
 
+        
+
         if($email !='' && $password != ''){
             $data = array("username"=>$email, "email"=>$email,"password"=>$password);
- 
             // Insert user details into the KioskDB
-            $value = KioskModel::insertData($data);
-            if($value){
+            $value = RegisterController::create($data);
+            
+            if($value->user_id){
                 $KHH_BASE_PATH = env("KHH_STORAGE_BASE");
-                $KHH_user_folder_path = $KHH_BASE_PATH.'khh_user_'.$value;
+                $KHH_user_folder_path = $KHH_BASE_PATH.'khh_user_'.$value->user_id;
                 File::makeDirectory($KHH_user_folder_path, $mode = 0777, true, true);
-                return response()->json(KioskModel::get()->where('user_id', $value),200);
+                return response()->json(KioskModel::get()->where('user_id', $value->user_id),200);
             }else{
                 return response()->json(['user already exists']);
             }
