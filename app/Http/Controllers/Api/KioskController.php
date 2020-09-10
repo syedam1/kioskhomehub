@@ -12,20 +12,29 @@ use Illuminate\Support\Facades\File;
 class KioskController extends Controller
 {
     public function kiosklist(){
-        return response()->json(KioskModel::get(),200);
+        $statusCode = 200;
+        $contents = KioskModel::get();
+        return response()->json($contents,$statusCode);
     }
 
     public function getuser(Request $request){
         //return "ID which is passed is ".$request->id;
-        return response()->json(KioskModel::get()->where('user_id', $request->id),200);
+        $statusCode = 200;
+        $contents = KioskModel::get()->where('user_id', $request->id);
+        #$response = Response::make($contents, $statusCode);
+        #$content_type = "json";
+        #$response->header('Content-Type', $content_type);
+        #return $response;
+        return response()->json($contents,$statusCode);
     }
 
     public function verify(Request $request){
+        $statusCode = 200;
+        $contents = KioskModel::get()->where('email', '=', $request->email)-> where('password', '=',$request->password);
         $html = "Email ".$request->email."\n";
         $html .= "Password ".$request->password."\n";
         #echo $html;
-        return response()->json(
-            KioskModel::get()->where('email', '=', $request->email)-> where('password', '=',$request->password),200);
+        return response()->json($contents,$statusCode);
         
     }
 
