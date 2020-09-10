@@ -8,6 +8,8 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Models\KioskModel;
+use Illuminate\Support\Facades\File;
 
 class RegisterController extends Controller
 {
@@ -57,6 +59,27 @@ class RegisterController extends Controller
     }
 
     /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    public static function uservalidator(array $data)
+    {
+        $validator = Validator::make($data, [
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8'],
+        ]);
+
+        if ($validator->fails()) {
+            return $validator->messages()->first();
+        } else {
+            return true;
+        }
+
+    }
+
+    /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
@@ -64,15 +87,20 @@ class RegisterController extends Controller
      */
     public static function create(array $data)
     {
-        return User::create([
+        $userdata = User::create([
             'username' => $data['username'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+        
+        //Create a user folder
+        self::createuserfolder($userdata);
+        return $userdata;
     }
 
-    public function username()
-    {
-        return 'username';
+    public static function createuserfolder($userdata){
+        $KHH_BASE_PATH = env("KHH_STORAGE_BASE");
+        $KHH_user_folder_path = $KHH_BASE_PATH.'khh_user_'.$userdata->user_id;
+        File::makeDirectory($KHH_user_folder_path, $mode = 0777, true, true);
     }
 }

@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Http\Request;
 use App\Models\KioskModel;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
 
 
 class KioskController extends Controller
@@ -40,27 +38,32 @@ class KioskController extends Controller
     }
 
     public function adduser(Request $request){
-        $html = "Email ".$request->email."\n";
-        $html .= "Password ".$request->password."\n";
-
         $email = $request->email;
         $password = $request->password;
 
-        
-
         if($email !='' && $password != ''){
-            $data = array("username"=>$email, "email"=>$email,"password"=>$password);
-            // Insert user details into the KioskDB
-            $value = RegisterController::create($data);
-            
-            if($value->user_id){
-                $KHH_BASE_PATH = env("KHH_STORAGE_BASE");
-                $KHH_user_folder_path = $KHH_BASE_PATH.'khh_user_'.$value->user_id;
-                File::makeDirectory($KHH_user_folder_path, $mode = 0777, true, true);
-                return response()->json(KioskModel::get()->where('user_id', $value->user_id),200);
-            }else{
-                return response()->json(['user already exists']);
+            $data = ["username"=>$email, "email"=>$email,"password"=>$password];
+            //Validate if the user exists 
+            $validation = RegisterController::uservalidator($data);
+
+            if ($validation === true) {
+                // Insert user details into the KioskDB
+                $userdata = RegisterController::create($data);
+
+                if($userdata->user_id){
+                    $statusCode = 200;
+                    $contents = KioskModel::get()->where('user_id', $userdata->user_id);
+                }else{
+                    $statusCode = 400;
+                    $contents = ['error'=>'Failed to create user'];
+                }
+            } else {
+                $statusCode = 400;
+                $contents = ['error'=>$validation];
             }
+            
+            
+            return response()->json($contents, $statusCode);
  
         }
         

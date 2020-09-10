@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Kiosk - Beta 1.9</title>
+    <title>Kiosk - Beta 2.0.1</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&amp;display=swap" rel="stylesheet">
