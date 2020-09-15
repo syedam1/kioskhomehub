@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\MailController;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -10,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Models\KioskModel;
 use Illuminate\Support\Facades\File;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -102,5 +104,25 @@ class RegisterController extends Controller
         $KHH_BASE_PATH = env("KHH_STORAGE_BASE");
         $KHH_user_folder_path = $KHH_BASE_PATH.'khh_user_'.$userdata->user_id;
         File::makeDirectory($KHH_user_folder_path, $mode = 0777, true, true);
+    }
+
+    public function newregister(Request $request){
+        $user = new User();
+        $user->username = $request->username;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->verification_code = sha1(time());
+        $user->save();
+
+        if($user !== null){
+            //SendEmail
+            MailController::sendSignupEmail($user->username, $user->email, $user->verification_code);
+            return redirect()->back()->with(session()->flash('alert-success', 'Successfully registered.  Please check your email for verification code.'));
+            //ShowMessage
+        } else {
+            //Show Error Message
+            return redirect()->back()->with(session()->flash('alert-danger', 'Unable to register registered.'));
+        }
+
     }
 }
