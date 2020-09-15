@@ -1,10 +1,5 @@
-@extends('layouts.app')
-
-@section('content')
-
-<body>
-  <!-- Products -->
-  <div class="modal fade fixed-right" id="modal-products" tabindex="-1" role="dialog" aria-hidden="true">
+<!-- Products -->
+<div class="modal fade fixed-right" id="modal-products" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-vertical" role="document">
       <div class="modal-content">
         <div class="scrollbar-inner">
@@ -155,7 +150,7 @@
             @else
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }}
+                        {{ Auth::user()->username }}
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('logout') }}"
@@ -177,94 +172,3 @@
       </div>
     </div>
   </nav>
-  <!-- Main content -->
-  <section class="slice slice-lg bg-gradient-dark header-web-app" data-offset-top="#header-main">
-    <!-- SVG background -->
-    <div class="bg-absolute-cover bg-size--contain d-flex align-items-center">
-      <figure class="w-100 d-none d-lg-block">
-        <img alt="Image placeholder" src="assets/img/svg/backgrounds/bg-circles-1.svg" class="svg-inject">
-      </figure>
-    </div>
-    <div class="container position-relative zindex-100" style="height:80vh;">
-      <div class="row justify-content-around align-items-center">
-        <div class="col-lg-6 pt-lg-4 text-center">
-          <!-- LOGIN -->
-
-          <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        
-          <!-- LoginEnds -->
-        </div>
-      </div>
-    </div>
-    <div class="shape-container" data-shape-style="curve" data-shape-position="bottom">
-      <img alt="Image placeholder" src="assets/img/svg/shapes/curve-1.svg" class="svg-inject fill-white">
-    </div>
-  </section>
-
-
-</body>
-
-
-@endsection

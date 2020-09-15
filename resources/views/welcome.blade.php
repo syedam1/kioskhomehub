@@ -73,7 +73,6 @@
           </li>
           <li class="nav-item">
             <a href="docs/getting-started/installation.html" class="nav-link">Installation</a>
-            
           </li>
           
         </ul>
@@ -135,12 +134,45 @@
             <a class="nav-link" href="docs/changelog.html" target="_blank">What's new</a>
           </li>
           <li class="nav-item mr-0">
-            <a href="/register" target="_blank" class="nav-link d-lg-none">Register now</a>
-            <a href="/register" target="_blank" class="btn btn-sm btn-white btn-icon rounded-pill d-none d-lg-inline-flex" data-toggle="tooltip" data-placement="left" title="Kiosk Home Hub">
-              <span class="btn-inner--icon"><i class="fas fa-sign"></i></span>
-              <span class="btn-inner--text">Register now</span>
-            </a>
+            
           </li>
+
+          <ul class="navbar-nav ml-auto">
+            <!-- Authentication Links -->
+            @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                </li>
+                @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a href="{{ route('register') }}" class="nav-link d-lg-none">Register now</a>
+                        <a href="{{ route('register') }}" class="btn btn-sm btn-white btn-icon rounded-pill d-none d-lg-inline-flex" data-toggle="tooltip" data-placement="left">
+                        <span class="btn-inner--icon"><i class="fas fa-sign"></i></span>
+                        <span class="btn-inner--text">Register now</span>
+                        </a>
+                    </li>
+                @endif
+            @else
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->username }}
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+            @endguest
+        </ul>
+
+
         </ul>
       </div>
     </div>
@@ -182,7 +214,7 @@
       <div class="row justify-content-center mb-7">
         <div class="col-lg-8">
           <p class="h4 text-center lh-160">
-            Customize your desktop to reflect your mood by using the next generation Kiosk Home Hub.  Quick and easy installation along with the ability to customize the app, allows you to match your device with your environment.  Experience your selection of media played on your device through the mood selector option!
+            Customize your desktop to reflect your mood by using the next generation Kiosk Home Hub.  Quick and easy installation along with the ability to customize the app, allows you to match your device with your environment.  Experience your selection of media played on your device through the mood selector option!  <a href="docs/getting-started/installation.html" class="nav-link">Install now</a>
           </p>
         </div>
       </div>
