@@ -282,7 +282,7 @@
       </div>
     </div>
   </section>
-  <section class="slice bg-section-secondary">
+  <section class="slice bg-section-secondary bg-dark">
     <div class="shape-container shape-position-top shape-orientation-inverse">
       <img alt="Image placeholder" src="assets/img/svg/shapes/curve-1.svg" class="svg-inject fill-white">
     </div>
