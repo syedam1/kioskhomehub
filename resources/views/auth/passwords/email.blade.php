@@ -242,7 +242,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer footer-light bg-white pt-0">
+  <footer class="footer footer-dark bg-dark pt-0">
     <div class="container">
       <div class="row align-items-center justify-content-md-between py-4 delimiter-top">
         <div class="col-md-6">
