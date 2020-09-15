@@ -2,7 +2,7 @@
 
 @section('content')
 
-<body>
+<body >
   <!-- Products -->
   <div class="modal fade fixed-right" id="modal-products" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-vertical" role="document">
@@ -52,7 +52,7 @@
     </div>
   </div>
   <!-- Nav -->
-  <nav class="navbar navbar-main navbar-expand-lg navbar-dark bg-gradient-dark navbar-border py-3" id="navbar-main">
+  <nav class="navbar navbar-main navbar-expand-lg navbar-dark bg-dark navbar-border py-3" id="navbar-main">
     <div class="container px-lg-0">
       <!-- Logo -->
       <a class="navbar-brand mr-lg-5" href="/">
@@ -146,7 +146,7 @@
                 @if (Route::has('register'))
                     <li class="nav-item">
                         <a href="{{ route('register') }}" class="nav-link d-lg-none">Register now</a>
-                        <a href="{{ route('register') }}" class="btn btn-sm btn-white btn-icon rounded-pill d-none d-lg-inline-flex" data-toggle="tooltip" data-placement="left">
+                        <a href="{{ route('register') }}" class="btn btn-sm btn-dark btn-icon rounded-pill d-none d-lg-inline-flex" data-toggle="tooltip" data-placement="left">
                         <span class="btn-inner--icon"><i class="fas fa-sign"></i></span>
                         <span class="btn-inner--text">Register now</span>
                         </a>
@@ -178,7 +178,7 @@
     </div>
   </nav>
   <!-- Main content -->
-  <section class="slice slice-lg bg-gradient-dark header-web-app" data-offset-top="#header-main">
+  <section class="slice slice-lg bg-dark header-web-app" data-offset-top="#header-main">
     <!-- SVG background -->
     <div class="bg-absolute-cover bg-size--contain d-flex align-items-center">
       <figure class="w-100 d-none d-lg-block">
@@ -188,6 +188,8 @@
     <div class="container position-relative zindex-100" style="height:80vh;">
       <div class="row justify-content-around align-items-center">
         <div class="col-lg-6 pt-lg-4 text-center">
+          <!-- Content -->
+
           <!-- LOGIN -->
 
           <div class="card">
@@ -255,6 +257,8 @@
             </div>
         
           <!-- LoginEnds -->
+        
+          <!-- ContentEnds -->
         </div>
       </div>
     </div>
@@ -263,8 +267,48 @@
     </div>
   </section>
 
+  <!-- Footer -->
+  <footer class="footer footer-light bg-white pt-0">
+    <div class="container">
+      <div class="row align-items-center justify-content-md-between py-4 delimiter-top">
+        <div class="col-md-6">
+          <div class="copyright text-sm font-weight-bold text-center text-md-left">
+            &copy; 2020-2022 <a href="https://kioskhomehub.com" class="h6 text-sm font-weight-bold" target="_blank">KioskHomeHub</a>. All rights reserved.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.instagram.com/kioskhomehub" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://twitter.com/kioskhomehub" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.facebook.com/kioskhomehub" target="_blank">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
+  <script src="assets/js/purpose.core.js"></script>
+  <!-- Page JS -->
+  <script src="assets/libs/swiper/dist/js/swiper.min.js"></script>
+  <!-- Purpose JS -->
+  <script src="assets/js/purpose.js"></script>
+  <!-- Demo JS - remove it when starting your project -->
+  <script src="assets/js/demo.js"></script>
+
 
 </body>
 
-
 @endsection
+

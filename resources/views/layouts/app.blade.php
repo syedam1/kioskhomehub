@@ -10,8 +10,6 @@
     <title>{{ config('app.name', 'Laravel') }} | version 2.0.3</title> 
     <meta name="description" content="{{ config('app.name', 'Laravel') }}">
     <meta name="author" content="kioskhomehub.com">
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -22,6 +20,7 @@
     <link rel="manifest" href="/images/favs/site.webmanifest">
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('assets/css/purpose.css') }} " id="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/css/app.css') }} " id="stylesheet">
     <!-- Font Awesome 5 -->
     <link rel="stylesheet" href="{{ asset('assets/libs/@fortawesome/fontawesome-free/css/all.min.css') }} "><!-- Page CSS -->
     <link rel="stylesheet" href="{{ asset('assets/libs/swiper/dist/css/swiper.min.css') }} ">

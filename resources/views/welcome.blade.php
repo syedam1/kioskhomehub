@@ -2,9 +2,9 @@
 
 @section('content')
 
-<body>
+<body > 
   <!-- Products -->
-  <div class="modal fade fixed-right" id="modal-products" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal fade fixed-right dark" id="modal-products" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-vertical" role="document">
       <div class="modal-content">
         <div class="scrollbar-inner">
@@ -52,7 +52,7 @@
     </div>
   </div>
   <!-- Nav -->
-  <nav class="navbar navbar-main navbar-expand-lg navbar-dark bg-gradient-dark navbar-border py-3" id="navbar-main">
+  <nav class="navbar navbar-main navbar-expand-lg navbar-dark bg-dark navbar-border py-3" id="navbar-main">
     <div class="container px-lg-0">
       <!-- Logo -->
       <a class="navbar-brand mr-lg-5" href="/">
@@ -146,7 +146,7 @@
                 @if (Route::has('register'))
                     <li class="nav-item">
                         <a href="{{ route('register') }}" class="nav-link d-lg-none">Register now</a>
-                        <a href="{{ route('register') }}" class="btn btn-sm btn-white btn-icon rounded-pill d-none d-lg-inline-flex" data-toggle="tooltip" data-placement="left">
+                        <a href="{{ route('register') }}" class="btn btn-sm btn-dark btn-icon rounded-pill d-none d-lg-inline-flex" data-toggle="tooltip" data-placement="left">
                         <span class="btn-inner--icon"><i class="fas fa-sign"></i></span>
                         <span class="btn-inner--text">Register now</span>
                         </a>
@@ -178,7 +178,7 @@
     </div>
   </nav>
   <!-- Main content -->
-  <section class="slice slice-lg bg-gradient-dark header-web-app" data-offset-top="#header-main">
+  <section class="slice slice-lg bg-dark header-web-app" data-offset-top="#header-main">
     <!-- SVG background -->
     <div class="bg-absolute-cover bg-size--contain d-flex align-items-center">
       <figure class="w-100 d-none d-lg-block">
@@ -193,7 +193,7 @@
             Your next generation home hub.
           </p>
           <a href="#sct-features" class="btn btn-primary rounded-pill hover-translate-y-n3 mt-4 d-none d-sm-inline-block" data-scroll-to>See features</a>
-          <a href="#" class="btn btn-white btn-icon rounded-pill hover-translate-y-n3 mt-4">
+          <a href="#" class="btn btn-dark btn-icon rounded-pill hover-translate-y-n3 mt-4">
             <span class="btn-inner--text">Install now!!</span>
             <span class="btn-inner--icon"><i class="fas fa-angle-right"></i></span>
           </a>
@@ -621,7 +621,7 @@
       </div>
     </div>
   </section>
-  <section class="slice slice-lg bg-gradient-dark pb-250">
+  <section class="slice slice-lg bg-dark pb-250">
     <div class="shape-container shape-position-top shape-orientation-inverse">
       <img alt="Image placeholder" src="assets/img/svg/shapes/curve-1.svg" class="svg-inject fill-white">
     </div>
@@ -733,7 +733,7 @@
     </div>
   </section>
   <!-- Footer -->
-  <footer class="footer footer-light bg-white pt-0">
+  <footer class="footer footer-dark bg-dark pt-0">
     <div class="container">
       <div class="row align-items-center justify-content-md-between py-4 delimiter-top">
         <div class="col-md-6">

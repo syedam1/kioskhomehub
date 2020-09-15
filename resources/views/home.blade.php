@@ -1111,7 +1111,7 @@
             </div>
           </div>
           <div class="col-lg-4">
-            <div class="card card-fluid bg-gradient-dark border-0">
+            <div class="card card-fluid bg--dark border-0">
               <div class="card-header border-0 pb-0">
                 <h6 class="text-white mb-0"><span class="text-danger mr-2">●</span>Project at risk</h6>
               </div>
