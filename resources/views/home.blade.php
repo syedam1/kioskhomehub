@@ -6,9 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Purpose Application UI is the following chapter we've finished in order to create a complete and robust solution next to the already known Purpose Website UI.">
   <meta name="author" content="Webpixels">
-  <title>Purpose – Application UI Kit</title>
+  <title>{{ config('app.name', 'Laravel') }} | version 2.0.3</title> 
   <!-- Favicon -->
-  <link rel="icon" href="/assets/img/brand/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favs/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favs/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/favs/site.webmanifest">
   <!-- Font Awesome 5 -->
   <link rel="stylesheet" href="/assets/libs/@fortawesome/fontawesome-free/css/all.min.css"><!-- Page CSS -->
   <link rel="stylesheet" href="/assets/libs/fullcalendar/dist/fullcalendar.min.css">
