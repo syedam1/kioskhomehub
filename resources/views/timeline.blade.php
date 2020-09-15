@@ -6,13 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Purpose Application UI is the following chapter we've finished in order to create a complete and robust solution next to the already known Purpose Website UI.">
   <meta name="author" content="Webpixels">
-  <title>Kioskhomehub | Version 2.1.0</title>
+  <title>Purpose – Application UI Kit</title>
   <!-- Favicon -->
   <link rel="icon" href="../assets/img/brand/favicon.png" type="image/png">
   <!-- Font Awesome 5 -->
-  <link rel="stylesheet" href="../assets/libs/@fortawesome/fontawesome-free/css/all.min.css"><!-- Page CSS -->
-  <link rel="stylesheet" href="../assets/libs/fullcalendar/dist/fullcalendar.min.css">
-  <!-- Purpose CSS -->
+  <link rel="stylesheet" href="../assets/libs/@fortawesome/fontawesome-free/css/all.min.css"><!-- Purpose CSS -->
   <link rel="stylesheet" href="../assets/css/purpose.css" id="stylesheet">
 </head>
 
@@ -417,7 +415,7 @@
       </div>
       <!-- Application nav -->
       <div class="nav-application clearfix">
-        <a href="../application/home.html" class="btn btn-square text-sm active">
+        <a href="../application/home.html" class="btn btn-square text-sm">
           <span class="btn-inner--icon d-block"><i class="fas fa-home fa-2x"></i></span>
           <span class="btn-inner--icon d-block pt-2">Home</span>
         </a>
@@ -1032,133 +1030,127 @@
         <!-- Page title -->
         <div class="page-title">
           <div class="row justify-content-between align-items-center">
-            <div class="col-md-6 mb-3 mb-md-0">
-              <h5 class="h3 font-weight-400 mb-0 text-white">Moning, Heather!</h5>
-              <span class="text-sm text-white opacity-8">Have a nice day!</span>
+            <div class="col-md-6 d-flex align-items-center justify-content-between justify-content-md-start mb-3 mb-md-0">
+              <!-- Page title + Go Back button -->
+              <div class="d-inline-block">
+                <h5 class="h4 d-inline-block font-weight-400 mb-0 text-white">Timeline</h5>
+              </div>
+              <!-- Additional info -->
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xl-8 col-md-6">
-            <div class="card card-fluid">
-              <div class="card-header">
-                <h6 class="mb-0">Engagement</h6>
-              </div>
-              <div class="card-body">
-                <!-- Chart -->
-                <div id="apex-engagement" data-color="primary" data-height="280"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6">
-            <div class="card card-fluid">
-              <div class="card-body text-center d-flex flex-column justify-content-center">
-                <h5 class="mb-4">Emails sent</h5>
-                <div class="progress-circle progress-lg mx-auto" id="progress-5" data-progress="50" data-text="98" data-textclass="h1" data-color="warning"></div>
-                <div class="d-flex mt-4">
-                  <div class="col">
-                    <span class="d-block badge badge-dot badge-lg h6">
-                      <i class="bg-danger"></i>30 not sent
-                    </span>
-                    <span class="d-block badge badge-dot badge-lg h6">
-                      <i class="bg-success"></i>68 success
-                    </span>
-                  </div>
-                  <div class="col">
-                    <span class="d-block badge badge-dot badge-lg h6">
-                      <i class="bg-warning"></i>38 opened
-                    </span>
-                    <span class="d-block badge badge-dot badge-lg h6">
-                      <i class="bg-danger"></i>SMTP error
-                    </span>
-                  </div>
-                </div>
-                <a href="#" class="btn btn-block btn-secondary mt-auto">Open insights</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-sm-6">
-            <div class="card card-fluid">
-              <div class="card-body">
-                <div class="row align-items-center mb-4">
-                  <div class="col-auto">
-                    <div class="progress-circle progress-sm" id="progress-1" data-progress="90" data-color="primary"></div>
-                  </div>
-                  <div class="col">
-                    <a href="#!" class="d-block h6 mb-0">98 tasks solved</a>
-                    <a href="#" class="text-sm text-muted">Purpose Website UI</a>
-                  </div>
-                </div>
-                <div class="row align-items-center mb-4">
-                  <div class="col-auto">
-                    <div class="progress-circle progress-sm" id="progress-2" data-progress="40" data-color="warning"></div>
-                  </div>
-                  <div class="col">
-                    <a href="#!" class="d-block h6 mb-0">13 tasks solved</a>
-                    <a href="#" class="text-sm text-muted">Webpixels website</a>
-                  </div>
-                </div>
-                <div class="row align-items-center">
-                  <div class="col-auto">
-                    <div class="progress-circle progress-sm" id="progress-3" data-progress="60" data-color="info"></div>
-                  </div>
-                  <div class="col">
-                    <a href="#!" class="d-block h6 mb-0">23 tasks solved</a>
-                    <a href="#" class="text-sm text-muted">Purpose Dashboard UI</a>
-                  </div>
-                </div>
-                <a href="#" class="btn btn-sm btn-block btn-secondary mt-5">Open insights</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <div class="card card-fluid">
-              <div class="card-body text-center d-flex flex-column justify-content-center">
-                <h5 class="mb-4">Congratulations!</h5>
-                <div class="progress-circle progress-lg mx-auto" id="progress-4" data-progress="78" data-text="23" data-textclass="h1" data-color="primary"></div>
-                <p class="mt-4 mb-0">
-                  Github issues were closed this week.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card card-fluid bg-gradient-dark border-0">
-              <div class="card-header border-0 pb-0">
-                <h6 class="text-white mb-0"><span class="text-danger mr-2">●</span>Project at risk</h6>
-              </div>
-              <div class="card-body text-center">
-                <!-- Avatar -->
-                <a href="#" class="avatar avatar-lg rounded-circle">
-                  <img alt="Image placeholder" src="../assets/img/theme/light/brand-avatar-1.png">
+            <div class="col-md-6 d-flex align-items-center justify-content-between justify-content-md-end">
+              <div class="actions actions-dark d-inline-block">
+                <a href="#" class="action-item ml-md-4">
+                  <i class="fas fa-file-export mr-2"></i>Export
                 </a>
-                <!-- Title -->
-                <h5 class="h6 mt-4 mb-0 text-white">Website redesign</h5>
-                <!-- Actions -->
-                <div class="actions actions-dark d-flex justify-content-between px-4 mt-4">
-                  <a href="#" class="action-item">
-                    <i class="fas fa-chart-pie"></i>
-                  </a>
-                  <a href="#" class="action-item">
-                    <i class="fas fa-user"></i>
-                  </a>
-                  <a href="#" class="action-item">
-                    <i class="fas fa-info-circle"></i>
-                  </a>
-                </div>
+                <a href="#" class="action-item ml-3">
+                  <i class="fas fa-cog mr-2"></i>Settings
+                </a>
+              </div>
+              <a href="#" class="btn btn-sm btn-white btn-icon-only rounded-circle ml-4">
+                <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header">
+                <h5 class=" h6 mb-0">Timeline</h5>
               </div>
               <div class="card-body">
-                <div class="row justify-content-between align-items-center">
-                  <div class="col-6">
-                    <div style="max-width: 120px;">
-                      <div class="spark-chart" data-toggle="spark-chart" data-type="line" data-height="50" data-color="danger" data-dataset="[42, 55, 19, 16, 84, 24, 10, 11, 93, 15, 81]"></div>
+                <div class="timeline timeline-one-side" data-timeline-content="axis" data-timeline-axis-style="dashed">
+                  <div class="timeline-block">
+                    <span class="timeline-step badge-primary">
+                    </span>
+                    <div class="timeline-content">
+                      <small class="text-muted font-weight-bold">10:30 AM</small>
+                      <h5 class="h6 ">Mail sent to</h5>
+                      <p class=" text-sm mb-0">Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                      <div class="mt-3">
+                        <span class="badge badge-pill badge-soft-primary">design</span>
+                        <span class="badge badge-pill badge-soft-primary">system</span>
+                        <span class="badge badge-pill badge-soft-primary">creative</span>
+                      </div>
                     </div>
                   </div>
-                  <div class="col-auto text-center">
-                    <span class="d-block h4 mb-0 text-white">8</span>
-                    <span class="d-block text-sm text-white opacity-8">Days delay</span>
+                  <div class="timeline-block">
+                    <span class="timeline-step badge-warning">
+                    </span>
+                    <div class="timeline-content">
+                      <small class="text-muted font-weight-bold">10:30 AM</small>
+                      <h5 class="h6 ">You liked a comment from</h5>
+                      <p class=" text-sm mb-0">Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                      <div class="mt-3">
+                        <span class="badge badge-pill badge-soft-warning">design</span>
+                        <span class="badge badge-pill badge-soft-warning">system</span>
+                        <span class="badge badge-pill badge-soft-warning">creative</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="timeline-block">
+                    <span class="timeline-step badge-info">
+                    </span>
+                    <div class="timeline-content">
+                      <small class="text-muted font-weight-bold">10:30 AM</small>
+                      <h5 class="h6 ">New likes from</h5>
+                      <p class=" text-sm mb-0">Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                      <div class="mt-3">
+                        <span class="badge badge-pill badge-soft-info">design</span>
+                        <span class="badge badge-pill badge-soft-info">system</span>
+                        <span class="badge badge-pill badge-soft-info">creative</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header">
+                <h5 class=" h6 mb-0">Timeline</h5>
+              </div>
+              <div class="card-body">
+                <div class="timeline timeline-one-side" data-timeline-content="axis" data-timeline-axis-style="dashed">
+                  <div class="timeline-block">
+                    <span class="timeline-step"></span>
+                    <div class="timeline-content">
+                      <small class="text-muted font-weight-bold">2016 - present</small>
+                      <h6>Web Developer at Webpixels</h6>
+                      <p class="text-sm lh-160">When we strive to become better than we are everything around us becomes better too. This is a wider card with supporting text below.</p>
+                      <div>
+                        <span class="badge badge-pill badge-secondary mr-2 mb-2">Bootstrap</span>
+                        <span class="badge badge-pill badge-secondary mr-2 mb-2">UI/UX</span>
+                        <span class="badge badge-pill badge-secondary mr-2 mb-2">Market Strategy</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="timeline-block">
+                    <span class="timeline-step timeline-step-sm"></span>
+                    <div class="timeline-content">
+                      <small class="text-muted font-weight-bold">2014 - 2016</small>
+                      <h6>Front Designer at Google</h6>
+                      <p class="text-sm lh-160">When we strive to become better than we are everything around us becomes better too. This is a wider card with supporting text below.</p>
+                      <div>
+                        <span class="badge badge-pill badge-secondary mr-2 mb-2">HTML5</span>
+                        <span class="badge badge-pill badge-secondary mr-2 mb-2">CSS3</span>
+                        <span class="badge badge-pill badge-secondary mr-2 mb-2">Responsive Design</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="timeline-block">
+                    <span class="timeline-step timeline-step-sm"></span>
+                    <div class="timeline-content">
+                      <small class="text-muted font-weight-bold">2013 - 2014</small>
+                      <h6>Internship at Apple</h6>
+                      <p class="text-sm lh-160">When we strive to become better than we are everything around us becomes better too. This is a wider card with supporting text below.</p>
+                      <div>
+                        <span class="badge badge-pill badge-secondary mr-2 mb-2">Product Design</span>
+                        <span class="badge badge-pill badge-secondary mr-2 mb-2">Development</span>
+                        <span class="badge badge-pill badge-secondary mr-2 mb-2">Market Strategy</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1166,171 +1158,85 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-xl-7 d-sm-flex flex-sm-column">
-            <div class="row flex-sm-fill">
-              <div class="col-sm-4">
-                <div class="card card-fluid">
-                  <div class="card-body text-center">
-                    <div class="avatar-parent-child">
-                      <a href="#" class="avatar avatar-lg rounded-circle">
-                        <img alt="Image placeholder" src="../assets/img/theme/light/team-1-800x800.jpg">
-                      </a>
-                      <span class="avatar-child avatar-badge bg-success"></span>
-                    </div>
-                    <h5 class="h6 mt-4 mb-0">John Sullivan</h5>
-                    <a href="#" class="d-block text-sm text-muted mb-3">@john.sullivan</a>
-                    <div class="actions d-flex justify-content-between px-4">
-                      <a href="#" class="action-item">
-                        <i class="fas fa-envelope"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-phone"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-share-alt"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="card card-fluid">
-                  <div class="card-body text-center">
-                    <div class="avatar-parent-child">
-                      <a href="#" class="avatar avatar-lg rounded-circle">
-                        <img alt="Image placeholder" src="../assets/img/theme/light/team-2-800x800.jpg">
-                      </a>
-                      <span class="avatar-child avatar-badge bg-warning"></span>
-                    </div>
-                    <h5 class="h6 mt-4 mb-0">Heather Wright</h5>
-                    <a href="#" class="d-block text-sm text-muted mb-3">@heather.wright</a>
-                    <div class="actions d-flex justify-content-between px-4">
-                      <a href="#" class="action-item">
-                        <i class="fas fa-envelope"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-phone"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-share-alt"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="card card-fluid">
-                  <div class="card-body text-center">
-                    <div class="avatar-parent-child">
-                      <a href="#" class="avatar avatar-lg rounded-circle">
-                        <img alt="Image placeholder" src="../assets/img/theme/light/team-3-800x800.jpg">
-                      </a>
-                      <span class="avatar-child avatar-badge bg-danger"></span>
-                    </div>
-                    <h5 class="h6 mt-4 mb-0">James Lewis</h5>
-                    <a href="#" class="d-block text-sm text-muted mb-3">@james.lewis</a>
-                    <div class="actions d-flex justify-content-between px-4">
-                      <a href="#" class="action-item">
-                        <i class="fas fa-envelope"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-phone"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-share-alt"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row flex-sm-fill">
-              <div class="col-sm-4">
-                <div class="card card-fluid">
-                  <div class="card-body text-center">
-                    <div class="avatar-parent-child">
-                      <a href="#" class="avatar avatar-lg rounded-circle">
-                        <img alt="Image placeholder" src="../assets/img/theme/light/team-1-800x800.jpg">
-                      </a>
-                      <span class="avatar-child avatar-badge bg-success"></span>
-                    </div>
-                    <h5 class="h6 mt-4 mb-0">John Snow</h5>
-                    <a href="#" class="d-block text-sm text-muted mb-3">@john.snow</a>
-                    <div class="actions d-flex justify-content-between px-4">
-                      <a href="#" class="action-item">
-                        <i class="fas fa-envelope"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-phone"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-share-alt"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="card card-fluid">
-                  <div class="card-body text-center">
-                    <div class="avatar-parent-child">
-                      <a href="#" class="avatar avatar-lg rounded-circle">
-                        <img alt="Image placeholder" src="../assets/img/theme/light/team-2-800x800.jpg">
-                      </a>
-                      <span class="avatar-child avatar-badge bg-success"></span>
-                    </div>
-                    <h5 class="h6 mt-4 mb-0">John Michael</h5>
-                    <a href="#" class="d-block text-sm text-muted mb-3">@john.michael</a>
-                    <div class="actions d-flex justify-content-between px-4">
-                      <a href="#" class="action-item">
-                        <i class="fas fa-envelope"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-phone"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-share-alt"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="card card-fluid">
-                  <div class="card-body text-center">
-                    <div class="avatar-parent-child">
-                      <a href="#" class="avatar avatar-lg rounded-circle">
-                        <img alt="Image placeholder" src="../assets/img/theme/light/team-3-800x800.jpg">
-                      </a>
-                      <span class="avatar-child avatar-badge bg-warning"></span>
-                    </div>
-                    <h5 class="h6 mt-4 mb-0">Monroe Parker</h5>
-                    <a href="#" class="d-block text-sm text-muted mb-3">@monroe.parker</a>
-                    <div class="actions d-flex justify-content-between px-4">
-                      <a href="#" class="action-item">
-                        <i class="fas fa-envelope"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-phone"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-share-alt"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-5">
-            <!-- Calendar -->
-            <div class="card widget-calendar">
+          <div class="col-lg-12">
+            <div class="card">
               <div class="card-header">
-                <div class="text-sm text-muted mb-1 widget-calendar-year"></div>
-                <div class="h5 mb-0 widget-calendar-day"></div>
+                <h5 class=" h6 mb-0">Timeline 2</h5>
               </div>
-              <!-- Calendar -->
-              <div data-toggle="widget-calendar"></div>
+              <div class="card-body">
+                <div class="timeline" data-timeline-content="axis" data-timeline-axis-style="dashed">
+                  <div class="timeline-block">
+                    <span class="timeline-step badge-primary">
+                    </span>
+                    <div class="timeline-content">
+                      <small class="text-muted font-weight-bold">10:30 AM</small>
+                      <h5 class="h6 ">Mail sent to</h5>
+                      <p class=" text-sm mb-0">Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                      <div class="mt-3">
+                        <span class="badge badge-pill badge-soft-primary">design</span>
+                        <span class="badge badge-pill badge-soft-primary">system</span>
+                        <span class="badge badge-pill badge-soft-primary">creative</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="timeline-block">
+                    <span class="timeline-step badge-warning">
+                    </span>
+                    <div class="timeline-content">
+                      <small class="text-muted font-weight-bold">10:30 AM</small>
+                      <h5 class="h6 ">You liked a comment from</h5>
+                      <p class=" text-sm mb-0">Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                      <div class="mt-3">
+                        <span class="badge badge-pill badge-soft-warning">design</span>
+                        <span class="badge badge-pill badge-soft-warning">system</span>
+                        <span class="badge badge-pill badge-soft-warning">creative</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="timeline-block">
+                    <span class="timeline-step badge-info">
+                    </span>
+                    <div class="timeline-content">
+                      <small class="text-muted font-weight-bold">10:30 AM</small>
+                      <h5 class="h6 ">New likes from</h5>
+                      <p class=" text-sm mb-0">Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                      <div class="mt-3">
+                        <span class="badge badge-pill badge-soft-info">design</span>
+                        <span class="badge badge-pill badge-soft-info">system</span>
+                        <span class="badge badge-pill badge-soft-info">creative</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="timeline-block">
+                    <span class="timeline-step badge-dark">
+                    </span>
+                    <div class="timeline-content">
+                      <small class="text-muted font-weight-bold">10:30 AM</small>
+                      <h5 class="h6 ">You are now in team with</h5>
+                      <p class=" text-sm mb-0">Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                      <div class="mt-3">
+                        <span class="badge badge-pill badge-soft-dark">design</span>
+                        <span class="badge badge-pill badge-soft-dark">system</span>
+                        <span class="badge badge-pill badge-soft-dark">creative</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="timeline-block">
+                    <span class="timeline-step badge-primary">
+                    </span>
+                    <div class="timeline-content">
+                      <small class="text-muted font-weight-bold">10:30 AM</small>
+                      <h5 class="h6 ">Mail sent to</h5>
+                      <p class=" text-sm mb-0">Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                      <div class="mt-3">
+                        <span class="badge badge-pill badge-soft-primary">design</span>
+                        <span class="badge badge-pill badge-soft-primary">system</span>
+                        <span class="badge badge-pill badge-soft-primary">creative</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1372,11 +1278,6 @@
   <!-- Scripts -->
   <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
   <script src="../assets/js/purpose.core.js"></script>
-  <!-- Page JS -->
-  <script src="../assets/libs/progressbar.js/dist/progressbar.min.js"></script>
-  <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-  <script src="../assets/libs/moment/min/moment.min.js"></script>
-  <script src="../assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
   <!-- Purpose JS -->
   <script src="../assets/js/purpose.js"></script>
   <!-- Demo JS - remove it when starting your project -->

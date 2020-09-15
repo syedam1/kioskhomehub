@@ -6,13 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Purpose Application UI is the following chapter we've finished in order to create a complete and robust solution next to the already known Purpose Website UI.">
   <meta name="author" content="Webpixels">
-  <title>Kioskhomehub | Version 2.1.0</title>
+  <title>Purpose – Application UI Kit</title>
   <!-- Favicon -->
   <link rel="icon" href="../assets/img/brand/favicon.png" type="image/png">
   <!-- Font Awesome 5 -->
-  <link rel="stylesheet" href="../assets/libs/@fortawesome/fontawesome-free/css/all.min.css"><!-- Page CSS -->
-  <link rel="stylesheet" href="../assets/libs/fullcalendar/dist/fullcalendar.min.css">
-  <!-- Purpose CSS -->
+  <link rel="stylesheet" href="../assets/libs/@fortawesome/fontawesome-free/css/all.min.css"><!-- Purpose CSS -->
   <link rel="stylesheet" href="../assets/css/purpose.css" id="stylesheet">
 </head>
 
@@ -371,7 +369,7 @@
     <div class="sidenav" id="sidenav-main">
       <!-- Sidenav header -->
       <div class="sidenav-header d-flex align-items-center">
-        <a class="navbar-brand" href="../index.html">
+        <a class="navbar-brand" href="../index.blade.php">
           <img src="../assets/img/brand/white.png" class="navbar-brand-img" alt="...">
         </a>
         <div class="ml-auto">
@@ -404,48 +402,48 @@
         <!-- User info -->
         <!-- Actions -->
         <div class="w-100 mt-4 actions d-flex justify-content-between">
-          <a href="../application/user/profile.html" class="action-item action-item-lg text-white pl-0">
+          <a href="../application/user/profile.blade.php" class="action-item action-item-lg text-white pl-0">
             <i class="fas fa-user"></i>
           </a>
           <a href="#modal-chat" class="action-item action-item-lg text-white" data-toggle="modal">
             <i class="fas fa-comment-alt"></i>
           </a>
-          <a href="../application/shop/invoices.html" class="action-item action-item-lg text-white pr-0">
+          <a href="../application/shop/invoices.blade.php" class="action-item action-item-lg text-white pr-0">
             <i class="fas fa-receipt"></i>
           </a>
         </div>
       </div>
       <!-- Application nav -->
       <div class="nav-application clearfix">
-        <a href="../application/home.html" class="btn btn-square text-sm active">
+        <a href="../application/home.blade.php" class="btn btn-square text-sm">
           <span class="btn-inner--icon d-block"><i class="fas fa-home fa-2x"></i></span>
           <span class="btn-inner--icon d-block pt-2">Home</span>
         </a>
-        <a href="../application/project/card-listing.html" class="btn btn-square text-sm">
+        <a href="../application/project/card-listing.blade.php" class="btn btn-square text-sm">
           <span class="btn-inner--icon d-block"><i class="fas fa-project-diagram fa-2x"></i></span>
           <span class="btn-inner--icon d-block pt-2">Projects</span>
         </a>
-        <a href="../application/task/table-listing.html" class="btn btn-square text-sm">
+        <a href="../application/task/table-listing.blade.php" class="btn btn-square text-sm">
           <span class="btn-inner--icon d-block"><i class="fas fa-tasks fa-2x"></i></span>
           <span class="btn-inner--icon d-block pt-2">Tasks</span>
         </a>
-        <a href="../application/task/kanban-board.html" class="btn btn-square text-sm">
+        <a href="../application/task/kanban-board.blade.php" class="btn btn-square text-sm">
           <span class="btn-inner--icon d-block"><i class="fas fa-columns fa-2x"></i></span>
           <span class="btn-inner--icon d-block pt-2">Kanban</span>
         </a>
-        <a href="../application/user/card-listing.html" class="btn btn-square text-sm">
+        <a href="../application/user/card-listing.blade.php" class="btn btn-square text-sm">
           <span class="btn-inner--icon d-block"><i class="fas fa-users-cog fa-2x"></i></span>
           <span class="btn-inner--icon d-block pt-2">Users</span>
         </a>
-        <a href="../application/user/profile.html" class="btn btn-square text-sm">
+        <a href="../application/user/profile.blade.php" class="btn btn-square text-sm">
           <span class="btn-inner--icon d-block"><i class="fas fa-user-ninja fa-2x"></i></span>
           <span class="btn-inner--icon d-block pt-2">Profile</span>
         </a>
-        <a href="../application/shop/invoices.html" class="btn btn-square text-sm">
+        <a href="../application/shop/invoices.blade.php" class="btn btn-square text-sm">
           <span class="btn-inner--icon d-block"><i class="fas fa-receipt fa-2x"></i></span>
           <span class="btn-inner--icon d-block pt-2">Invoices</span>
         </a>
-        <a href="../application/widgets.html" class="btn btn-square text-sm">
+        <a href="../application/widgets.blade.php" class="btn btn-square text-sm">
           <span class="btn-inner--icon d-block"><i class="fas fa-cogs fa-2x"></i></span>
           <span class="btn-inner--icon d-block pt-2">Widgets</span>
         </a>
@@ -565,24 +563,24 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow">
                   <h6 class="dropdown-header px-0">Hi, Heather!</h6>
-                  <a href="../application/user/profile.html" class="dropdown-item">
+                  <a href="../application/user/profile.blade.php" class="dropdown-item">
                     <i class="fas fa-user"></i>
                     <span>My profile</span>
                   </a>
-                  <a href="../application/account/settings.html" class="dropdown-item">
+                  <a href="../application/account/settings.blade.php" class="dropdown-item">
                     <i class="fas fa-cog"></i>
                     <span>Settings</span>
                   </a>
-                  <a href="../application/account/billing.html" class="dropdown-item">
+                  <a href="../application/account/billing.blade.php" class="dropdown-item">
                     <i class="fas fa-credit-card"></i>
                     <span>Billing</span>
                   </a>
-                  <a href="../application/shop/orders.html" class="dropdown-item">
+                  <a href="../application/shop/orders.blade.php" class="dropdown-item">
                     <i class="fas fa-shopping-basket"></i>
                     <span>Orders</span>
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a href="../application/authentication/login.html" class="dropdown-item">
+                  <a href="../application/authentication/login.blade.php" class="dropdown-item">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                   </a>
@@ -595,14 +593,14 @@
             <ul class="navbar-nav align-items-lg-center">
               <!-- Overview  -->
               <li class="nav-item d-lg-none ">
-                <a class="nav-link" href="../index.html">
+                <a class="nav-link" href="../index.blade.php">
                   Overview
                 </a>
               </li>
               <li class="border-top opacity-2 my-2"></li>
               <!-- Home  -->
               <li class="nav-item ">
-                <a class="nav-link pl-lg-0" href="../application/home.html">
+                <a class="nav-link pl-lg-0" href="../application/home.blade.php">
                   Home
                 </a>
               </li>
@@ -618,16 +616,16 @@
                       <a href="#" class="dropdown-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Project
                       </a>
-                      <div class="dropdown-menu"><a class="dropdown-item" href="../application/project/card-listing.html">
+                      <div class="dropdown-menu"><a class="dropdown-item" href="../application/project/card-listing.blade.php">
                           Card listing
                         </a>
-                        <a class="dropdown-item" href="../application/project/table-listing.html">
+                        <a class="dropdown-item" href="../application/project/table-listing.blade.php">
                           Table listing
                         </a>
-                        <a class="dropdown-item" href="../application/project/overview.html">
+                        <a class="dropdown-item" href="../application/project/overview.blade.php">
                           Overview
                         </a>
-                        <a class="dropdown-item" href="../application/project/create-new.html">
+                        <a class="dropdown-item" href="../application/project/create-new.blade.php">
                           Create new
                         </a>
                       </div>
@@ -636,13 +634,13 @@
                       <a href="#" class="dropdown-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Task
                       </a>
-                      <div class="dropdown-menu"><a class="dropdown-item" href="../application/task/table-listing.html">
+                      <div class="dropdown-menu"><a class="dropdown-item" href="../application/task/table-listing.blade.php">
                           Table listing
                         </a>
-                        <a class="dropdown-item" href="../application/task/kanban-board.html">
+                        <a class="dropdown-item" href="../application/task/kanban-board.blade.php">
                           Kanban board
                         </a>
-                        <a class="dropdown-item" href="../application/task/create-new.html">
+                        <a class="dropdown-item" href="../application/task/create-new.blade.php">
                           Create new
                         </a>
                       </div>
@@ -651,13 +649,13 @@
                       <a href="#" class="dropdown-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         User
                       </a>
-                      <div class="dropdown-menu"><a class="dropdown-item" href="../application/user/card-listing.html">
+                      <div class="dropdown-menu"><a class="dropdown-item" href="../application/user/card-listing.blade.php">
                           Card listing
                         </a>
-                        <a class="dropdown-item" href="../application/user/table-listing.html">
+                        <a class="dropdown-item" href="../application/user/table-listing.blade.php">
                           Table listing
                         </a>
-                        <a class="dropdown-item" href="../application/user/profile.html">
+                        <a class="dropdown-item" href="../application/user/profile.blade.php">
                           Profile
                         </a>
                       </div>
@@ -666,13 +664,13 @@
                       <a href="#" class="dropdown-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Authentication
                       </a>
-                      <div class="dropdown-menu"><a class="dropdown-item" href="../application/authentication/login.html">
+                      <div class="dropdown-menu"><a class="dropdown-item" href="../application/authentication/login.blade.php">
                           Login
                         </a>
-                        <a class="dropdown-item" href="../application/authentication/register.html">
+                        <a class="dropdown-item" href="../application/authentication/register.blade.php">
                           Register
                         </a>
-                        <a class="dropdown-item" href="../application/authentication/recover.html">
+                        <a class="dropdown-item" href="../application/authentication/recover.blade.php">
                           Recover
                         </a>
                       </div>
@@ -681,19 +679,19 @@
                       <a href="#" class="dropdown-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Account
                       </a>
-                      <div class="dropdown-menu"><a class="dropdown-item" href="../application/account/profile.html">
+                      <div class="dropdown-menu"><a class="dropdown-item" href="../application/account/profile.blade.php">
                           Profile
                         </a>
-                        <a class="dropdown-item" href="../application/account/settings.html">
+                        <a class="dropdown-item" href="../application/account/settings.blade.php">
                           Settings
                         </a>
-                        <a class="dropdown-item" href="../application/account/billing.html">
+                        <a class="dropdown-item" href="../application/account/billing.blade.php">
                           Billing
                         </a>
-                        <a class="dropdown-item" href="../application/account/notifications.html">
+                        <a class="dropdown-item" href="../application/account/notifications.blade.php">
                           Notifications
                         </a>
-                        <a class="dropdown-item" href="../application/account/addresses.html">
+                        <a class="dropdown-item" href="../application/account/addresses.blade.php">
                           Addresses
                         </a>
                       </div>
@@ -702,31 +700,31 @@
                       <a href="#" class="dropdown-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Shop
                       </a>
-                      <div class="dropdown-menu"><a class="dropdown-item" href="../application/shop/card-listing.html">
+                      <div class="dropdown-menu"><a class="dropdown-item" href="../application/shop/card-listing.blade.php">
                           Card listing
                         </a>
-                        <a class="dropdown-item" href="../application/shop/table-listing.html">
+                        <a class="dropdown-item" href="../application/shop/table-listing.blade.php">
                           Table listing
                         </a>
-                        <a class="dropdown-item" href="../application/shop/product.html">
+                        <a class="dropdown-item" href="../application/shop/product.blade.php">
                           Product
                         </a>
-                        <a class="dropdown-item" href="../application/shop/orders.html">
+                        <a class="dropdown-item" href="../application/shop/orders.blade.php">
                           Orders
                         </a>
-                        <a class="dropdown-item" href="../application/shop/order-description.html">
+                        <a class="dropdown-item" href="../application/shop/order-description.blade.php">
                           Order description
                         </a>
-                        <a class="dropdown-item" href="../application/shop/cart.html">
+                        <a class="dropdown-item" href="../application/shop/cart.blade.php">
                           Cart
                         </a>
-                        <a class="dropdown-item" href="../application/shop/sellers.html">
+                        <a class="dropdown-item" href="../application/shop/sellers.blade.php">
                           Sellers
                         </a>
-                        <a class="dropdown-item" href="../application/shop/invoices.html">
+                        <a class="dropdown-item" href="../application/shop/invoices.blade.php">
                           Invoices
                         </a>
-                        <a class="dropdown-item" href="../application/shop/invoice-description.html">
+                        <a class="dropdown-item" href="../application/shop/invoice-description.blade.php">
                           Invoice description
                         </a>
                       </div>
@@ -735,19 +733,19 @@
                       <a href="#" class="dropdown-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Utility
                       </a>
-                      <div class="dropdown-menu"><a class="dropdown-item" href="../application/utility/error-404.html">
+                      <div class="dropdown-menu"><a class="dropdown-item" href="../application/utility/error-404.blade.php">
                           Error 404
                         </a>
-                        <a class="dropdown-item" href="../application/utility/error-500.html">
+                        <a class="dropdown-item" href="../application/utility/error-500.blade.php">
                           Error 500
                         </a>
-                        <a class="dropdown-item" href="../application/utility/maintenance-mode.html">
+                        <a class="dropdown-item" href="../application/utility/maintenance-mode.blade.php">
                           Maintenance mode
                         </a>
-                        <a class="dropdown-item" href="../application/utility/faq.html">
+                        <a class="dropdown-item" href="../application/utility/faq.blade.php">
                           Faq
                         </a>
-                        <a class="dropdown-item" href="../application/utility/topic.html">
+                        <a class="dropdown-item" href="../application/utility/topic.blade.php">
                           Topic
                         </a>
                       </div>
@@ -757,19 +755,19 @@
                   <div class="dropdown-menu-links rounded-bottom delimiter-top p-lg-4">
                     <div class="row">
                       <div class="col-sm-6">
-                        <a href="../application/calendar.html" class="dropdown-item">Calendar</a>
-                        <a href="../application/timeline.html" class="dropdown-item">Timeline</a>
+                        <a href="../application/calendar.blade.php" class="dropdown-item">Calendar</a>
+                        <a href="../application/timeline.blade.php" class="dropdown-item">Timeline</a>
                       </div>
                       <div class="col-sm-6">
-                        <a href="../application/task/kanban-board.html" class="dropdown-item">Kanban board</a>
-                        <a href="../application/google-map.html" class="dropdown-item">Google map</a>
+                        <a href="../application/task/kanban-board.blade.php" class="dropdown-item">Kanban board</a>
+                        <a href="../application/google-map.blade.php" class="dropdown-item">Google map</a>
                       </div>
                     </div>
                   </div>
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../application/widgets.html">
+                <a class="nav-link" href="../application/widgets.blade.php">
                   Widgets
                 </a>
               </li>
@@ -778,7 +776,7 @@
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg dropdown-menu-arrow p-0">
                   <ul class="list-group list-group-flush">
                     <li>
-                      <a href="../docs/index.html" class="list-group-item list-group-item-action" role="button">
+                      <a href="../docs/index.blade.php" class="list-group-item list-group-item-action" role="button">
                         <div class="media d-flex align-items-center">
                           <!-- SVG icon -->
                           <figure style="width: 50px;">
@@ -793,7 +791,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="../docs/components/index.html" class="list-group-item list-group-item-action" role="button">
+                      <a href="../docs/components/index.blade.php" class="list-group-item list-group-item-action" role="button">
                         <div class="media d-flex align-items-center">
                           <!-- SVG icon -->
                           <figure style="width: 50px;">
@@ -811,16 +809,16 @@
                   <div class="dropdown-menu-links rounded-bottom delimiter-top p-4">
                     <div class="row">
                       <div class="col-sm-6">
-                        <a href="../docs/getting-started/installation.html" class="dropdown-item">Installation</a>
-                        <a href="../docs/getting-started/file-structure.html" class="dropdown-item">File structure</a>
-                        <a href="../docs/getting-started/build-tools.html" class="dropdown-item">Build tools</a>
-                        <a href="../docs/getting-started/customization.html" class="dropdown-item">Customization</a>
+                        <a href="../docs/getting-started/installation.blade.php" class="dropdown-item">Installation</a>
+                        <a href="../docs/getting-started/file-structure.blade.php" class="dropdown-item">File structure</a>
+                        <a href="../docs/getting-started/build-tools.blade.php" class="dropdown-item">Build tools</a>
+                        <a href="../docs/getting-started/customization.blade.php" class="dropdown-item">Customization</a>
                       </div>
                       <div class="col-sm-6">
-                        <a href="../docs/getting-started/plugins.html" class="dropdown-item">Using plugins</a>
-                        <a href="../docs/components/index.html" class="dropdown-item">Components</a>
-                        <a href="../docs/plugins/animate.html" class="dropdown-item">Plugins</a>
-                        <a href="../docs/support.html" class="dropdown-item">Support</a>
+                        <a href="../docs/getting-started/plugins.blade.php" class="dropdown-item">Using plugins</a>
+                        <a href="../docs/components/index.blade.php" class="dropdown-item">Components</a>
+                        <a href="../docs/plugins/animate.blade.php" class="dropdown-item">Plugins</a>
+                        <a href="../docs/support.blade.php" class="dropdown-item">Support</a>
                       </div>
                     </div>
                   </div>
@@ -829,17 +827,17 @@
               <li class="border-top opacity-2 my-2"></li>
               <!-- Docs menu -->
               <li class="nav-item d-lg-none">
-                <a class="nav-link" href="../docs/index.html">
+                <a class="nav-link" href="../docs/index.blade.php">
                   Docs
                 </a>
               </li>
               <li class="nav-item d-lg-none">
-                <a class="nav-link" href="../application/authentication/register.html">
+                <a class="nav-link" href="../application/authentication/register.blade.php">
                   Register
                 </a>
               </li>
               <li class="nav-item d-lg-none">
-                <a class="nav-link" href="../application/authentication/login.html">
+                <a class="nav-link" href="../application/authentication/login.blade.php">
                   Sign in
                 </a>
               </li>
@@ -1032,305 +1030,326 @@
         <!-- Page title -->
         <div class="page-title">
           <div class="row justify-content-between align-items-center">
-            <div class="col-md-6 mb-3 mb-md-0">
-              <h5 class="h3 font-weight-400 mb-0 text-white">Moning, Heather!</h5>
-              <span class="text-sm text-white opacity-8">Have a nice day!</span>
+            <div class="col-md-6 d-flex align-items-center justify-content-between justify-content-md-start mb-3 mb-md-0">
+              <!-- Page title + Go Back button -->
+              <div class="d-inline-block">
+                <h5 class="h4 d-inline-block font-weight-400 mb-0 text-white">Google Map</h5>
+              </div>
+              <!-- Additional info -->
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xl-8 col-md-6">
-            <div class="card card-fluid">
-              <div class="card-header">
-                <h6 class="mb-0">Engagement</h6>
-              </div>
-              <div class="card-body">
-                <!-- Chart -->
-                <div id="apex-engagement" data-color="primary" data-height="280"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6">
-            <div class="card card-fluid">
-              <div class="card-body text-center d-flex flex-column justify-content-center">
-                <h5 class="mb-4">Emails sent</h5>
-                <div class="progress-circle progress-lg mx-auto" id="progress-5" data-progress="50" data-text="98" data-textclass="h1" data-color="warning"></div>
-                <div class="d-flex mt-4">
-                  <div class="col">
-                    <span class="d-block badge badge-dot badge-lg h6">
-                      <i class="bg-danger"></i>30 not sent
-                    </span>
-                    <span class="d-block badge badge-dot badge-lg h6">
-                      <i class="bg-success"></i>68 success
-                    </span>
-                  </div>
-                  <div class="col">
-                    <span class="d-block badge badge-dot badge-lg h6">
-                      <i class="bg-warning"></i>38 opened
-                    </span>
-                    <span class="d-block badge badge-dot badge-lg h6">
-                      <i class="bg-danger"></i>SMTP error
-                    </span>
-                  </div>
-                </div>
-                <a href="#" class="btn btn-block btn-secondary mt-auto">Open insights</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-sm-6">
-            <div class="card card-fluid">
-              <div class="card-body">
-                <div class="row align-items-center mb-4">
-                  <div class="col-auto">
-                    <div class="progress-circle progress-sm" id="progress-1" data-progress="90" data-color="primary"></div>
-                  </div>
-                  <div class="col">
-                    <a href="#!" class="d-block h6 mb-0">98 tasks solved</a>
-                    <a href="#" class="text-sm text-muted">Purpose Website UI</a>
-                  </div>
-                </div>
-                <div class="row align-items-center mb-4">
-                  <div class="col-auto">
-                    <div class="progress-circle progress-sm" id="progress-2" data-progress="40" data-color="warning"></div>
-                  </div>
-                  <div class="col">
-                    <a href="#!" class="d-block h6 mb-0">13 tasks solved</a>
-                    <a href="#" class="text-sm text-muted">Webpixels website</a>
-                  </div>
-                </div>
-                <div class="row align-items-center">
-                  <div class="col-auto">
-                    <div class="progress-circle progress-sm" id="progress-3" data-progress="60" data-color="info"></div>
-                  </div>
-                  <div class="col">
-                    <a href="#!" class="d-block h6 mb-0">23 tasks solved</a>
-                    <a href="#" class="text-sm text-muted">Purpose Dashboard UI</a>
-                  </div>
-                </div>
-                <a href="#" class="btn btn-sm btn-block btn-secondary mt-5">Open insights</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <div class="card card-fluid">
-              <div class="card-body text-center d-flex flex-column justify-content-center">
-                <h5 class="mb-4">Congratulations!</h5>
-                <div class="progress-circle progress-lg mx-auto" id="progress-4" data-progress="78" data-text="23" data-textclass="h1" data-color="primary"></div>
-                <p class="mt-4 mb-0">
-                  Github issues were closed this week.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card card-fluid bg-gradient-dark border-0">
-              <div class="card-header border-0 pb-0">
-                <h6 class="text-white mb-0"><span class="text-danger mr-2">●</span>Project at risk</h6>
-              </div>
-              <div class="card-body text-center">
-                <!-- Avatar -->
-                <a href="#" class="avatar avatar-lg rounded-circle">
-                  <img alt="Image placeholder" src="../assets/img/theme/light/brand-avatar-1.png">
+            <div class="col-md-6 d-flex align-items-center justify-content-between justify-content-md-end">
+              <div class="actions actions-dark d-inline-block">
+                <a href="#" class="action-item ml-md-4">
+                  <i class="fas fa-file-export mr-2"></i>Export
                 </a>
-                <!-- Title -->
-                <h5 class="h6 mt-4 mb-0 text-white">Website redesign</h5>
-                <!-- Actions -->
-                <div class="actions actions-dark d-flex justify-content-between px-4 mt-4">
-                  <a href="#" class="action-item">
-                    <i class="fas fa-chart-pie"></i>
-                  </a>
-                  <a href="#" class="action-item">
-                    <i class="fas fa-user"></i>
-                  </a>
-                  <a href="#" class="action-item">
-                    <i class="fas fa-info-circle"></i>
-                  </a>
-                </div>
+                <a href="#" class="action-item ml-3">
+                  <i class="fas fa-cog mr-2"></i>Settings
+                </a>
               </div>
-              <div class="card-body">
-                <div class="row justify-content-between align-items-center">
-                  <div class="col-6">
-                    <div style="max-width: 120px;">
-                      <div class="spark-chart" data-toggle="spark-chart" data-type="line" data-height="50" data-color="danger" data-dataset="[42, 55, 19, 16, 84, 24, 10, 11, 93, 15, 81]"></div>
-                    </div>
-                  </div>
-                  <div class="col-auto text-center">
-                    <span class="d-block h4 mb-0 text-white">8</span>
-                    <span class="d-block text-sm text-white opacity-8">Days delay</span>
-                  </div>
-                </div>
-              </div>
+              <a href="#" class="btn btn-sm btn-white btn-icon-only rounded-circle ml-4">
+                <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
+              </a>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-xl-7 d-sm-flex flex-sm-column">
-            <div class="row flex-sm-fill">
-              <div class="col-sm-4">
-                <div class="card card-fluid">
-                  <div class="card-body text-center">
-                    <div class="avatar-parent-child">
-                      <a href="#" class="avatar avatar-lg rounded-circle">
-                        <img alt="Image placeholder" src="../assets/img/theme/light/team-1-800x800.jpg">
-                      </a>
-                      <span class="avatar-child avatar-badge bg-success"></span>
+        <!-- Google Map -->
+        <div class="card overflow-hidden">
+          <div class="row no-gutters">
+            <div class="col-lg-5 col-xl-4 order-lg-2">
+              <div class="card-header actions-toolbar">
+                <div class="actions-search" id="actions-search">
+                  <div class="input-group input-group-merge input-group-flush">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text bg-transparent"><i class="fas fa-search"></i></span>
                     </div>
-                    <h5 class="h6 mt-4 mb-0">John Sullivan</h5>
-                    <a href="#" class="d-block text-sm text-muted mb-3">@john.sullivan</a>
-                    <div class="actions d-flex justify-content-between px-4">
-                      <a href="#" class="action-item">
-                        <i class="fas fa-envelope"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-phone"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-share-alt"></i>
-                      </a>
+                    <input type="text" class="form-control form-control-flush" placeholder="Type and hit enter ...">
+                    <div class="input-group-append">
+                      <a href="#" class="input-group-text bg-transparent" data-action="search-close" data-target="#actions-search"><i class="fas fa-times"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-between align-items-center">
+                  <div class="col">
+                    <h6 class="d-inline-block mb-0">Filters</h6>
+                  </div>
+                  <div class="col text-right">
+                    <div class="actions"><a href="#" class="action-item mr-3" data-action="search-open" data-target="#actions-search"><i class="fas fa-search"></i></a>
+                      <div class="dropdown mr-3">
+                        <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fas fa-filter"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a class="dropdown-item" href="#">
+                            <i class="fas fa-sort-amount-down"></i>Newest
+                          </a>
+                          <a class="dropdown-item" href="#">
+                            <i class="fas fa-sort-alpha-down"></i>From A-Z
+                          </a>
+                          <a class="dropdown-item" href="#">
+                            <i class="fas fa-sort-alpha-up"></i>From Z-A
+                          </a>
+                        </div>
+                      </div>
+                      <div class="dropdown" data-toggle="dropdown">
+                        <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fas fa-ellipsis-h"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a href="#" class="dropdown-item">Refresh</a>
+                          <a href="#" class="dropdown-item">Manage Widgets</a>
+                          <a href="#" class="dropdown-item">Settings</a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-4">
-                <div class="card card-fluid">
-                  <div class="card-body text-center">
-                    <div class="avatar-parent-child">
-                      <a href="#" class="avatar avatar-lg rounded-circle">
-                        <img alt="Image placeholder" src="../assets/img/theme/light/team-2-800x800.jpg">
-                      </a>
-                      <span class="avatar-child avatar-badge bg-warning"></span>
+              <ul class="list-group list-group-flush border-bottom">
+                <li class="list-group-item">
+                  <div class="row align-items-center">
+                    <div class="col-6">
+                      <span class="form-control-label">Private project:</span>
                     </div>
-                    <h5 class="h6 mt-4 mb-0">Heather Wright</h5>
-                    <a href="#" class="d-block text-sm text-muted mb-3">@heather.wright</a>
-                    <div class="actions d-flex justify-content-between px-4">
-                      <a href="#" class="action-item">
-                        <i class="fas fa-envelope"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-phone"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-share-alt"></i>
-                      </a>
+                    <div class="col-6 text-right">
+                      <span class="badge badge-soft-success badge-pill">Yes</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row align-items-center">
+                    <div class="col-6">
+                      <span class="form-control-label">Published:</span>
+                    </div>
+                    <div class="col-6 text-right">
+                      <span class="badge badge-soft-danger badge-pill">No</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row align-items-center">
+                    <div class="col-6">
+                      <small>Start date:</small>
+                      <div class="h6 mb-0">23-05-2018</div>
+                    </div>
+                    <div class="col-6">
+                      <small>End date:</small>
+                      <div class="h6 mb-0">30-06-2019</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <!-- Results -->
+              <div class="border-bottom" style="height: 400px;">
+                <div class="scrollbar-inner">
+                  <div class="list-group list-group-flush">
+                    <div class="list-group-item">
+                      <div class="row align-items-center">
+                        <div class="col-auto">
+                          <!-- Avatar -->
+                          <a href="#" class="avatar rounded-circle">
+                            <img alt="Image placeholder" src="../assets/img/theme/light/team-1-800x800.jpg" class="">
+                          </a>
+                        </div>
+                        <div class="col ml-n2">
+                          <a href="#!" class="d-block h6 mb-0">John Sullivan</a>
+                          <p class="card-text text-sm text-muted mb-0">
+                            2.8 km
+                          </p>
+                        </div>
+                        <div class="col-auto">
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="location-check-1" checked>
+                            <label class="custom-control-label" for="location-check-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group-item">
+                      <div class="row align-items-center">
+                        <div class="col-auto">
+                          <!-- Avatar -->
+                          <a href="#" class="avatar rounded-circle">
+                            <img alt="Image placeholder" src="../assets/img/theme/light/team-2-800x800.jpg" class="">
+                          </a>
+                        </div>
+                        <div class="col ml-n2">
+                          <a href="#!" class="d-block h6 mb-0">Heather Wright</a>
+                          <p class="card-text text-sm text-muted mb-0">
+                            5.6 km
+                          </p>
+                        </div>
+                        <div class="col-auto">
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="location-check-2">
+                            <label class="custom-control-label" for="location-check-2"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group-item">
+                      <div class="row align-items-center">
+                        <div class="col-auto">
+                          <!-- Avatar -->
+                          <a href="#" class="avatar rounded-circle">
+                            <img alt="Image placeholder" src="../assets/img/theme/light/team-3-800x800.jpg" class="">
+                          </a>
+                        </div>
+                        <div class="col ml-n2">
+                          <a href="#!" class="d-block h6 mb-0">James Lewis</a>
+                          <p class="card-text text-sm text-muted mb-0">
+                            8.4 km
+                          </p>
+                        </div>
+                        <div class="col-auto">
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="location-check-3" checked>
+                            <label class="custom-control-label" for="location-check-3"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group-item">
+                      <div class="row align-items-center">
+                        <div class="col-auto">
+                          <!-- Avatar -->
+                          <a href="#" class="avatar rounded-circle">
+                            <img alt="Image placeholder" src="../assets/img/theme/light/team-4-800x800.jpg" class="">
+                          </a>
+                        </div>
+                        <div class="col ml-n2">
+                          <a href="#!" class="d-block h6 mb-0">Martin Gray</a>
+                          <p class="card-text text-sm text-muted mb-0">
+                            11.2 km
+                          </p>
+                        </div>
+                        <div class="col-auto">
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="location-check-4" checked>
+                            <label class="custom-control-label" for="location-check-4"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group-item">
+                      <div class="row align-items-center">
+                        <div class="col-auto">
+                          <!-- Avatar -->
+                          <a href="#" class="avatar rounded-circle">
+                            <img alt="Image placeholder" src="../assets/img/theme/light/team-5-800x800.jpg" class="">
+                          </a>
+                        </div>
+                        <div class="col ml-n2">
+                          <a href="#!" class="d-block h6 mb-0">Mike Snow</a>
+                          <p class="card-text text-sm text-muted mb-0">
+                            14.0 km
+                          </p>
+                        </div>
+                        <div class="col-auto">
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="location-check-5" checked>
+                            <label class="custom-control-label" for="location-check-5"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group-item">
+                      <div class="row align-items-center">
+                        <div class="col-auto">
+                          <!-- Avatar -->
+                          <a href="#" class="avatar rounded-circle">
+                            <img alt="Image placeholder" src="../assets/img/theme/light/team-6-800x800.jpg" class="">
+                          </a>
+                        </div>
+                        <div class="col ml-n2">
+                          <a href="#!" class="d-block h6 mb-0">John Sullivan</a>
+                          <p class="card-text text-sm text-muted mb-0">
+                            16.8 km
+                          </p>
+                        </div>
+                        <div class="col-auto">
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="location-check-6" checked>
+                            <label class="custom-control-label" for="location-check-6"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group-item">
+                      <div class="row align-items-center">
+                        <div class="col-auto">
+                          <!-- Avatar -->
+                          <a href="#" class="avatar rounded-circle">
+                            <img alt="Image placeholder" src="../assets/img/theme/light/team-7-800x800.jpg" class="">
+                          </a>
+                        </div>
+                        <div class="col ml-n2">
+                          <a href="#!" class="d-block h6 mb-0">John Sullivan</a>
+                          <p class="card-text text-sm text-muted mb-0">
+                            19.6 km
+                          </p>
+                        </div>
+                        <div class="col-auto">
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="location-check-7" checked>
+                            <label class="custom-control-label" for="location-check-7"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group-item">
+                      <div class="row align-items-center">
+                        <div class="col-auto">
+                          <!-- Avatar -->
+                          <a href="#" class="avatar rounded-circle">
+                            <img alt="Image placeholder" src="../assets/img/theme/light/team-2-800x800.jpg" class="">
+                          </a>
+                        </div>
+                        <div class="col ml-n2">
+                          <a href="#!" class="d-block h6 mb-0">John Sullivan</a>
+                          <p class="card-text text-sm text-muted mb-0">
+                            22.4 km
+                          </p>
+                        </div>
+                        <div class="col-auto">
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="location-check-8" checked>
+                            <label class="custom-control-label" for="location-check-8"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group-item">
+                      <div class="row align-items-center">
+                        <div class="col-auto">
+                          <!-- Avatar -->
+                          <a href="#" class="avatar rounded-circle">
+                            <img alt="Image placeholder" src="../assets/img/theme/light/team-1-800x800.jpg" class="">
+                          </a>
+                        </div>
+                        <div class="col ml-n2">
+                          <a href="#!" class="d-block h6 mb-0">John Sullivan</a>
+                          <p class="card-text text-sm text-muted mb-0">
+                            25.2 km
+                          </p>
+                        </div>
+                        <div class="col-auto">
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="location-check-9" checked>
+                            <label class="custom-control-label" for="location-check-9"></label>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-4">
-                <div class="card card-fluid">
-                  <div class="card-body text-center">
-                    <div class="avatar-parent-child">
-                      <a href="#" class="avatar avatar-lg rounded-circle">
-                        <img alt="Image placeholder" src="../assets/img/theme/light/team-3-800x800.jpg">
-                      </a>
-                      <span class="avatar-child avatar-badge bg-danger"></span>
-                    </div>
-                    <h5 class="h6 mt-4 mb-0">James Lewis</h5>
-                    <a href="#" class="d-block text-sm text-muted mb-3">@james.lewis</a>
-                    <div class="actions d-flex justify-content-between px-4">
-                      <a href="#" class="action-item">
-                        <i class="fas fa-envelope"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-phone"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-share-alt"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+              <!-- Reset button -->
+              <div class="p-4">
+                <button type="button" class="btn btn-block btn-primary">Reset filters</button>
               </div>
             </div>
-            <div class="row flex-sm-fill">
-              <div class="col-sm-4">
-                <div class="card card-fluid">
-                  <div class="card-body text-center">
-                    <div class="avatar-parent-child">
-                      <a href="#" class="avatar avatar-lg rounded-circle">
-                        <img alt="Image placeholder" src="../assets/img/theme/light/team-1-800x800.jpg">
-                      </a>
-                      <span class="avatar-child avatar-badge bg-success"></span>
-                    </div>
-                    <h5 class="h6 mt-4 mb-0">John Snow</h5>
-                    <a href="#" class="d-block text-sm text-muted mb-3">@john.snow</a>
-                    <div class="actions d-flex justify-content-between px-4">
-                      <a href="#" class="action-item">
-                        <i class="fas fa-envelope"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-phone"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-share-alt"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="card card-fluid">
-                  <div class="card-body text-center">
-                    <div class="avatar-parent-child">
-                      <a href="#" class="avatar avatar-lg rounded-circle">
-                        <img alt="Image placeholder" src="../assets/img/theme/light/team-2-800x800.jpg">
-                      </a>
-                      <span class="avatar-child avatar-badge bg-success"></span>
-                    </div>
-                    <h5 class="h6 mt-4 mb-0">John Michael</h5>
-                    <a href="#" class="d-block text-sm text-muted mb-3">@john.michael</a>
-                    <div class="actions d-flex justify-content-between px-4">
-                      <a href="#" class="action-item">
-                        <i class="fas fa-envelope"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-phone"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-share-alt"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="card card-fluid">
-                  <div class="card-body text-center">
-                    <div class="avatar-parent-child">
-                      <a href="#" class="avatar avatar-lg rounded-circle">
-                        <img alt="Image placeholder" src="../assets/img/theme/light/team-3-800x800.jpg">
-                      </a>
-                      <span class="avatar-child avatar-badge bg-warning"></span>
-                    </div>
-                    <h5 class="h6 mt-4 mb-0">Monroe Parker</h5>
-                    <a href="#" class="d-block text-sm text-muted mb-3">@monroe.parker</a>
-                    <div class="actions d-flex justify-content-between px-4">
-                      <a href="#" class="action-item">
-                        <i class="fas fa-envelope"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-phone"></i>
-                      </a>
-                      <a href="#" class="action-item">
-                        <i class="fas fa-share-alt"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-5">
-            <!-- Calendar -->
-            <div class="card widget-calendar">
-              <div class="card-header">
-                <div class="text-sm text-muted mb-1 widget-calendar-year"></div>
-                <div class="h5 mb-0 widget-calendar-day"></div>
-              </div>
-              <!-- Calendar -->
-              <div data-toggle="widget-calendar"></div>
+            <div class="col-lg-7 col-xl-8 order-lg-1">
+              <div id="map-default" class="map-canvas rounded-0" data-lat="37.7767964" data-lng="-122.4187928" style="height: 770px;" data-color="#caa7f9"></div>
             </div>
           </div>
         </div>
@@ -1373,10 +1392,7 @@
   <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
   <script src="../assets/js/purpose.core.js"></script>
   <!-- Page JS -->
-  <script src="../assets/libs/progressbar.js/dist/progressbar.min.js"></script>
-  <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-  <script src="../assets/libs/moment/min/moment.min.js"></script>
-  <script src="../assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBuyKngB9VC3zgY_uEB-DKL9BKYMekbeY"></script>
   <!-- Purpose JS -->
   <script src="../assets/js/purpose.js"></script>
   <!-- Demo JS - remove it when starting your project -->
