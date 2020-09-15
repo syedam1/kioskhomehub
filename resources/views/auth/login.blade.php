@@ -146,7 +146,7 @@
                 @if (Route::has('register'))
                     <li class="nav-item">
                         <a href="{{ route('register') }}" class="nav-link d-lg-none">Register now</a>
-                        <a href="{{ route('register') }}" class="btn btn-sm btn-dark btn-icon rounded-pill d-none d-lg-inline-flex" data-toggle="tooltip" data-placement="left">
+                        <a href="{{ route('register') }}" class="nav-link btn btn-sm btn-dark btn-icon rounded-pill d-none d-lg-inline-flex" data-toggle="tooltip" data-placement="left">
                         <span class="btn-inner--icon"><i class="fas fa-sign"></i></span>
                         <span class="btn-inner--text">Register now</span>
                         </a>
@@ -192,7 +192,7 @@
 
           <!-- LOGIN -->
 
-          <div class="card">
+          <div class="card bg-dark">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">

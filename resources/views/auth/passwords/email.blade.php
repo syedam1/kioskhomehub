@@ -52,7 +52,7 @@
     </div>
   </div>
   <!-- Nav -->
-  <nav class="navbar navbar-main navbar-expand-lg navbar-dark bg-gradient-dark navbar-border py-3" id="navbar-main">
+  <nav class="navbar navbar-main navbar-expand-lg navbar-dark bg-dark navbar-border py-3" id="navbar-main">
     <div class="container px-lg-0">
       <!-- Logo -->
       <a class="navbar-brand mr-lg-5" href="/">
@@ -146,7 +146,7 @@
                 @if (Route::has('register'))
                     <li class="nav-item">
                         <a href="{{ route('register') }}" class="nav-link d-lg-none">Register now</a>
-                        <a href="{{ route('register') }}" class="btn btn-sm btn-white btn-icon rounded-pill d-none d-lg-inline-flex" data-toggle="tooltip" data-placement="left">
+                        <a href="{{ route('register') }}" class="nav-link btn btn-sm btn-dark btn-icon rounded-pill d-none d-lg-inline-flex" data-toggle="tooltip" data-placement="left">
                         <span class="btn-inner--icon"><i class="fas fa-sign"></i></span>
                         <span class="btn-inner--text">Register now</span>
                         </a>
@@ -178,7 +178,7 @@
     </div>
   </nav>
   <!-- Main content -->
-  <section class="slice slice-lg bg-gradient-dark header-web-app" data-offset-top="#header-main">
+  <section class="slice slice-lg bg-dark header-web-app" data-offset-top="#header-main">
     <!-- SVG background -->
     <div class="bg-absolute-cover bg-size--contain d-flex align-items-center">
       <figure class="w-100 d-none d-lg-block">
@@ -192,7 +192,7 @@
 
             
 <!-- EmailBlade -->
-<div class="card">
+<div class="card bg-dark">
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
