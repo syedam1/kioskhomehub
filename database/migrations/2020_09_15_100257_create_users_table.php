@@ -18,10 +18,12 @@ class CreateUsersTable extends Migration {
 			$table->integer('user_id', true);
 			$table->string('username', 50);
 			$table->string('email', 50)->unique('unique_email');
-			$table->string('password', 255);
+			$table->string('password');
 			$table->timestamp('created_date')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->timestamp('update_date')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->integer('disabled')->default(0);
+			$table->string('verification_code', 50)->nullable();
+			$table->integer('is_verified')->nullable()->default(0);
 		});
 	}
 
