@@ -947,7 +947,7 @@
                   </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow">
-                  <h6 class="dropdown-header px-0">Hi, John!</h6>
+                  <h6 class="dropdown-header px-0">Hi, {{ Auth::user()->username }}!</h6>
                   <a href="#!" class="dropdown-item">
                     <i class="fas fa-user"></i>
                     <span>My profile</span>
@@ -965,10 +965,15 @@
                     <span>Activity</span>
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a href="#!" class="dropdown-item">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span>Logout</span>
+                  <a class="dropdown-item" href="{{ route('logout') }}"
+                      onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();">
+                      <i class="fas fa-sign-out-alt"></i> <span>{{ __('Logout') }}</span>
                   </a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                  </form>
+
                 </div>
               </li>
             </ul>
