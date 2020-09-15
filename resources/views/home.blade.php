@@ -417,7 +417,7 @@
       </div>
       <!-- Application nav -->
       <div class="nav-application clearfix">
-        <a href="../application/home.html" class="btn btn-square text-sm active">
+        <a href="/" class="btn btn-square text-sm active">
           <span class="btn-inner--icon d-block"><i class="fas fa-home fa-2x"></i></span>
           <span class="btn-inner--icon d-block pt-2">Home</span>
         </a>
@@ -602,7 +602,7 @@
               <li class="border-top opacity-2 my-2"></li>
               <!-- Home  -->
               <li class="nav-item ">
-                <a class="nav-link pl-lg-0" href="../application/home.html">
+                <a class="nav-link pl-lg-0" href="/">
                   Home
                 </a>
               </li>
