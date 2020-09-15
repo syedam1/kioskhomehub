@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Purpose Application UI is the following chapter we've finished in order to create a complete and robust solution next to the already known Purpose Website UI.">
-  <meta name="author" content="Webpixels">
-  <title>Kioskhomehub | Version 2.1.0</title>
-  <!-- Favicon -->
-  <link rel="icon" href="assets/img/brand/favicon.png" type="image/png">
-  <!-- Font Awesome 5 -->
-  <link rel="stylesheet" href="assets/libs/@fortawesome/fontawesome-free/css/all.min.css"><!-- Page CSS -->
-  <link rel="stylesheet" href="assets/libs/swiper/dist/css/swiper.min.css">
-  <!-- Purpose CSS -->
-  <link rel="stylesheet" href="assets/css/purpose.css" id="stylesheet">
-</head>
+@section('content')
 
 <body>
   <!-- Products -->
@@ -23,9 +9,9 @@
       <div class="modal-content">
         <div class="scrollbar-inner">
           <div class="modal-body">
-            <h5 class="mt-3 mb-3">Choose (your) Purpose</h5>
+            <h5 class="mt-3 mb-3">What we offer</h5>
             <p>
-              Purpose is the most advanced UI solution we've built, that helps developers create beautiful and consistent websites, dashboards and applications.
+              Kiosk is the next generation device hub which allows you to manage your media according to your customized themes.
             </p>
             <hr class="my-4">
             <!-- Products -->
@@ -35,7 +21,7 @@
               </div>
               <div class="card-img-overlay d-flex flex-column align-items-center p-0">
                 <div class="overlay-actions w-100 card-footer mt-auto">
-                  <a href="https://themes.getbootstrap.com/product/purpose-website-ui-kit/" class="h6 mb-0 stretched-link" target="_blank">Purpose Website UI Kit</a>
+                  <a href="#" class="h6 mb-0 stretched-link" target="_blank">Kiosk Home Hub</a>
                 </div>
               </div>
             </div>
@@ -45,7 +31,7 @@
               </div>
               <div class="card-img-overlay d-flex flex-column align-items-center p-0">
                 <div class="overlay-actions w-100 card-footer mt-auto">
-                  <a href="https://themes.getbootstrap.com/product/purpose-application-ui-kit/" class="h6 mb-0 stretched-link" target="_blank">Purpose Application UI Kit</a>
+                  <a href="#" class="h6 mb-0 stretched-link" target="_blank">ABar</a>
                 </div>
               </div>
             </div>
@@ -53,10 +39,10 @@
               <div class="col text-center">
                 <div>
                   <i class="fas fa-laugh-beam fa-3x text-primary"></i>
-                  <span class="h5 d-block mt-3">What's next?</span>
+                  <span class="h5 d-block mt-3">Kiosk</span>
                 </div>
                 <p class="px-4 mt-2 mb-0">
-                  We are already working on a new product, so stay tuned :)
+                  Your next generation home hub.
                 </p>
               </div>
             </div>
@@ -69,8 +55,8 @@
   <nav class="navbar navbar-main navbar-expand-lg navbar-dark bg-gradient-dark navbar-border py-3" id="navbar-main">
     <div class="container px-lg-0">
       <!-- Logo -->
-      <a class="navbar-brand mr-lg-5" href="index.html">
-        <img alt="Image placeholder" src="assets/img/brand/white.png" id="navbar-logo">
+      <a class="navbar-brand mr-lg-5" href="/">
+        <img alt="Kiosk Home Hub" src="assets/img/brand/kiosk-white.svg" id="navbar-logo">
       </a>
       <!-- Navbar collapse trigger -->
       <button class="navbar-toggler pr-0" type="button" data-toggle="collapse" data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,11 +66,16 @@
       <div class="collapse navbar-collapse" id="navbar-main-collapse">
         <ul class="navbar-nav align-items-lg-center">
           <li class="nav-item ">
-            <a class="nav-link" href="application/home.html">Explore Theme</a>
+            <a class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#modal-products" data-toggle="modal">Products</a>
           </li>
+          <li class="nav-item">
+            <a href="docs/getting-started/installation.html" class="nav-link">Installation</a>
+            
+          </li>
+          
         </ul>
         <ul class="navbar-nav align-items-lg-center ml-lg-auto">
           <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
@@ -144,10 +135,10 @@
             <a class="nav-link" href="docs/changelog.html" target="_blank">What's new</a>
           </li>
           <li class="nav-item mr-0">
-            <a href="https://themes.getbootstrap.com/product/purpose-application-ui-kit/" target="_blank" class="nav-link d-lg-none">Purchase now</a>
-            <a href="https://themes.getbootstrap.com/product/purpose-application-ui-kit/" target="_blank" class="btn btn-sm btn-white btn-icon rounded-pill d-none d-lg-inline-flex" data-toggle="tooltip" data-placement="left" title="Go to Bootstrap Themes">
-              <span class="btn-inner--icon"><i class="fas fa-shopping-cart"></i></span>
-              <span class="btn-inner--text">Purchase now</span>
+            <a href="/register" target="_blank" class="nav-link d-lg-none">Register now</a>
+            <a href="/register" target="_blank" class="btn btn-sm btn-white btn-icon rounded-pill d-none d-lg-inline-flex" data-toggle="tooltip" data-placement="left" title="Kiosk Home Hub">
+              <span class="btn-inner--icon"><i class="fas fa-sign"></i></span>
+              <span class="btn-inner--text">Register now</span>
             </a>
           </li>
         </ul>
@@ -165,13 +156,13 @@
     <div class="container position-relative zindex-100">
       <div class="row justify-content-around align-items-center">
         <div class="col-lg-6 pt-lg-4 text-center">
-          <h1 class="display-3 text-white mb-3">What's next?</h1>
+          <h1 class="display-3 text-white mb-3"><img alt="Image placeholder" src="assets/img/brand/kiosk-white.svg" id="navbar-logo"></h1>
           <p class="lead text-white lh-180 mx-auto">
-            Purpose Application UI is the following chapter we've finished in order to create a complete and robust solution next to the already known Purpose Website UI.
+            Your next generation home hub.
           </p>
           <a href="#sct-features" class="btn btn-primary rounded-pill hover-translate-y-n3 mt-4 d-none d-sm-inline-block" data-scroll-to>See features</a>
-          <a href="application/home.html" class="btn btn-white btn-icon rounded-pill hover-translate-y-n3 mt-4">
-            <span class="btn-inner--text">Explore theme</span>
+          <a href="#" class="btn btn-white btn-icon rounded-pill hover-translate-y-n3 mt-4">
+            <span class="btn-inner--text">Install now!!</span>
             <span class="btn-inner--icon"><i class="fas fa-angle-right"></i></span>
           </a>
         </div>
@@ -191,7 +182,7 @@
       <div class="row justify-content-center mb-7">
         <div class="col-lg-8">
           <p class="h4 text-center lh-160">
-            Components, plugins, and build tools are all thoroughly documented with live examples and markup for easier use and customisation—just like Bootstrap itself. Not comfortable diving that deep? No worries, you just use the compiled CSS and examples pages!
+            Customize your desktop to reflect your mood by using the next generation Kiosk Home Hub.  Quick and easy installation along with the ability to customize the app, allows you to match your device with your environment.  Experience your selection of media played on your device through the mood selector option!
           </p>
         </div>
       </div>
@@ -206,7 +197,7 @@
               </div>
               <h5>Modular</h5>
               <p class="mt-3 mb-0">
-                All pages and components are built to be used in any combination.
+                Consolidate all your media into different themes.  Allow the Kiosk to select the right media for you.
               </p>
             </div>
           </div>
@@ -221,7 +212,7 @@
               </div>
               <h5>Responsive</h5>
               <p class="mt-3 mb-0">
-                Components and pages are optimised to work for most devices.
+                Kiosk Toolbar provides you the critical apps that you need.
               </p>
             </div>
           </div>
@@ -251,7 +242,7 @@
               </div>
               <h5>Customizable</h5>
               <p class="mt-3 mb-0">
-                Purpose inherits its style from custom variables, so basic customisation is easy.
+                Configure the toolbar and the media to suite your needs.
               </p>
             </div>
           </div>
@@ -266,20 +257,20 @@
     <div class="container pt-9 pb-0 position-relative zindex-100">
       <div class="row justify-content-center text-center mb-5">
         <div class="col-xl-6 col-lg-7">
-          <h2 class="h1">Change the way you build web apps. Forever.</h2>
+          <h2 class="h1">Change the way you manage apps...forever.</h2>
           <p class="lead px-lg-5">
-            With Purpose you get components and examples, including tons of variables that will help you customize this theme with ease.
+            With Kiosk you get components that provide you with security plus support from our Kiosk Home Hub team.
           </p>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-3 col-md-4 mb-4 mb-md-0 pt-lg-6 pr-lg-4">
-          <h4 class="mb-4">Experience quality</h4>
+          <h4 class="mb-4">Track your activity</h4>
           <p class="lead">
-            Purpose makes it super easy for developers to create unified pages and features for a product by using a single code base for everything
+            Kiosk makes it super easy for you to track and manage your activities.  The automatic tracking feature along with viewing time recommendations will let you know what is best for you.
           </p>
           <p class="lead mt-5">
-            You will find it super easy to work with any of the Purpose templates because they have the same classes and component structure.
+            You will find it super simple to install and navigate through your desktop with your favourite apps just a click away.
           </p>
         </div>
         <div class="col mb-lg-n7">
@@ -299,7 +290,7 @@
             Complete features at your hand
           </h1>
           <p class="font-size-lg text-gray-500 mb-7 mb-md-9">
-            Accelerate your development workflow with ready to use interface elements and components.
+            Accelerate your workflow or provide a seemless experience using our Kiosk Home Hub.
           </p>
         </div>
       </div>
@@ -532,9 +523,9 @@
       <div class="row row-grid justify-content-around align-items-center">
         <div class="col-lg-5">
           <div class="">
-            <h5 class=" h3">A complete solution for developers &amp; designers</h5>
+            <h5 class=" h3">A complete solution for individuals &amp; businesses</h5>
             <p class="lead my-4">
-              With Purpose you get components and examples, including tons of variables that will help you customize this theme with ease.
+              You could setup the Kiosk for your own use or to provide media experience to a larger crowd either in a business setup or hospitality.  
             </p>
             <ul class="list-unstyled">
               <li class="py-2">
@@ -545,7 +536,7 @@
                     </div>
                   </div>
                   <div>
-                    <span class="h6 mb-0">Perfect for modern web apps</span>
+                    <span class="h6 mb-0">Perfect for Windows systems</span>
                   </div>
                 </div>
               </li>
@@ -557,7 +548,7 @@
                     </div>
                   </div>
                   <div>
-                    <span class="h6 mb-0">Built with customization and ease-of-use at its core</span>
+                    <span class="h6 mb-0">Ease of installation, customization and ease-of-use at its core</span>
                   </div>
                 </div>
               </li>
@@ -569,7 +560,7 @@
                     </div>
                   </div>
                   <div>
-                    <span class="h6 mb-0">Quality design and thoughfully crafted code</span>
+                    <span class="h6 mb-0">For everyones needs, thoughfully crafted app</span>
                   </div>
                 </div>
               </li>
@@ -588,9 +579,8 @@
       <div class="row row-grid justify-content-around align-items-center">
         <div class="col-lg-5 order-lg-2">
           <div class=" pr-lg-4">
-            <h5 class=" h3">Change the way you build web apps. Forever.</h5>
-            <p class="lead mt-4 mb-5">Purpose has everything you need to start your next project. No need to start
-              from scratch. A huge set of base elements and pre-built components are already set up for you. You just have to get started!</p><a href="https://themes.getbootstrap.com/product/purpose-application-ui-kit/" class="link link-underline-primary">Purchase now</a>
+            <h5 class=" h3">Change the way you manage desktop apps...forever.</h5>
+            <p class="lead mt-4 mb-5">Simply install the Kiosk, create an account and start uploading media to experience it through your entire day!</p><a href="/register" class="link link-underline-primary">Register now</a>
           </div>
         </div>
         <div class="col-lg-6 order-lg-1">
@@ -606,7 +596,7 @@
     <div class="container pt-9 pb-0 position-relative zindex-100">
       <div class="row justify-content-center text-center mb-5">
         <div class="col-xl-5 col-lg-7">
-          <h2 class="h1 text-white">People who enjoy working with Purpose</h2>
+          <h2 class="h1 text-white">People who have enjoyed Kiosk</h2>
         </div>
       </div>
       <div class="row justify-content-center">
@@ -618,11 +608,10 @@
                 <div class="swiper-slide">
                   <div class="text-center">
                     <p class="h2 lh-160 text-white font-italic font-weight-300" style="font-family: 'Playfair Display', serif;">
-                      "I saw it and fell in love. Absolutely beautiful design. And great docs too! I love that when making use of the plugins they actually thought of speed and development. That level of detail says much about the
-                      quality of service and the product."
+                      "I saw it and fell in love. Absolutely beautiful design. And great docs too! I love the simplicty and the effectiveness of the Kiosk.  This has changed the way I manage not only my apps but also helps me manage my time.  With the mood selector option, it feels like my system actually knows me. That level of detail says much about the quality of service and the product."
                     </p>
                     <div class="text-center mt-4">
-                      <h5 class="text-white font-weight-700">Luis – <span class="font-weight-300">Bootstrap Marketplace</span></h5>
+                      <h5 class="text-white font-weight-700">Dylan Lucas – <span class="font-weight-300">Happy Kiosk user</span></h5>
                     </div>
                   </div>
                 </div>
@@ -630,11 +619,10 @@
                 <div class="swiper-slide">
                   <div class="text-center">
                     <p class="h2 lh-160 text-white font-italic font-weight-300" style="font-family: 'Playfair Display', serif;">
-                      "I love every bit of it. While the great design convinced me in the first place, it is also a professional template to work with in the long run - structured very well, responsive and a lot of element to
-                      choose from for your project."
+                      "I love every bit of it. While the great design convinced me in the first place, it is also comes with clear documentation and steps.  The support team is absolutely fantastic although haven't had to get in touch with them much. Definitely would recommend this to others."
                     </p>
                     <div class="text-center mt-4">
-                      <h5 class="text-white font-weight-700">Steffen – <span class="font-weight-300">Bootstrap Marketplace</span></h5>
+                      <h5 class="text-white font-weight-700">Steffen – <span class="font-weight-300">Satisfied Kiosk user</span></h5>
                     </div>
                   </div>
                 </div>
@@ -642,11 +630,10 @@
                 <div class="swiper-slide">
                   <div class="text-center">
                     <p class="h2 lh-160 text-white font-italic font-weight-300" style="font-family: 'Playfair Display', serif;">
-                      "I have to say it’s been absolutely brilliant. Besides a few minor niggles, I can’t really fault it. It’s really easy to customise and make your own. I don’t see any issues incorporating it into any CMS or web
-                      app. Great job, thanks guys!"
+                      "I have to say it’s been absolutely brilliant. Besides a few minor niggles, I can’t really fault it. It’s really easy to customise and make your own. I don’t see any issues incorporating it onto my machine and the web portal allows me to monitor my activities and add media as and when I require. Great job, thanks guys!"
                     </p>
                     <div class="text-center mt-4">
-                      <h5 class="text-white font-weight-700">Rob – <span class="font-weight-300">Bootstrap Marketplace</span></h5>
+                      <h5 class="text-white font-weight-700">Rob – <span class="font-weight-300">Satisfied Kiosk user</span></h5>
                     </div>
                   </div>
                 </div>
@@ -719,28 +706,23 @@
       <div class="row align-items-center justify-content-md-between py-4 delimiter-top">
         <div class="col-md-6">
           <div class="copyright text-sm font-weight-bold text-center text-md-left">
-            &copy; 2013-2019 <a href="https://webpixels.io" class="h6 text-sm font-weight-bold" target="_blank">Webpixels</a>. All rights reserved.
+            &copy; 2020-2022 <a href="https://kioskhomehub.com" class="h6 text-sm font-weight-bold" target="_blank">KioskHomeHub</a>. All rights reserved.
           </div>
         </div>
         <div class="col-md-6">
           <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
             <li class="nav-item">
-              <a class="nav-link" href="https://dribbble.com/webpixels" target="_blank">
-                <i class="fab fa-dribbble"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://www.instagram.com/webpixelsofficial" target="_blank">
+              <a class="nav-link" href="https://www.instagram.com/kioskhomehub" target="_blank">
                 <i class="fab fa-instagram"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://github.com/webpixels" target="_blank">
-                <i class="fab fa-github"></i>
+              <a class="nav-link" href="https://twitter.com/kioskhomehub" target="_blank">
+                <i class="fab fa-twitter"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://www.facebook.com/webpixels" target="_blank">
+              <a class="nav-link" href="https://www.facebook.com/kioskhomehub" target="_blank">
                 <i class="fab fa-facebook"></i>
               </a>
             </li>
@@ -759,4 +741,4 @@
   <script src="assets/js/demo.js"></script>
 </body>
 
-</html>
+@endsection

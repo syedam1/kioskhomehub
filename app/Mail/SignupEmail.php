@@ -28,6 +28,7 @@ class SignupEmail extends Mailable
      */
     public function build()
     {
+        
         return $this->view('mail.signup-email', ['email_data'=>$this->email_data] );
     }
 }

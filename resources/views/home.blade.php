@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Purpose Application UI is the following chapter we've finished in order to create a complete and robust solution next to the already known Purpose Website UI.">
-  <meta name="author" content="Webpixels">
-  <title>Kioskhomehub | Version 2.1.0</title>
-  <!-- Favicon -->
-  <link rel="icon" href="../assets/img/brand/favicon.png" type="image/png">
-  <!-- Font Awesome 5 -->
-  <link rel="stylesheet" href="../assets/libs/@fortawesome/fontawesome-free/css/all.min.css"><!-- Page CSS -->
-  <link rel="stylesheet" href="../assets/libs/fullcalendar/dist/fullcalendar.min.css">
-  <!-- Purpose CSS -->
-  <link rel="stylesheet" href="../assets/css/purpose.css" id="stylesheet">
-</head>
+@section('content')
 
 <body class="application application-offset">
   <!-- Chat modal -->
@@ -1383,4 +1369,4 @@
   <script src="../assets/js/demo.js"></script>
 </body>
 
-</html>
+@endsection
