@@ -1,8 +1,22 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Purpose Application UI is the following chapter we've finished in order to create a complete and robust solution next to the already known Purpose Website UI.">
+  <meta name="author" content="Webpixels">
+  <title>Purpose – Application UI Kit</title>
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/img/brand/favicon.png" type="image/png">
+  <!-- Font Awesome 5 -->
+  <link rel="stylesheet" href="/assets/libs/@fortawesome/fontawesome-free/css/all.min.css"><!-- Page CSS -->
+  <link rel="stylesheet" href="/assets/libs/fullcalendar/dist/fullcalendar.min.css">
+  <!-- Purpose CSS -->
+  <link rel="stylesheet" href="/assets/css/purpose.css" id="stylesheet">
+</head>
 
-<body class="application application-offset">
+<body class="application application-offset bg-dark">
   <!-- Chat modal -->
   <!-- Customizer modal -->
   <div class="modal fade fixed-right" id="modal-chat" tabindex="-1" role="dialog" aria-hidden="true">
@@ -72,7 +86,7 @@
               <div class="d-flex align-items-center" data-toggle="tooltip" data-placement="right" data-title="">
                 <div>
                   <div class="avatar-parent-child">
-                    <img alt="Image placeholder" src="../assets/img/theme/light/team-4-800x800.jpg" class="avatar  rounded-circle">
+                    <img alt="Image placeholder" src="../assets/img/theme/light/k.png" class="avatar  rounded-circle">
                     <span class="avatar-child avatar-badge bg-warning"></span>
                   </div>
                 </div>
@@ -93,7 +107,7 @@
                   </div>
                 </div>
                 <div class="flex-fill ml-3">
-                  <h6 class="text-sm mb-0">John Snow</h6>
+                  <h6 class="text-sm mb-0"></h6>
                   <p class="text-sm mb-0">
                     Working remotely
                   </p>
@@ -152,7 +166,7 @@
               <div class="d-flex align-items-center" data-toggle="tooltip" data-placement="right" data-title="">
                 <div>
                   <div class="avatar-parent-child">
-                    <img alt="Image placeholder" src="../assets/img/theme/light/team-4-800x800.jpg" class="avatar  rounded-circle">
+                    <img alt="Image placeholder" src="../assets/img/theme/light/k.png" class="avatar  rounded-circle">
                     <span class="avatar-child avatar-badge bg-warning"></span>
                   </div>
                 </div>
@@ -173,7 +187,7 @@
                   </div>
                 </div>
                 <div class="flex-fill ml-3">
-                  <h6 class="text-sm mb-0">John Snow</h6>
+                  <h6 class="text-sm mb-0">{{ Auth::user()->username }}</h6>
                   <p class="text-sm mb-0">
                     Working remotely
                   </p>
@@ -232,7 +246,7 @@
               <div class="d-flex align-items-center" data-toggle="tooltip" data-placement="right" data-title="">
                 <div>
                   <div class="avatar-parent-child">
-                    <img alt="Image placeholder" src="../assets/img/theme/light/team-4-800x800.jpg" class="avatar  rounded-circle">
+                    <img alt="Image placeholder" src="../assets/img/theme/light/k.png" class="avatar  rounded-circle">
                     <span class="avatar-child avatar-badge bg-warning"></span>
                   </div>
                 </div>
@@ -253,7 +267,7 @@
                   </div>
                 </div>
                 <div class="flex-fill ml-3">
-                  <h6 class="text-sm mb-0">John Snow</h6>
+                  <h6 class="text-sm mb-0">{{ Auth::user()->username }}</h6>
                   <p class="text-sm mb-0">
                     Working remotely
                   </p>
@@ -312,7 +326,7 @@
               <div class="d-flex align-items-center" data-toggle="tooltip" data-placement="right" data-title="">
                 <div>
                   <div class="avatar-parent-child">
-                    <img alt="Image placeholder" src="../assets/img/theme/light/team-4-800x800.jpg" class="avatar  rounded-circle">
+                    <img alt="Image placeholder" src="../assets/img/theme/light/k.png" class="avatar  rounded-circle">
                     <span class="avatar-child avatar-badge bg-warning"></span>
                   </div>
                 </div>
@@ -333,7 +347,7 @@
                   </div>
                 </div>
                 <div class="flex-fill ml-3">
-                  <h6 class="text-sm mb-0">John Snow</h6>
+                  <h6 class="text-sm mb-0">{{ Auth::user()->username }}</h6>
                   <p class="text-sm mb-0">
                     Working remotely
                   </p>
@@ -357,8 +371,8 @@
     <div class="sidenav" id="sidenav-main">
       <!-- Sidenav header -->
       <div class="sidenav-header d-flex align-items-center">
-        <a class="navbar-brand" href="../index.html">
-          <img src="../assets/img/brand/white.png" class="navbar-brand-img" alt="...">
+        <a class="navbar-brand" href="/">
+          <img src="../assets/img/brand/kiosk-white.svg" class="navbar-brand-img" alt="...">
         </a>
         <div class="ml-auto">
           <!-- Sidenav toggler -->
@@ -376,11 +390,11 @@
         <!-- Avatar -->
         <div>
           <a href="#" class="avatar rounded-circle avatar-xl">
-            <img alt="Image placeholder" src="../assets/img/theme/light/team-1-800x800.jpg" class="">
+            <img alt="Image placeholder" src="../assets/img/theme/light/k.png" class="">
           </a>
           <div class="mt-4">
-            <h5 class="mb-0 text-white">Heather Parker</h5>
-            <span class="d-block text-sm text-white opacity-8 mb-3">Web Architect</span>
+            <h5 class="mb-0 text-white">{{ Auth::user()->username }}</h5>
+            <span class="d-block text-sm text-white opacity-8 mb-3">Kiosk User</span>
             <a href="#" class="btn btn-sm btn-white btn-icon rounded-pill shadow hover-translate-y-n3">
               <span class="btn-inner--icon"><i class="fas fa-coins"></i></span>
               <span class="btn-inner--text">$2.300</span>
@@ -450,7 +464,7 @@
     <!-- Content -->
     <div class="main-content position-relative">
       <!-- Main nav -->
-      <nav class="navbar navbar-main navbar-expand-lg navbar-dark bg-primary navbar-border" id="navbar-main">
+      <nav class="navbar navbar-main navbar-expand-lg navbar-dark bg-dark bg-primary navbar-border" id="navbar-main">
         <div class="container-fluid">
           <!-- Brand + Toggler (for mobile devices) -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -546,7 +560,7 @@
               <li class="nav-item dropdown dropdown-animate">
                 <a class="nav-link pr-lg-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="../assets/img/theme/light/team-4-800x800.jpg">
+                    <img alt="Image placeholder" src="../assets/img/theme/light/k.png">
                   </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow">
@@ -922,10 +936,10 @@
                 <a class="nav-link pr-lg-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <div class="media media-pill align-items-center">
                     <span class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="../assets/img/theme/light/team-4-800x800.jpg">
+                      <img alt="Image placeholder" src="../assets/img/theme/light/k.png">
                     </span>
                     <div class="ml-2 d-none d-lg-block">
-                      <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
+                      <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->username }}</span>
                     </div>
                   </div>
                 </a>
@@ -1019,7 +1033,7 @@
         <div class="page-title">
           <div class="row justify-content-between align-items-center">
             <div class="col-md-6 mb-3 mb-md-0">
-              <h5 class="h3 font-weight-400 mb-0 text-white">Moning, Heather!</h5>
+              <h5 class="h3 font-weight-400 mb-0 text-white">Hello, {{ Auth::user()->username }}!</h5>
               <span class="text-sm text-white opacity-8">Have a nice day!</span>
             </div>
           </div>
@@ -1111,7 +1125,7 @@
             </div>
           </div>
           <div class="col-lg-4">
-            <div class="card card-fluid bg--dark border-0">
+            <div class="card card-fluid bg-gradient-dark border-0">
               <div class="card-header border-0 pb-0">
                 <h6 class="text-white mb-0"><span class="text-danger mr-2">●</span>Project at risk</h6>
               </div>
@@ -1240,7 +1254,7 @@
                       </a>
                       <span class="avatar-child avatar-badge bg-success"></span>
                     </div>
-                    <h5 class="h6 mt-4 mb-0">John Snow</h5>
+                    <h5 class="h6 mt-4 mb-0">{{ Auth::user()->username }}</h5>
                     <a href="#" class="d-block text-sm text-muted mb-3">@john.snow</a>
                     <div class="actions d-flex justify-content-between px-4">
                       <a href="#" class="action-item">
@@ -1322,51 +1336,50 @@
         </div>
       </div>
       <!-- Footer -->
-      <div class="footer pt-5 pb-4 footer-light" id="footer-main">
-        <div class="row text-center text-sm-left align-items-sm-center">
-          <div class="col-sm-6">
-            <p class="text-sm mb-0">&copy; 2019 <a href="https://webpixels.io" class="h6 text-sm" target="_blank">Webpixels</a>. All rights reserved.</p>
-          </div>
-          <div class="col-sm-6 mb-md-0">
-            <ul class="nav justify-content-center justify-content-md-end">
-              <li class="nav-item dropdown border-right">
-                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img alt="Image placeholder" src="../assets/img/icons/flags/ro.svg">
-                  <span class="h6 text-sm mb-0">RO</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                  <a href="#" class="dropdown-item"><img alt="Image placeholder" src="../assets/img/icons/flags/es.svg" class="mr-2">Spanish</a>
-                  <a href="#" class="dropdown-item"><img alt="Image placeholder" src="../assets/img/icons/flags/us.svg" class="mr-2">English</a>
-                  <a href="#" class="dropdown-item"><img alt="Image placeholder" src="../assets/img/icons/flags/gr.svg" class="mr-2">Greek</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Support</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Terms</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link pr-0" href="#">Privacy</a>
-              </li>
-            </ul>
+      <footer class="footer footer-dark bg-dark pt-0">
+    <div class="container">
+      <div class="row align-items-center justify-content-md-between py-4 delimiter-top">
+        <div class="col-md-6">
+          <div class="copyright text-sm font-weight-bold text-center text-md-left">
+            &copy; 2020-2022 <a href="https://kioskhomehub.com" class="h6 text-sm font-weight-bold" target="_blank">KioskHomeHub</a>. All rights reserved.
           </div>
         </div>
+        <div class="col-md-6">
+          <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.instagram.com/kioskhomehub" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://twitter.com/kioskhomehub" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.facebook.com/kioskhomehub" target="_blank">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
+    </div>
+  </footer>
     </div>
   </div>
   <!-- Scripts -->
   <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
-  <script src="../assets/js/purpose.core.js"></script>
+  <script src="/assets/js/purpose.core.js"></script>
   <!-- Page JS -->
-  <script src="../assets/libs/progressbar.js/dist/progressbar.min.js"></script>
-  <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-  <script src="../assets/libs/moment/min/moment.min.js"></script>
-  <script src="../assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
+  <script src="assets/libs/progressbar.js/dist/progressbar.min.js"></script>
+  <script src="/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+  <script src="/assets/libs/moment/min/moment.min.js"></script>
+  <script src="/assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
   <!-- Purpose JS -->
-  <script src="../assets/js/purpose.js"></script>
+  <script src="/assets/js/purpose.js"></script>
   <!-- Demo JS - remove it when starting your project -->
-  <script src="../assets/js/demo.js"></script>
+  <script src="/assets/js/demo.js"></script>
 </body>
 
-@endsection
+</html>
