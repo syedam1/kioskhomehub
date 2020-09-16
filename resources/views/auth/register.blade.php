@@ -118,7 +118,7 @@
                             </form>
                         </div>
                         <div class="card-footer px-md-5"><small>Already have an acocunt?</small>
-                            <a href="#" class="small font-weight-bold">Sign in</a>
+                            <a href="/login" class="small font-weight-bold">Sign in</a>
                         </div>
                     </div>
                 </div>
