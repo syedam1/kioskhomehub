@@ -20,3 +20,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/account/profile', 'AccountController@profile')->name('profile');
+Route::get('/account/settings', 'AccountController@settings')->name('settings');
+Route::get('/account/address', 'AccountController@address')->name('address');
+Route::get('/account/billing', 'AccountController@billing')->name('billing');
+Route::get('/account/activity', 'AccountController@activity')->name('activity');
+Route::get('/account/payment-history', 'AccountController@paymenthistory')->name('payment-history');
