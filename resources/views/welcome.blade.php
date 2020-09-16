@@ -71,9 +71,9 @@
             <div class="collapse navbar-collapse" id="navbar-main-collapse">
                 <ul class="navbar-nav align-items-lg-center">
                     <li class="nav-item ">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#about-us">About</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="#modal-products" data-toggle="modal">Products</a>
                     </li>
                     <li class="nav-item">
@@ -235,6 +235,7 @@
         </div>
     </section>
     <section class="slice bg-white" id="sct-features">
+    <a name="about-us"></a>
         <div class="container">
             <div class="row justify-content-center mb-7">
                 <div class="col-lg-8">

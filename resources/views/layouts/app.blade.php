@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!--title and description-->
-    <title>{{ config('app.name', 'Laravel') }} | version 2.0.3</title> 
+    <title>{{ config('app.name', 'Laravel') }} | version 2.0.4</title> 
     <meta name="description" content="{{ config('app.name', 'Laravel') }}">
     <meta name="author" content="kioskhomehub.com">
     <!-- Fonts -->

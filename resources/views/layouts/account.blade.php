@@ -7,7 +7,7 @@
     <meta name="description"
         content="Purpose Application UI is the following chapter we've finished in order to create a complete and robust solution next to the already known Purpose Website UI.">
     <meta name="author" content="Webpixels">
-    <title>{{ config('app.name', 'Laravel') }} | version 2.0.3</title>
+    <title>{{ config('app.name', 'Laravel') }} | version 2.0.4</title>
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favs/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favs/favicon-32x32.png">
@@ -211,7 +211,9 @@
                                     </div>
                                 </div>
                                 <div class="flex-fill ml-3">
-                                    <h6 class="text-sm mb-0">{{ Auth::user()->username }}</h6>
+                                    <h6 class="text-sm mb-0">
+                                        @if (Auth::check()) {{ Auth::user()->username }} @endif
+                                    </h6>
                                     <p class="text-sm mb-0">
                                         Working remotely
                                     </p>
@@ -301,7 +303,8 @@
                                     </div>
                                 </div>
                                 <div class="flex-fill ml-3">
-                                    <h6 class="text-sm mb-0">{{ Auth::user()->username }}</h6>
+                                    <h6 class="text-sm mb-0">@if (Auth::check()) {{ Auth::user()->username }} @endif
+                                    </h6>
                                     <p class="text-sm mb-0">
                                         Working remotely
                                     </p>
@@ -391,7 +394,8 @@
                                     </div>
                                 </div>
                                 <div class="flex-fill ml-3">
-                                    <h6 class="text-sm mb-0">{{ Auth::user()->username }}</h6>
+                                    <h6 class="text-sm mb-0">@if (Auth::check()) {{ Auth::user()->username }} @endif
+                                    </h6>
                                     <p class="text-sm mb-0">
                                         Working remotely
                                     </p>
@@ -412,6 +416,7 @@
     <!-- Application container -->
     <div class="container-fluid container-application">
         <!-- Sidenav -->
+        @if (Auth::check()) 
         <div class="sidenav" id="sidenav-main">
             <!-- Sidenav header -->
             <div class="sidenav-header d-flex align-items-center">
@@ -438,7 +443,7 @@
                         <img alt="Image placeholder" src="../assets/img/theme/light/k.png" class="">
                     </a>
                     <div class="mt-4">
-                        <h5 class="mb-0 text-white">{{ Auth::user()->username }}</h5>
+                        <h5 class="mb-0 text-white">@if (Auth::check()) {{ Auth::user()->username }} @endif</h5>
                         <span class="d-block text-sm text-white opacity-8 mb-3">Kiosk User</span>
                         <a href="#" class="btn btn-sm btn-white btn-icon rounded-pill shadow hover-translate-y-n3">
                             <span class="btn-inner--icon"><i class="fas fa-coins"></i></span>
@@ -507,9 +512,11 @@
                 </div>
             </div>
         </div>
+        @endif
         <!-- Content -->
         <div class="main-content position-relative">
             <!-- Main nav -->
+            @if (Auth::check()) 
             <nav class="navbar navbar-main navbar-expand-lg navbar-dark bg-dark bg-primary navbar-border"
                 id="navbar-main">
                 <div class="container-fluid">
@@ -1060,13 +1067,14 @@
                                             <img alt="Image placeholder" src="../assets/img/theme/light/k.png">
                                         </span>
                                         <div class="ml-2 d-none d-lg-block">
-                                            <span
-                                                class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->username }}</span>
+                                            <span class="mb-0 text-sm  font-weight-bold">@if (Auth::check())
+                                                {{ Auth::user()->username }} @endif</span>
                                         </div>
                                     </div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow">
-                                    <h6 class="dropdown-header px-0">Hi, {{ Auth::user()->username }}!</h6>
+                                    <h6 class="dropdown-header px-0">Hi, @if (Auth::check())
+                                        {{ Auth::user()->username }} @endif!</h6>
                                     <a href="/account/profile" class="dropdown-item">
                                         <i class="fas fa-user"></i>
                                         <span>My profile</span>
@@ -1098,6 +1106,8 @@
                     </div>
                 </div>
             </nav>
+            @endif
+
             <!-- Omnisearch -->
             <div id="omnisearch" class="omnisearch">
                 <div class="container">
