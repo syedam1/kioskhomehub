@@ -173,7 +173,7 @@
                         @endif
                         @else
                         <li class="nav-item d-lg-none d-xl-block">
-                            <a class="nav-link" href="/home" target="_blank">Dashboard</a>
+                            <a class="nav-link" href="/home" >Dashboard</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
@@ -203,9 +203,9 @@
     <section class="slice slice-lg bg-dark header-web-app" data-offset-top="#header-main">
         <!-- SVG background -->
         <div class="bg-absolute-cover bg-size--contain d-flex align-items-center">
-            <figure class="w-100 d-none d-lg-block">
+            <!--figure class="w-100 d-none d-lg-block">
                 <img alt="Image placeholder" src="assets/img/svg/backgrounds/bg-circles-1.svg" class="svg-inject">
-            </figure>
+            </figure-->
         </div>
         <div class="container position-relative zindex-100">
             <div class="row justify-content-around align-items-center">
