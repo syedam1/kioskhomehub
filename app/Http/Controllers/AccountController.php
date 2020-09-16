@@ -82,7 +82,7 @@ class AccountController extends Controller
     public function address(account $account)
     {
         //
-        return view('account.address');
+        return view('account.addresses');
     }
 
     /**
@@ -120,6 +120,31 @@ class AccountController extends Controller
         //
         return view('account.payment-history');
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\account  $account
+     * @return \Illuminate\Http\Response
+     */
+    public function notifications(account $account)
+    {
+        //
+        return view('account.notifications');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\account  $account
+     * @return \Illuminate\Http\Response
+     */
+    public function widgets(account $account)
+    {
+        //
+        return view('widgets');
+    }
+    
 
     /**
      * Show the form for editing the specified resource.

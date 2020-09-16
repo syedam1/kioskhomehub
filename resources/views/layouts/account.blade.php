@@ -866,7 +866,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../application/widgets.html">
+                                <a class="nav-link" href="/application/widgets">
                                     Widgets
                                 </a>
                             </li>
@@ -1064,7 +1064,7 @@
                                     aria-haspopup="true" aria-expanded="false">
                                     <div class="media media-pill align-items-center">
                                         <span class="avatar rounded-circle">
-                                            <img alt="Image placeholder" src="../assets/img/theme/light/k.png">
+                                            <img alt="Image placeholder" src="/assets/img/theme/light/k.png">
                                         </span>
                                         <div class="ml-2 d-none d-lg-block">
                                             <span class="mb-0 text-sm  font-weight-bold">@if (Auth::check())
