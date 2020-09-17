@@ -56,15 +56,15 @@
                     </form>
                 </div>
             </div>
-            <div class="card">
+            <!--div class="card">
                 <div class="card-header">
                     <h5 class=" h6 mb-0">Change username</h5>
                 </div>
                 <div class="card-body">
-                    <!-- Button trigger modal -->
+                    <!-- Button trigger modal >
                     <button type="button" class="btn btn-sm btn-secondary rounded-pill" data-toggle="modal"
                         data-target="#modal-change-username">Change username</button>
-                    <!-- Modal -->
+                    <!-- Modal >
                     <div class="modal fade" id="modal-change-username" tabindex="-1" role="dialog"
                         aria-labelledby="modal-change-username" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -117,7 +117,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div-->
+            
             <div class="card">
                 <div class="card-header">
                     <h5 class=" h6 mb-0">Danger zone</h5>
