@@ -33,7 +33,7 @@
                                 </a>
                                 <div class="media-body">
                                     <h5 class="text-white mb-0">@if (Auth::check())
-                                                {{ Auth::user()->username }} @endif</h5>
+                                        {{ Auth::user()->username }} @endif</h5>
                                     <div>
                                         <form>
                                             <input type="file" name="file-1[]" id="file-1"
@@ -60,20 +60,35 @@
 
             <div class="card">
                 <div class="card-body">
-                    <form role="form" method="post" action="{{ route('profile-submit') }}" enctype="multipart/form-data">
-                    @csrf
+
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+
+
+                    <form role="form" method="post" action="{{ route('profile-submit') }}"
+                        enctype="multipart/form-data">
+                        @csrf
                         <!-- General information -->
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-control-label">First name</label>
-                                    <input class="form-control" type="text" value="{{$user_data->first_name}}" placeholder="Enter your first name" name="first_name">
+                                    <input class="form-control" type="text" value="{{$user_data->first_name}}"
+                                        placeholder="Enter your first name" name="first_name">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-control-label">Last name</label>
-                                    <input class="form-control" type="text" value="{{$user_data->last_name}}" placeholder="Also your last name" name="last_name">
+                                    <input class="form-control" type="text" value="{{$user_data->last_name}}"
+                                        placeholder="Also your last name" name="last_name">
                                 </div>
                             </div>
                         </div>
@@ -110,7 +125,8 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label class="form-control-label">Address</label>
-                                    <input class="form-control" type="text" placeholder="Enter your home address" name="address">
+                                    <input class="form-control" type="text" placeholder="Enter your home address"
+                                        name="address">
                                 </div>
                             </div>
                         </div>
@@ -119,7 +135,8 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label class="form-control-label">Profile Image</label>
-                                    <input class="form-control" type="file" id="fileToUpload" placeholder="Profile Image" name="fileToUpload">
+                                    <input class="form-control" type="file" id="fileToUpload"
+                                        placeholder="Profile Image" name="fileToUpload">
                                 </div>
                             </div>
                         </div>
@@ -165,7 +182,7 @@
                         <hr />
                         <!-- Save changes buttons -->
                         <button type="submit" class="btn btn-sm btn-primary rounded-pill">Save changes</button>
-                        <button type="button" class="btn btn-link text-muted">Cancel</button>
+                        <a href="/home" type="button" class="btn btn-link text-muted">Cancel</a>
                     </form>
                 </div>
             </div>
