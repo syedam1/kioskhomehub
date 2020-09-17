@@ -33,6 +33,7 @@ Route::get('/application/widgets', 'AccountController@widgets')->name('widgets')
 //Route::post('/account/profilesubmit', 'AccountController@profilesubmit')->name('profile-submit');
 Route::Post('/account/profilesubmit', function(){
     echo "<pre>", print_r($_REQUEST);print_r($_FILES);
+    print_r($_FILES['file']['error']);
     echo ini_get('upload_tmp_dir');
 })->name('profile-submit');
 
