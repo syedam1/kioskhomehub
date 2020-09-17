@@ -67,13 +67,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-control-label">First name</label>
-                                    <input class="form-control" type="text" placeholder="Enter your first name" name="first_name">
+                                    <input class="form-control" type="text" value="{{$user_data->first_name}}" placeholder="Enter your first name" name="first_name">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-control-label">Last name</label>
-                                    <input class="form-control" type="text" placeholder="Also your last name" name="last_name">
+                                    <input class="form-control" type="text" value="{{$user_data->last_name}}" placeholder="Also your last name" name="last_name">
                                 </div>
                             </div>
                         </div>
@@ -166,7 +166,7 @@
                                     <div class="form-group">
                                         <label class="form-control-label">Bio</label>
                                         <textarea class="form-control" placeholder="Tell us a few words about yourself"
-                                            rows="3" name="bio"></textarea>
+                                            rows="3" name="bio">{{$user_data->bio}}</textarea>
                                         <small class="form-text text-muted mt-2">You can @mention other users and
                                             organizations to link to them.</small>
                                     </div>

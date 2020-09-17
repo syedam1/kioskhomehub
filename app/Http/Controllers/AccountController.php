@@ -14,6 +14,8 @@ use App\Models\KioskModel;
 
 class AccountController extends Controller
 {
+
+    protected $user_data;
     /**
      * Create a new controller instance.
      *
@@ -22,7 +24,6 @@ class AccountController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        
     }
 
     /**
@@ -64,9 +65,8 @@ class AccountController extends Controller
      */
     public function profile(account $account)
     {
-        //
         $avatar = (Auth::user()->profile_image) ? '/uploads/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
-        return view('account.profile', ['avatar' => $avatar]);
+        return view('account.profile', ['avatar' => $avatar, 'user_data' => Auth::user() ?? null ]);
     }
 
     /**
@@ -79,7 +79,7 @@ class AccountController extends Controller
     {
         //
         $avatar = (Auth::user()->profile_image) ? '/uploads/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
-        return view('account.settings', ['avatar' => $avatar]);
+        return view('account.settings', ['avatar' => $avatar, 'user_data' => Auth::user() ?? null ]);
     }
 
 
@@ -93,7 +93,7 @@ class AccountController extends Controller
     {
         //
         $avatar = (Auth::user()->profile_image) ? '/uploads/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
-        return view('account.addresses', ['avatar' => $avatar]);
+        return view('account.addresses', ['avatar' => $avatar, 'user_data' => Auth::user() ?? null ]);
     }
 
     /**
@@ -106,7 +106,7 @@ class AccountController extends Controller
     {
         //
         $avatar = (Auth::user()->profile_image) ? '/uploads/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
-        return view('account.activity', ['avatar' => $avatar]);
+        return view('account.activity', ['avatar' => $avatar, 'user_data' => Auth::user() ?? null ]);
     }
 
     /**
@@ -119,7 +119,7 @@ class AccountController extends Controller
     {
         //
         $avatar = (Auth::user()->profile_image) ? '/uploads/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
-        return view('account.billing', ['avatar' => $avatar]);
+        return view('account.billing', ['avatar' => $avatar, 'user_data' => Auth::user() ?? null ]);
     }
 
     /**
@@ -132,7 +132,7 @@ class AccountController extends Controller
     {
         //
         $avatar = (Auth::user()->profile_image) ? '/uploads/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
-        return view('account.payment-history', ['avatar' => $avatar]);
+        return view('account.payment-history', ['avatar' => $avatar, 'user_data' => Auth::user() ?? null ]);
     }
 
     /**
@@ -145,7 +145,7 @@ class AccountController extends Controller
     {
         //
         $avatar = (Auth::user()->profile_image) ? '/uploads/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
-        return view('account.notifications', ['avatar' => $avatar]);
+        return view('account.notifications', ['avatar' => $avatar, 'user_data' => Auth::user() ?? null ]);
     }
 
     /**
@@ -158,7 +158,7 @@ class AccountController extends Controller
     {
         //
         $avatar = (Auth::user()->profile_image) ? '/uploads/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
-        return view('widgets', ['avatar' => $avatar]);
+        return view('widgets', ['avatar' => $avatar, 'user_data' => Auth::user() ?? null ]);
     }
 
 
@@ -185,6 +185,9 @@ class AccountController extends Controller
             $user = KioskModel::find(Auth::user()->user_id);
             $user->first_name = $valid_request_data['first_name'];
             $user->last_name = $valid_request_data['last_name'];
+            if(request()->has('bio')){
+                $user->bio = $valid_request_data['bio'];
+            }
             if (request()->has('fileToUpload')) {
                 $user->profile_image = $user_avatar;
             }
@@ -240,6 +243,7 @@ class AccountController extends Controller
         return tap(request()->validate([
             'first_name' => 'required|min:3',
             'last_name' => 'required|min:3',
+            'bio' => 'min:3',
             'fileToUpload' => 'sometimes|file|image',
         ]),function(){
             if(request()->hasFile('fileToUpload')){
