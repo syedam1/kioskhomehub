@@ -34,6 +34,7 @@ Route::get('/application/widgets', 'AccountController@widgets')->name('widgets')
 Route::Post('/account/profilesubmit', function(){
     
     echo "<pre>", print_r($_REQUEST);
+    print_r($_FILES);
 
 })->name('profile-submit');
 
