@@ -8,10 +8,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Auth;
 use App\Models\KioskModel;
-//use Illuminate\Auth\Middleware\Authenticate as Auth;
-//use Intervention\Image\Facades\Image;
 
 class AccountController extends Controller
 {
@@ -66,7 +65,10 @@ class AccountController extends Controller
     public function profile(account $account)
     {
         //
-        $avatar = (Auth::user()->profile_image) ? '/storage/'.Auth::user()->profile_image : '/storage/useravatars/placeholder_image.png';
+        $avatar = (Auth::user()->profile_image) ? '/uploads/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
+
+        
+
         return view('account.profile', ['avatar' => $avatar]);
     }
 
@@ -79,7 +81,7 @@ class AccountController extends Controller
     public function settings(account $account)
     {
         //
-        $avatar = (Auth::user()->profile_image) ? '/storage/'.Auth::user()->profile_image : '/storage/useravatars/placeholder_image.png';
+        $avatar = (Auth::user()->profile_image) ? '/uploads/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
         return view('account.settings', ['avatar' => $avatar]);
     }
 
@@ -93,7 +95,7 @@ class AccountController extends Controller
     public function address(account $account)
     {
         //
-        $avatar = (Auth::user()->profile_image) ? '/storage/'.Auth::user()->profile_image : '/storage/useravatars/placeholder_image.png';
+        $avatar = (Auth::user()->profile_image) ? '/uploads/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
         return view('account.addresses', ['avatar' => $avatar]);
     }
 
@@ -106,7 +108,7 @@ class AccountController extends Controller
     public function activity(account $account)
     {
         //
-        $avatar = (Auth::user()->profile_image) ? '/storage/'.Auth::user()->profile_image : '/storage/useravatars/placeholder_image.png';
+        $avatar = (Auth::user()->profile_image) ? '/uploads/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
         return view('account.activity', ['avatar' => $avatar]);
     }
 
@@ -119,7 +121,7 @@ class AccountController extends Controller
     public function billing(account $account)
     {
         //
-        $avatar = (Auth::user()->profile_image) ? '/storage/'.Auth::user()->profile_image : '/storage/useravatars/placeholder_image.png';
+        $avatar = (Auth::user()->profile_image) ? '/uploads/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
         return view('account.billing', ['avatar' => $avatar]);
     }
 
@@ -132,7 +134,7 @@ class AccountController extends Controller
     public function paymenthistory(account $account)
     {
         //
-        $avatar = (Auth::user()->profile_image) ? '/storage/'.Auth::user()->profile_image : '/storage/useravatars/placeholder_image.png';
+        $avatar = (Auth::user()->profile_image) ? '/uploads/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
         return view('account.payment-history', ['avatar' => $avatar]);
     }
 
@@ -145,7 +147,7 @@ class AccountController extends Controller
     public function notifications(account $account)
     {
         //
-        $avatar = (Auth::user()->profile_image) ? '/storage/'.Auth::user()->profile_image : '/storage/useravatars/placeholder_image.png';
+        $avatar = (Auth::user()->profile_image) ? '/uploads/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
         return view('account.notifications', ['avatar' => $avatar]);
     }
 
@@ -158,7 +160,7 @@ class AccountController extends Controller
     public function widgets(account $account)
     {
         //
-        $avatar = (Auth::user()->profile_image) ? '/storage/'.Auth::user()->profile_image : '/storage/useravatars/placeholder_image.png';
+        $avatar = (Auth::user()->profile_image) ? '/uploads/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
         return view('widgets', ['avatar' => $avatar]);
     }
 
@@ -255,8 +257,10 @@ class AccountController extends Controller
     {
         if (request()->has('fileToUpload')) {
             $user_folder = 'useravatars/'. Auth::user()->user_id; 
-            $user_avatar_path = $request->file('fileToUpload')->store($user_folder,'public');
-            return $user_avatar_path;
-        }
+            $user_avatar_path = $request->file('fileToUpload')->store($user_folder,'public');  /// Stores in the storage folder which is hidden from source countrol
+            $user_avatar_path = $request->file('fileToUpload')->store($user_folder, 'uploads');  //On the disk
+        } 
+
+        return $user_avatar_path;
     }
 }

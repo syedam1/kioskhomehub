@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $avatar = (Auth::user()->profile_image) ? '/storage/'.Auth::user()->profile_image : '/storage/useravatars/placeholder_image.png';
+        $avatar = (Auth::user()->profile_image) ? '/uploads/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
         return view('home', ['avatar' => $avatar]);
     }
 }
