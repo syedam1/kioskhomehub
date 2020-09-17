@@ -19,14 +19,23 @@
         </div>
     </div>
     <div class="row">
-    @include('layouts.rightsidenav')
+        @include('layouts.rightsidenav')
         <div class="col-lg-8 order-lg-1">
             <div class="card">
                 <div class="card-header">
                     <h5 class=" h6 mb-0">Change password</h5>
                 </div>
                 <div class="card-body">
-                    <form role="form" method="post" action="{{ route('settings-update') }}"  >
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                    <form role="form" method="post" action="{{ route('settings-update') }}">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -118,7 +127,7 @@
                     </div>
                 </div>
             </div-->
-            
+
             <div class="card">
                 <div class="card-header">
                     <h5 class=" h6 mb-0">Danger zone</h5>
