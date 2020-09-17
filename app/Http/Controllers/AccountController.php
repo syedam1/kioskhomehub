@@ -66,9 +66,6 @@ class AccountController extends Controller
     {
         //
         $avatar = (Auth::user()->profile_image) ? '/uploads/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
-
-        
-
         return view('account.profile', ['avatar' => $avatar]);
     }
 
