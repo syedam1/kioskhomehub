@@ -30,8 +30,8 @@ Route::get('/account/payment-history', 'AccountController@paymenthistory')->name
 Route::get('/account/notifications', 'AccountController@notifications')->name('notifications');
 Route::get('/application/widgets', 'AccountController@widgets')->name('widgets');
 
-//Route::post('/account/profilesubmit', 'AccountController@profilesubmit')->name('profile-submit');
-Route::Post('/account/profilesubmit', function(){
+Route::post('/account/profilesubmit', 'AccountController@profilesubmit')->name('profile-submit');
+/*Route::Post('/account/profilesubmit', function(){
     echo "<pre>", print_r($_REQUEST);print_r($_FILES);
     print_r($_FILES['fileToUpload']['error']);
     echo ini_get('upload_tmp_dir');
@@ -39,4 +39,5 @@ Route::Post('/account/profilesubmit', function(){
     echo "<br>".$temp_file;
     echo "<br>".ini_get('upload_tmp_dir') ;
 })->name('profile-submit');
+*/
 
