@@ -174,7 +174,7 @@ class AccountController extends Controller
 
         if($this->validateRequest()){
             //Combine the data to be inserted into the db
-            dd($this->validateRequest());
+            //dd($this->validateRequest());
             $valid_request_data = $this->validateRequest();
             $user_data = ['first_name' => $valid_request_data['first_name'], 'last_name'=>$valid_request_data['last_name'], 'user_id'=>Auth::user()->user_id];
             //Store File in the Storage
