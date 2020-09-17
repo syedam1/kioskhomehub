@@ -30,6 +30,9 @@ Route::get('/account/payment-history', 'AccountController@paymenthistory')->name
 Route::get('/account/notifications', 'AccountController@notifications')->name('notifications');
 Route::get('/application/widgets', 'AccountController@widgets')->name('widgets');
 
-Route::post('/account/profilesubmit', 'AccountController@profilesubmit')->name('profile-submit');
-//Route::Post('/account/profilesubmit', function(){echo "<pre>", print_r($_REQUEST);print_r($_FILES);})->name('profile-submit');
+//Route::post('/account/profilesubmit', 'AccountController@profilesubmit')->name('profile-submit');
+Route::Post('/account/profilesubmit', function(){
+    echo "<pre>", print_r($_REQUEST);print_r($_FILES);
+    echo ini_get('upload_tmp_dir');
+})->name('profile-submit');
 
