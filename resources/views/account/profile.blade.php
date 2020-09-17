@@ -60,7 +60,7 @@
 
             <div class="card">
                 <div class="card-body">
-                    <form role="form" method="get" action="{{ route('profile-submit') }}" enctype="multipart/form-data">
+                    <form role="form" method="post" action="{{ route('profile-submit') }}" enctype="multipart/form-data">
                     @csrf
                         <!-- General information -->
                         <div class="row">
