@@ -60,20 +60,20 @@
 
             <div class="card">
                 <div class="card-body">
-                    <form role="form" method="post" action="{{ route('login') }}">
+                    <form role="form" method="post" action="{{ route('profile-submit') }}" enctype="multipart/form-data">
                     @csrf
                         <!-- General information -->
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-control-label">First name</label>
-                                    <input class="form-control" type="text" placeholder="Enter your first name">
+                                    <input class="form-control" type="text" placeholder="Enter your first name" name="first_name">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-control-label">Last name</label>
-                                    <input class="form-control" type="text" placeholder="Also your last name">
+                                    <input class="form-control" type="text" placeholder="Also your last name" name="last_name">
                                 </div>
                             </div>
                         </div>
@@ -82,13 +82,13 @@
                                 <div class="form-group">
                                     <label class="form-control-label">Birthday</label>
                                     <input type="text" class="form-control" data-toggle="date"
-                                        placeholder="Select your birth date">
+                                        placeholder="Select your birth date" name="birthdate">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-control-label">Gender</label>
-                                    <select class="form-control" data-toggle="select">
+                                    <select class="form-control" data-toggle="select" name="gender">
                                         <option value="1">Female</option>
                                         <option value="2">Male</option>
                                         <option value="2">Rather not say</option>
@@ -100,7 +100,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-control-label">Email</label>
-                                    <input class="form-control" type="email" placeholder="name@exmaple.com">
+                                    <input class="form-control" type="email" placeholder="name@exmaple.com" name="email">
                                     <small class="form-text text-muted mt-2">This is the main email address that we'll
                                         send notifications.</small>
                                 </div>
@@ -110,7 +110,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-control-label">Phone</label>
-                                    <input class="form-control" type="text" placeholder="+40-777 245 549">
+                                    <input class="form-control" type="text" placeholder="+40-777 245 549" name="phone">
                                 </div>
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label class="form-control-label">Address</label>
-                                    <input class="form-control" type="text" placeholder="Enter your home address">
+                                    <input class="form-control" type="text" placeholder="Enter your home address" name="address">
                                 </div>
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label class="form-control-label">Profile Image</label>
-                                    <input class="form-control" type="file" name="fileToUpload" id="fileToUpload" placeholder="Profile Image">
+                                    <input class="form-control" type="file" id="fileToUpload" placeholder="Profile Image" name="fileToUpload">
                                 </div>
                             </div>
                         </div>
@@ -140,15 +140,15 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-control-label">City</label>
-                                    <input class="form-control" type="text" placeholder="City">
+                                    <input class="form-control" type="text" placeholder="City" name="city">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-control-label">Country</label>
                                     <select class="form-control" data-toggle="select" title="Country"
-                                        data-live-search="true" data-live-search-placeholder="Country">
-                                        <option>Romania</option>
+                                        data-live-search="true" data-live-search-placeholder="Country" name="country">
+                                        <option>United Kingdom</option>
                                         <option>United Stated</option>
                                         <option>France</option>
                                         <option>Greece</option>
@@ -166,20 +166,10 @@
                                     <div class="form-group">
                                         <label class="form-control-label">Bio</label>
                                         <textarea class="form-control" placeholder="Tell us a few words about yourself"
-                                            rows="3"></textarea>
+                                            rows="3" name="bio"></textarea>
                                         <small class="form-text text-muted mt-2">You can @mention other users and
                                             organizations to link to them.</small>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label class="form-control-label mb-3">Skills</label>
-                                    <input type="text" class="form-control"
-                                        value="HTML, CSS3, Bootstrap, Photoshop, VueJS" data-toggle="tags"
-                                        placeholder="Type here..." />
                                 </div>
                             </div>
                         </div>

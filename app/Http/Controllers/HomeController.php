@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -24,6 +25,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        return view('home');
+        $avatar = (Auth::user()->profile_image) ? '/storage/'.Auth::user()->profile_image : '/storage/useravatars/placeholder_image.png';
+        return view('home', ['avatar' => $avatar]);
     }
 }

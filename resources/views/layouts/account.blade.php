@@ -97,7 +97,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/k.png"
+                                        <img alt="Image placeholder" src="{{$avatar}}"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -187,7 +187,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/k.png"
+                                        <img alt="Image placeholder" src="{{$avatar}}"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -279,8 +279,8 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/k.png"
-                                            class="avatar  rounded-circle">
+                                        <img alt="Image placeholder" src="{{$avatar}}"
+                                            class="avatar  rounded-circle" >
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
                                 </div>
@@ -370,7 +370,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/k.png"
+                                        <img alt="Image placeholder" src="{{$avatar}}"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -440,7 +440,8 @@
                 <!-- Avatar -->
                 <div>
                     <a href="#" class="avatar rounded-circle avatar-xl">
-                        <img alt="Image placeholder" src="../assets/img/theme/light/k.png" class="">
+                        <img alt="Image placeholder" src="{{ $avatar }} " class=""  >
+                        
                     </a>
                     <div class="mt-4">
                         <h5 class="mb-0 text-white">@if (Auth::check()) {{ Auth::user()->username }} @endif</h5>
@@ -630,7 +631,7 @@
                                 <a class="nav-link pr-lg-0" href="#" role="button" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
                                     <span class="avatar avatar-sm rounded-circle">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/k.png">
+                                        <img alt="Image placeholder" src="{{$avatar}}">
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow">
@@ -1064,7 +1065,7 @@
                                     aria-haspopup="true" aria-expanded="false">
                                     <div class="media media-pill align-items-center">
                                         <span class="avatar rounded-circle">
-                                            <img alt="Image placeholder" src="/assets/img/theme/light/k.png">
+                                            <img alt="Image placeholder" src="{{$avatar}}">
                                         </span>
                                         <div class="ml-2 d-none d-lg-block">
                                             <span class="mb-0 text-sm  font-weight-bold">@if (Auth::check())
