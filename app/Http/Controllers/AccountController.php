@@ -185,7 +185,9 @@ class AccountController extends Controller
             $user = KioskModel::find(Auth::user()->user_id);
             $user->first_name = $valid_request_data['first_name'];
             $user->last_name = $valid_request_data['last_name'];
-            $user->profile_image = $user_avatar;
+            if (request()->has('fileToUpload')) {
+                $user->profile_image = $user_avatar;
+            }
             $user->save();
 
             return redirect()->route('home');
