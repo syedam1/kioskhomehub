@@ -26,7 +26,7 @@
                     <h5 class=" h6 mb-0">Change password</h5>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form role="form" method="post" action="{{ route('settings-update') }}"  >
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">

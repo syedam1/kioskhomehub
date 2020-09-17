@@ -31,6 +31,8 @@ Route::get('/account/notifications', 'AccountController@notifications')->name('n
 Route::get('/application/widgets', 'AccountController@widgets')->name('widgets');
 
 Route::post('/account/profilesubmit', 'AccountController@profilesubmit')->name('profile-submit');
+Route::post('/account/settingsupdate', 'AccountController@settingsupdate')->name('settings-update');
+
 /*Route::Post('/account/profilesubmit', function(){
     echo "<pre>", print_r($_REQUEST);print_r($_FILES);
     print_r($_FILES['fileToUpload']['error']);
