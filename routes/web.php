@@ -37,5 +37,6 @@ Route::Post('/account/profilesubmit', function(){
     echo ini_get('upload_tmp_dir');
     $temp_file = sys_get_temp_dir();
     echo "<br>".$temp_file;
+    echo "<br>".ini_get('upload_tmp_dir') ;
 })->name('profile-submit');
 
