@@ -14,6 +14,15 @@
                                 <p class="text-muted mb-0">Sign in to your account to continue.</p>
                             </div>
                             <span class="clearfix"></span>
+                            @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
                             <form role="form" method="POST" action="{{ route('login') }}">
                                 @csrf
                                 <div class="form-group">

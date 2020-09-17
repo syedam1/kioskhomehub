@@ -35,12 +35,21 @@
                         </ul>
                     </div>
                     @endif
-                    <form role="form" method="post" action="{{ route('settings-update') }}">
+
+                    @if(session()->has('message.level'))
+                    <div class="alert alert-{{ session('message.level') }}">
+                        {!! session('message.content') !!}
+                    </div>
+                    @endif
+
+
+                    <form role="form" method="post" action="{{ route('change.password') }}">
+                        @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-control-label">Old password</label>
-                                    <input class="form-control" type="password">
+                                    <input class="form-control" type="password" name="current_password">
                                 </div>
                             </div>
                         </div>
@@ -48,18 +57,18 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-control-label">New password</label>
-                                    <input class="form-control" type="password">
+                                    <input class="form-control" type="password" name="new_password">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-control-label">Confirm password</label>
-                                    <input class="form-control" type="password">
+                                    <input class="form-control" type="password" name="new_confirm_password">
                                 </div>
                             </div>
                         </div>
                         <div class="mt-4">
-                            <button type="button" class="btn btn-sm btn-primary rounded-pill">Update
+                            <button type="submit" class="btn btn-sm btn-primary rounded-pill">Update
                                 password</button>
                         </div>
                     </form>

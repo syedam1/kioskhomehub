@@ -32,6 +32,8 @@ Route::get('/application/widgets', 'AccountController@widgets')->name('widgets')
 
 Route::post('/account/profilesubmit', 'AccountController@profilesubmit')->name('profile-submit');
 Route::post('/account/settingsupdate', 'AccountController@settingsupdate')->name('settings-update');
+Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
+
 
 /*Route::Post('/account/profilesubmit', function(){
     echo "<pre>", print_r($_REQUEST);print_r($_FILES);
