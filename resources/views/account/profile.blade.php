@@ -99,16 +99,6 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-control-label">Email</label>
-                                    <input class="form-control" type="email" placeholder="name@exmaple.com" name="email">
-                                    <small class="form-text text-muted mt-2">This is the main email address that we'll
-                                        send notifications.</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
                                     <label class="form-control-label">Phone</label>
                                     <input class="form-control" type="text" placeholder="+40-777 245 549" name="phone">
                                 </div>
@@ -124,7 +114,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Profile Image -->
                         <div class="row">
                             <div class="col">

@@ -445,7 +445,7 @@
                     </a>
                     <div class="mt-4">
                         <h5 class="mb-0 text-white">@if (Auth::check()) {{ Auth::user()->username }} @endif</h5>
-                        <span class="d-block text-sm text-white opacity-8 mb-3">Kiosk User</span>
+                        <span class="d-block text-sm text-white opacity-8 mb-3">@if (Auth::check()) {{ Auth::user()->bio }} @endif</span>
                         <a href="#" class="btn btn-sm btn-white btn-icon rounded-pill shadow hover-translate-y-n3">
                             <span class="btn-inner--icon"><i class="fas fa-coins"></i></span>
                             <span class="btn-inner--text">$2.300</span>
