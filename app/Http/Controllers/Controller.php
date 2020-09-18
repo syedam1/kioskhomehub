@@ -12,7 +12,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public static function avatar()
+    public static function avatar() 
     {
         if(Auth::user()){
             if (file_exists( public_path() . '/storage/'.Auth::user()->profile_image)) {
