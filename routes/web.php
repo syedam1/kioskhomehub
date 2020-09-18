@@ -32,16 +32,10 @@ Route::get('/application/widgets', 'AccountController@widgets')->name('widgets')
 
 Route::post('/account/profilesubmit', 'AccountController@profilesubmit')->name('profile-submit');
 Route::post('/account/settingsupdate', 'AccountController@settingsupdate')->name('settings-update');
-Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
+Route::post('/change-password', 'ChangePasswordController@store')->name('change.password');
 
+//Route::get('/application/{slug?}/{slug2?}', function () { return file_get_contents(public_path().'/docs/index.html'); });
 
-/*Route::Post('/account/profilesubmit', function(){
-    echo "<pre>", print_r($_REQUEST);print_r($_FILES);
-    print_r($_FILES['fileToUpload']['error']);
-    echo ini_get('upload_tmp_dir');
-    $temp_file = sys_get_temp_dir();
-    echo "<br>".$temp_file;
-    echo "<br>".ini_get('upload_tmp_dir') ;
-})->name('profile-submit');
-*/
+Route::get('/application/{slug1?}/{slug2?}', 'ProjectController@index')->name('projects');
+
 
