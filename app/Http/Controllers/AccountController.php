@@ -65,8 +65,7 @@ class AccountController extends Controller
      */
     public function profile(account $account)
     {
-        $avatar = (Auth::user()->profile_image) ? '/storage/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
-        return view('account.profile', ['avatar' => $avatar, 'user_data' => Auth::user() ?? null ]);
+        return view('account.profile', ['user_data' => $this->customuserdata()]);
     }
 
     /**
@@ -77,9 +76,7 @@ class AccountController extends Controller
      */
     public function settings(account $account)
     {
-        //
-        $avatar = (Auth::user()->profile_image) ? '/storage/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
-        return view('account.settings', ['avatar' => $avatar, 'user_data' => Auth::user() ?? null ]);
+        return view('account.settings', ['user_data' => $this->customuserdata()]);
     }
 
 
@@ -91,9 +88,8 @@ class AccountController extends Controller
      */
     public function address(account $account)
     {
-        //
-        $avatar = (Auth::user()->profile_image) ? '/storage/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
-        return view('account.addresses', ['avatar' => $avatar, 'user_data' => Auth::user() ?? null ]);
+
+        return view('account.addresses', ['user_data' => $this->customuserdata()]);
     }
 
     /**
@@ -105,8 +101,7 @@ class AccountController extends Controller
     public function activity(account $account)
     {
         //
-        $avatar = (Auth::user()->profile_image) ? '/storage/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
-        return view('account.activity', ['avatar' => $avatar, 'user_data' => Auth::user() ?? null ]);
+        return view('account.activity', ['user_data' => $this->customuserdata()]);
     }
 
     /**
@@ -117,9 +112,7 @@ class AccountController extends Controller
      */
     public function billing(account $account)
     {
-        //
-        $avatar = (Auth::user()->profile_image) ? '/storage/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
-        return view('account.billing', ['avatar' => $avatar, 'user_data' => Auth::user() ?? null ]);
+        return view('account.billing', ['user_data' => $this->customuserdata()]);
     }
 
     /**
@@ -130,9 +123,8 @@ class AccountController extends Controller
      */
     public function paymenthistory(account $account)
     {
-        //
-        $avatar = (Auth::user()->profile_image) ? '/storage/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
-        return view('account.payment-history', ['avatar' => $avatar, 'user_data' => Auth::user() ?? null ]);
+        
+        return view('account.payment-history', ['user_data' => $this->customuserdata()]);
     }
 
     /**
@@ -143,9 +135,8 @@ class AccountController extends Controller
      */
     public function notifications(account $account)
     {
-        //
-        $avatar = (Auth::user()->profile_image) ? '/storage/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
-        return view('account.notifications', ['avatar' => $avatar, 'user_data' => Auth::user() ?? null ]);
+        
+        return view('account.notifications', ['user_data' => $this->customuserdata()]);
     }
 
     /**
@@ -155,10 +146,8 @@ class AccountController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function widgets(account $account)
-    {
-        //
-        $avatar = (Auth::user()->profile_image) ? '/storage/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
-        return view('widgets', ['avatar' => $avatar, 'user_data' => Auth::user() ?? null ]);
+    {       
+        return view('widgets', ['user_data' => $this->customuserdata()]);
     }
 
 
@@ -193,7 +182,9 @@ class AccountController extends Controller
             }
             $user->save();
 
-            return redirect()->route('home');
+            $request->session()->flash('message.level', 'success');
+            $request->session()->flash('message.content', 'Profile has been updated successfully!');
+            return redirect()->route('profile');
 
         } else {
             dd($this->validateRequest());

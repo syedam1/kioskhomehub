@@ -29,9 +29,9 @@
                         <div class="col-lg-8">
                             <div class="media align-items-center">
                                 <a href="#" class="avatar avatar-lg rounded-circle mr-3">
-                                    <img alt="Image placeholder" src="/assets/img/theme/light/k.png">
+                                    <img alt="Image placeholder" src="{{$user_data->avatar}}">
                                 </a>
-                                <div class="media-body">
+                                <!--div class="media-body">
                                     <h5 class="text-white mb-0">@if (Auth::check())
                                         {{ Auth::user()->username }} @endif</h5>
                                     <div>
@@ -44,7 +44,7 @@
                                             </label>
                                         </form>
                                     </div>
-                                </div>
+                                </div-->
                             </div>
                         </div>
                         <div class="col-auto flex-fill mt-4 mt-sm-0 text-sm-right d-none d-lg-block">
@@ -71,6 +71,12 @@
                     </div>
                     @endif
 
+                    @if(session()->has('message.level'))
+                    <div class="alert alert-{{ session('message.level') }}">
+                        {!! session('message.content') !!}
+                    </div>
+                    @endif
+
 
                     <form role="form" method="post" action="{{ route('profile-submit') }}"
                         enctype="multipart/form-data">
@@ -80,14 +86,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-control-label">First name</label>
-                                    <input class="form-control" type="text" value="{{$user_data->first_name}}"
+                                    <input class="form-control" type="text" value="{{$user_data->detail->first_name}}"
                                         placeholder="Enter your first name" name="first_name">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-control-label">Last name</label>
-                                    <input class="form-control" type="text" value="{{$user_data->last_name}}"
+                                    <input class="form-control" type="text" value="{{$user_data->detail->last_name}}"
                                         placeholder="Also your last name" name="last_name">
                                 </div>
                             </div>
@@ -172,7 +178,7 @@
                                     <div class="form-group">
                                         <label class="form-control-label">Bio</label>
                                         <textarea class="form-control" placeholder="Tell us a few words about yourself"
-                                            rows="3" name="bio">{{$user_data->bio}}</textarea>
+                                            rows="3" name="bio">{{$user_data->detail->bio}}</textarea>
                                         <small class="form-text text-muted mt-2">You can @mention other users and
                                             organizations to link to them.</small>
                                     </div>
