@@ -201,6 +201,36 @@ class AccountController extends Controller
         
 
     }
+
+    /**Validate requests and store image funtions */
+    private function validateRequest()
+    {
+
+        return tap(request()->validate([
+            'first_name' => 'required|min:3',
+            'last_name' => 'required|min:3',
+            'bio' => 'min:3',
+            'fileToUpload' => 'sometimes|file|image',
+        ]),function(){
+            if(request()->hasFile('fileToUpload')){
+                request()->validate([
+                    'fileToUpload' => 'file|image',
+                ]);
+            }
+        });
+    
+    }
+
+    private function storeImage(Request $request)
+    {
+        if (request()->has('fileToUpload')) {
+            $user_folder = 'useravatars/'. Auth::user()->user_id; 
+            $user_avatar_path = $request->file('fileToUpload')->store($user_folder,'public');  /// Stores in the storage folder which is hidden from source countrol
+            $user_avatar_path = $request->file('fileToUpload')->store($user_folder, 'uploads');  //On the disk
+        } 
+
+        return $user_avatar_path;
+    }
     
 
     /**
@@ -237,32 +267,5 @@ class AccountController extends Controller
         //
     }
 
-    private function validateRequest()
-    {
-
-        return tap(request()->validate([
-            'first_name' => 'required|min:3',
-            'last_name' => 'required|min:3',
-            'bio' => 'min:3',
-            'fileToUpload' => 'sometimes|file|image',
-        ]),function(){
-            if(request()->hasFile('fileToUpload')){
-                request()->validate([
-                    'fileToUpload' => 'file|image',
-                ]);
-            }
-        });
     
-    }
-
-    private function storeImage(Request $request)
-    {
-        if (request()->has('fileToUpload')) {
-            $user_folder = 'useravatars/'. Auth::user()->user_id; 
-            $user_avatar_path = $request->file('fileToUpload')->store($user_folder,'public');  /// Stores in the storage folder which is hidden from source countrol
-            $user_avatar_path = $request->file('fileToUpload')->store($user_folder, 'uploads');  //On the disk
-        } 
-
-        return $user_avatar_path;
-    }
 }
