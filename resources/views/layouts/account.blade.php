@@ -82,7 +82,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="{{$user_data->avatar}}"
+                                        <img alt="Image placeholder" src="{{$user_data->avatar ?? ''}}"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -172,7 +172,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="{{$user_data->avatar}}"
+                                        <img alt="Image placeholder" src="{{$user_data->avatar ?? ''}}"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -197,7 +197,7 @@
                                 </div>
                                 <div class="flex-fill ml-3">
                                     <h6 class="text-sm mb-0">
-                                        {{$user_data->detail->username}}
+                                        {{$user_data->detail->username ?? ''}}
                                     </h6>
                                     <p class="text-sm mb-0">
                                         Working remotely
@@ -264,7 +264,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="{{$user_data->avatar}}"
+                                        <img alt="Image placeholder" src="{{$user_data->avatar ?? ''}}"
                                             class="avatar  rounded-circle" >
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -288,7 +288,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-fill ml-3">
-                                    <h6 class="text-sm mb-0">{{$user_data->detail->username}}
+                                    <h6 class="text-sm mb-0">{{$user_data->detail->username ?? ''}}
                                     </h6>
                                     <p class="text-sm mb-0">
                                         Working remotely
@@ -355,7 +355,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="{{$user_data->avatar}}"
+                                        <img alt="Image placeholder" src="{{$user_data->avatar ?? ''}}"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -379,7 +379,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-fill ml-3">
-                                    <h6 class="text-sm mb-0">{{$user_data->detail->username}}
+                                    <h6 class="text-sm mb-0">{{$user_data->detail->username ?? ''}}
                                     </h6>
                                     <p class="text-sm mb-0">
                                         Working remotely
@@ -425,11 +425,11 @@
                 <!-- Avatar -->
                 <div>
                     <a href="#" class="avatar rounded-circle avatar-xl">
-                        <img alt="Image placeholder" src="{{ $user_data->avatar }} " class=""  >
+                        <img alt="Image placeholder" src="{{ $user_data->avatar ?? '' }} " class=""  >
                         
                     </a>
                     <div class="mt-4">
-                        <h5 class="mb-0 text-white">{{$user_data->detail->username}}</h5>
+                        <h5 class="mb-0 text-white">{{$user_data->detail->username ?? ''}}</h5>
                         <span class="d-block text-sm text-white opacity-8 mb-3">@if (Auth::check()) {{ Auth::user()->bio }} @endif</span>
                         <a href="#" class="btn btn-sm btn-white btn-icon rounded-pill shadow hover-translate-y-n3">
                             <span class="btn-inner--icon"><i class="fas fa-coins"></i></span>
@@ -616,7 +616,7 @@
                                 <a class="nav-link pr-lg-0" href="#" role="button" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
                                     <span class="avatar avatar-sm rounded-circle">
-                                        <img alt="Image placeholder" src="{{$user_data->avatar}}">
+                                        <img alt="Image placeholder" src="{{$user_data->avatar ?? ''}}">
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow">
@@ -1050,15 +1050,15 @@
                                     aria-haspopup="true" aria-expanded="false">
                                     <div class="media media-pill align-items-center">
                                         <span class="avatar rounded-circle">
-                                            <img alt="Image placeholder" src="{{$user_data->avatar}}">
+                                            <img alt="Image placeholder" src="{{$user_data->avatar ?? ''}}">
                                         </span>
                                         <div class="ml-2 d-none d-lg-block">
-                                            <span class="mb-0 text-sm  font-weight-bold">{{ $user_data->detail->username }}</span>
+                                            <span class="mb-0 text-sm  font-weight-bold">{{ $user_data->detail->username ?? '' }}</span>
                                         </div>
                                     </div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow">
-                                    <h6 class="dropdown-header px-0">{{ $user_data->detail->username }}</h6>
+                                    <h6 class="dropdown-header px-0">{{ $user_data->detail->username ?? '' }}</h6>
                                     <a href="/account/profile" class="dropdown-item">
                                         <i class="fas fa-user"></i>
                                         <span>My profile</span>
