@@ -23,3 +23,5 @@
 <link rel="stylesheet" href="{{ asset('assets/libs/fullcalendar/dist/fullcalendar.min.css') }} ">
 <!-- Page CSS -->
 <link rel="stylesheet" href="{{ asset('assets/libs/swiper/dist/css/swiper.min.css') }} ">
+<!-- Scripts -->
+<script src="{{asset('assets/libs/autosize/dist/autosize.min.js')}}"></script>
