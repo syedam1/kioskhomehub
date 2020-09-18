@@ -19,6 +19,8 @@ class Controller extends BaseController
                 return '/storage/'.Auth::user()->profile_image;
             } elseif (file_exists(public_path().'/uploads/'.Auth::user()->profile_image)) {
                 return '/uploads/'.Auth::user()->profile_image;
+            }else{
+                return '/assets/img/icons/placeholder_image.png';
             } 
         }else {
             return '/assets/img/icons/placeholder_image.png';
