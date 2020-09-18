@@ -15,9 +15,10 @@ class Controller extends BaseController
     public static function avatar() 
     {
         if(Auth::user()){
-            if (file_exists( public_path() . '/storage/'.Auth::user()->profile_image)) {
+
+            if (file_exists( public_path() . '/storage/'.Auth::user()->profile_image) && Auth::user()->profile_image != null) {
                 return '/storage/'.Auth::user()->profile_image;
-            } elseif (file_exists(public_path().'/uploads/'.Auth::user()->profile_image)) {
+            } elseif (file_exists(public_path().'/uploads/'.Auth::user()->profile_image) && Auth::user()->profile_image != null) {
                 return '/uploads/'.Auth::user()->profile_image;
             }else{
                 return '/assets/img/icons/placeholder_image.png';

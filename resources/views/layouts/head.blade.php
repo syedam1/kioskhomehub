@@ -8,6 +8,7 @@
 <meta name="description" content="{{ env('APP_DESCRIPTION') }}">
 <meta name="keywords" content="{{ env('APP_NAME') }}">
 <meta name="author" content="{{ env('APP_URL') }}">
+<meta name="userid" content="{{ $user_data->detail->user_id ?? '' }}">
 <!-- Fonts -->
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
