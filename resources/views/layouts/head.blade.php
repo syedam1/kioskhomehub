@@ -5,8 +5,9 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <!--title and description-->
 <title>{{ config('app.name', 'Laravel') }} | version 2.1.0</title>
-<meta name="description" content="{{ config('app.name', 'Laravel') }}">
-<meta name="author" content="kioskhomehub.com">
+<meta name="description" content="{{ env('APP_DESCRIPTION') }}">
+<meta name="keywords" content="{{ $user_data->detail->username }}">
+<meta name="author" content="{{ env('APP_URL') }}">
 <!-- Fonts -->
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
