@@ -71,13 +71,13 @@
             <div class="collapse navbar-collapse" id="navbar-main-collapse">
                 <ul class="navbar-nav align-items-lg-center">
                     <li class="nav-item ">
-                        <a class="nav-link" href="#about-us">About</a>
+                        <a class="nav-link " href="#about-us" data-scroll-to>About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#modal-products" data-toggle="modal">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a href="docs/getting-started/installation.html" class="nav-link">Installation</a>
+                        <a href="/docs/getting-started/installation.html" class="nav-link">Installation</a>
                     </li>
 
                 </ul>
@@ -218,7 +218,7 @@
                     <a href="#sct-features"
                         class="btn btn-primary rounded-pill hover-translate-y-n3 mt-4 d-none d-sm-inline-block"
                         data-scroll-to>See features</a>
-                    <a href="#" class="btn btn-dark btn-icon rounded-pill hover-translate-y-n3 mt-4">
+                    <a href="{{asset('docs/getting-started/installation.html')}}" class="btn btn-dark btn-icon rounded-pill hover-translate-y-n3 mt-4">
                         <span class="btn-inner--text">Install now!!</span>
                         <span class="btn-inner--icon"><i class="fas fa-angle-right"></i></span>
                     </a>
