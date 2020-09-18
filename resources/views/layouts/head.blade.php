@@ -16,7 +16,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favs/favicon-16x16.png">
 <!-- Styles -->
 <link rel="stylesheet" href="{{ asset('assets/css/purpose.css') }} " id="stylesheet">
-<link rel="stylesheet" href="{{ asset('assets/css/app.css') }} " id="stylesheet">
+<!--link rel="stylesheet" href="{{ asset('assets/css/app.css') }} " id="stylesheet"-->
 <!-- Font Awesome 5 -->
 <link rel="stylesheet" href="{{ asset('assets/libs/@fortawesome/fontawesome-free/css/all.min.css') }} ">
 <link rel="stylesheet" href="/assets/libs/fullcalendar/dist/fullcalendar.min.css">
