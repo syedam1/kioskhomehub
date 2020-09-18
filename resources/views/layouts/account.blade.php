@@ -82,7 +82,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="{{$avatar ?? ''}}"
+                                        <img alt="Image placeholder" src="{{$user_data->avatar}}"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -172,7 +172,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="{{$avatar ?? ''}}"
+                                        <img alt="Image placeholder" src="{{$user_data->avatar}}"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -264,7 +264,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="{{$avatar ?? ''}}"
+                                        <img alt="Image placeholder" src="{{$user_data->avatar}}"
                                             class="avatar  rounded-circle" >
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -355,7 +355,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="{{$avatar ?? ''}}"
+                                        <img alt="Image placeholder" src="{{$user_data->avatar}}"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -616,7 +616,7 @@
                                 <a class="nav-link pr-lg-0" href="#" role="button" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
                                     <span class="avatar avatar-sm rounded-circle">
-                                        <img alt="Image placeholder" src="{{$avatar ?? ''}}">
+                                        <img alt="Image placeholder" src="{{$user_data->avatar}}">
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow">

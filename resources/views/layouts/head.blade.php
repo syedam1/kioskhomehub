@@ -6,20 +6,20 @@
 <!--title and description-->
 <title>{{ config('app.name', 'Laravel') }} | version 2.1.0</title>
 <meta name="description" content="{{ env('APP_DESCRIPTION') }}">
-<meta name="keywords" content="{{ $user_data->detail->username }}">
+<meta name="keywords" content="{{ env('APP_NAME') }}">
 <meta name="author" content="{{ env('APP_URL') }}">
 <!-- Fonts -->
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 <!-- Favicon -->
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favs/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favs/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favs/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/favs/apple-touch-icon.png')}}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/favs/favicon-32x32.png')}}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/favs/favicon-16x16.png')}}">
 <!-- Styles -->
 <link rel="stylesheet" href="{{ asset('assets/css/purpose.css') }} " id="stylesheet">
 <!--link rel="stylesheet" href="{{ asset('assets/css/app.css') }} " id="stylesheet"-->
 <!-- Font Awesome 5 -->
 <link rel="stylesheet" href="{{ asset('assets/libs/@fortawesome/fontawesome-free/css/all.min.css') }} ">
-<link rel="stylesheet" href="/assets/libs/fullcalendar/dist/fullcalendar.min.css">
+<link rel="stylesheet" href="{{ asset('assets/libs/fullcalendar/dist/fullcalendar.min.css') }} ">
 <!-- Page CSS -->
 <link rel="stylesheet" href="{{ asset('assets/libs/swiper/dist/css/swiper.min.css') }} ">
