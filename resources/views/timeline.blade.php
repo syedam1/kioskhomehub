@@ -580,7 +580,7 @@
                     <span>Orders</span>
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a href="../application/authentication/login.html" class="dropdown-item">
+                  <a href="{{route('login')}}" class="dropdown-item">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                   </a>
@@ -664,10 +664,10 @@
                       <a href="#" class="dropdown-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Authentication
                       </a>
-                      <div class="dropdown-menu"><a class="dropdown-item" href="../application/authentication/login.html">
+                      <div class="dropdown-menu"><a class="dropdown-item" href="{{route('login')}}">
                           Login
                         </a>
-                        <a class="dropdown-item" href="../application/authentication/register.html">
+                        <a class="dropdown-item" href="{{route('register')}}">
                           Register
                         </a>
                         <a class="dropdown-item" href="../application/authentication/recover.html">
@@ -791,7 +791,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="../docs/components/index.html" class="list-group-item list-group-item-action" role="button">
+                      <a href="{{asset('docs/components/index.html')}}" class="list-group-item list-group-item-action" role="button">
                         <div class="media d-flex align-items-center">
                           <!-- SVG icon -->
                           <figure style="width: 50px;">
@@ -809,16 +809,16 @@
                   <div class="dropdown-menu-links rounded-bottom delimiter-top p-4">
                     <div class="row">
                       <div class="col-sm-6">
-                        <a href="../docs/getting-started/installation.html" class="dropdown-item">Installation</a>
-                        <a href="../docs/getting-started/file-structure.html" class="dropdown-item">File structure</a>
-                        <a href="../docs/getting-started/build-tools.html" class="dropdown-item">Build tools</a>
-                        <a href="../docs/getting-started/customization.html" class="dropdown-item">Customization</a>
+                        <a href="{{asset('/docs/getting-started/installation.html')}}" class="dropdown-item">Installation</a>
+                        <a href="{{asset('docs/getting-started/file-structure.html')}}" class="dropdown-item">File structure</a>
+                        <a href="{{asset('docs/getting-started/build-tools.html')}}" class="dropdown-item">Build tools</a>
+                        <a href="{{asset('docs/getting-started/customization.html')}}" class="dropdown-item">Customization</a>
                       </div>
                       <div class="col-sm-6">
-                        <a href="../docs/getting-started/plugins.html" class="dropdown-item">Using plugins</a>
-                        <a href="../docs/components/index.html" class="dropdown-item">Components</a>
-                        <a href="../docs/plugins/animate.html" class="dropdown-item">Plugins</a>
-                        <a href="../docs/support.html" class="dropdown-item">Support</a>
+                        <a href="{{asset('docs/getting-started/plugins.html')}}" class="dropdown-item">Using plugins</a>
+                        <a href="{{asset('docs/components/index.html')}}" class="dropdown-item">Components</a>
+                        <a href="{{asset('docs/plugins/animate.html')}}" class="dropdown-item">Plugins</a>
+                        <a href="{{asset('docs/support.html')}}" class="dropdown-item">Support</a>
                       </div>
                     </div>
                   </div>
@@ -832,12 +832,12 @@
                 </a>
               </li>
               <li class="nav-item d-lg-none">
-                <a class="nav-link" href="../application/authentication/register.html">
+                <a class="nav-link" href="{{route('register')}}">
                   Register
                 </a>
               </li>
               <li class="nav-item d-lg-none">
-                <a class="nav-link" href="../application/authentication/login.html">
+                <a class="nav-link" href="{{route('login')}}">
                   Sign in
                 </a>
               </li>
