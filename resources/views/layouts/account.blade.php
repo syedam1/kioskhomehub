@@ -440,13 +440,13 @@
                 <!-- User info -->
                 <!-- Actions -->
                 <div class="w-100 mt-4 actions d-flex justify-content-between">
-                    <a href="../application/user/profile.html" class="action-item action-item-lg text-white pl-0">
+                    <a href="/application/user/profile.html" class="action-item action-item-lg text-white pl-0">
                         <i class="fas fa-user"></i>
                     </a>
                     <a href="#modal-chat" class="action-item action-item-lg text-white" data-toggle="modal">
                         <i class="fas fa-comment-alt"></i>
                     </a>
-                    <a href="../application/shop/invoices.html" class="action-item action-item-lg text-white pr-0">
+                    <a href="/application/shop/invoices.html" class="action-item action-item-lg text-white pr-0">
                         <i class="fas fa-receipt"></i>
                     </a>
                 </div>
@@ -457,31 +457,31 @@
                     <span class="btn-inner--icon d-block"><i class="fas fa-home fa-2x"></i></span>
                     <span class="btn-inner--icon d-block pt-2">Home</span>
                 </a>
-                <a href="../application/project/card-listing.html" class="btn btn-square text-sm">
+                <a href="/application/project/card-listing.html" class="btn btn-square text-sm">
                     <span class="btn-inner--icon d-block"><i class="fas fa-project-diagram fa-2x"></i></span>
                     <span class="btn-inner--icon d-block pt-2">Projects</span>
                 </a>
-                <a href="../application/task/table-listing.html" class="btn btn-square text-sm">
+                <a href="/application/task/table-listing.html" class="btn btn-square text-sm">
                     <span class="btn-inner--icon d-block"><i class="fas fa-tasks fa-2x"></i></span>
                     <span class="btn-inner--icon d-block pt-2">Tasks</span>
                 </a>
-                <a href="../application/task/kanban-board.html" class="btn btn-square text-sm">
+                <a href="/application/task/kanban-board.html" class="btn btn-square text-sm">
                     <span class="btn-inner--icon d-block"><i class="fas fa-columns fa-2x"></i></span>
                     <span class="btn-inner--icon d-block pt-2">Kanban</span>
                 </a>
-                <a href="../application/user/card-listing.html" class="btn btn-square text-sm">
+                <a href="/application/user/card-listing.html" class="btn btn-square text-sm">
                     <span class="btn-inner--icon d-block"><i class="fas fa-users-cog fa-2x"></i></span>
                     <span class="btn-inner--icon d-block pt-2">Users</span>
                 </a>
-                <a href="../application/user/profile.html" class="btn btn-square text-sm">
+                <a href="/application/user/profile.html" class="btn btn-square text-sm">
                     <span class="btn-inner--icon d-block"><i class="fas fa-user-ninja fa-2x"></i></span>
                     <span class="btn-inner--icon d-block pt-2">Profile</span>
                 </a>
-                <a href="../application/shop/invoices.html" class="btn btn-square text-sm">
+                <a href="/application/shop/invoices.html" class="btn btn-square text-sm">
                     <span class="btn-inner--icon d-block"><i class="fas fa-receipt fa-2x"></i></span>
                     <span class="btn-inner--icon d-block pt-2">Invoices</span>
                 </a>
-                <a href="../application/widgets.html" class="btn btn-square text-sm">
+                <a href="/application/widgets" class="btn btn-square text-sm">
                     <span class="btn-inner--icon d-block"><i class="fas fa-cogs fa-2x"></i></span>
                     <span class="btn-inner--icon d-block pt-2">Widgets</span>
                 </a>
@@ -621,19 +621,19 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow">
                                     <h6 class="dropdown-header px-0">Hi, Heather!</h6>
-                                    <a href="../application/user/profile.html" class="dropdown-item">
+                                    <a href="/application/user/profile.html" class="dropdown-item">
                                         <i class="fas fa-user"></i>
                                         <span>My profile</span>
                                     </a>
-                                    <a href="../application/account/settings.html" class="dropdown-item">
+                                    <a href="/application/account/settings.html" class="dropdown-item">
                                         <i class="fas fa-cog"></i>
                                         <span>Settings</span>
                                     </a>
-                                    <a href="../application/account/billing.html" class="dropdown-item">
+                                    <a href="/application/account/billing.html" class="dropdown-item">
                                         <i class="fas fa-credit-card"></i>
                                         <span>Billing</span>
                                     </a>
-                                    <a href="../application/shop/orders.html" class="dropdown-item">
+                                    <a href="/application/shop/orders.html" class="dropdown-item">
                                         <i class="fas fa-shopping-basket"></i>
                                         <span>Orders</span>
                                     </a>
@@ -677,17 +677,17 @@
                                                 Project
                                             </a>
                                             <div class="dropdown-menu"><a class="dropdown-item"
-                                                    href="../application/project/card-listing.html">
+                                                    href="/application/project/card-listing.html">
                                                     Card listing
                                                 </a>
                                                 <a class="dropdown-item"
-                                                    href="../application/project/table-listing.html">
+                                                    href="/application/project/table-listing.html">
                                                     Table listing
                                                 </a>
-                                                <a class="dropdown-item" href="../application/project/overview.html">
+                                                <a class="dropdown-item" href="/application/project/overview.html">
                                                     Overview
                                                 </a>
-                                                <a class="dropdown-item" href="../application/project/create-new.html">
+                                                <a class="dropdown-item" href="/application/project/create-new.html">
                                                     Create new
                                                 </a>
                                             </div>
@@ -698,13 +698,13 @@
                                                 Task
                                             </a>
                                             <div class="dropdown-menu"><a class="dropdown-item"
-                                                    href="../application/task/table-listing.html">
+                                                    href="/application/task/table-listing.html">
                                                     Table listing
                                                 </a>
-                                                <a class="dropdown-item" href="../application/task/kanban-board.html">
+                                                <a class="dropdown-item" href="/application/task/kanban-board.html">
                                                     Kanban board
                                                 </a>
-                                                <a class="dropdown-item" href="../application/task/create-new.html">
+                                                <a class="dropdown-item" href="/application/task/create-new.html">
                                                     Create new
                                                 </a>
                                             </div>
@@ -715,13 +715,13 @@
                                                 User
                                             </a>
                                             <div class="dropdown-menu"><a class="dropdown-item"
-                                                    href="../application/user/card-listing.html">
+                                                    href="/application/user/card-listing.html">
                                                     Card listing
                                                 </a>
-                                                <a class="dropdown-item" href="../application/user/table-listing.html">
+                                                <a class="dropdown-item" href="/application/user/table-listing.html">
                                                     Table listing
                                                 </a>
-                                                <a class="dropdown-item" href="../application/user/profile.html">
+                                                <a class="dropdown-item" href="/application/user/profile.html">
                                                     Profile
                                                 </a>
                                             </div>
@@ -740,7 +740,7 @@
                                                     Register
                                                 </a>
                                                 <a class="dropdown-item"
-                                                    href="../application/authentication/recover.html">
+                                                    href="/application/authentication/recover.html">
                                                     Recover
                                                 </a>
                                             </div>
@@ -751,20 +751,20 @@
                                                 Account
                                             </a>
                                             <div class="dropdown-menu"><a class="dropdown-item"
-                                                    href="../application/account/profile.html">
+                                                    href="/application/account/profile.html">
                                                     Profile
                                                 </a>
-                                                <a class="dropdown-item" href="../application/account/settings.html">
+                                                <a class="dropdown-item" href="/application/account/settings.html">
                                                     Settings
                                                 </a>
-                                                <a class="dropdown-item" href="../application/account/billing.html">
+                                                <a class="dropdown-item" href="/application/account/billing.html">
                                                     Billing
                                                 </a>
                                                 <a class="dropdown-item"
-                                                    href="../application/account/notifications.html">
+                                                    href="/application/account/notifications.html">
                                                     Notifications
                                                 </a>
-                                                <a class="dropdown-item" href="../application/account/addresses.html">
+                                                <a class="dropdown-item" href="/application/account/addresses.html">
                                                     Addresses
                                                 </a>
                                             </div>
@@ -775,33 +775,33 @@
                                                 Shop
                                             </a>
                                             <div class="dropdown-menu"><a class="dropdown-item"
-                                                    href="../application/shop/card-listing.html">
+                                                    href="/application/shop/card-listing.html">
                                                     Card listing
                                                 </a>
-                                                <a class="dropdown-item" href="../application/shop/table-listing.html">
+                                                <a class="dropdown-item" href="/application/shop/table-listing.html">
                                                     Table listing
                                                 </a>
-                                                <a class="dropdown-item" href="../application/shop/product.html">
+                                                <a class="dropdown-item" href="/application/shop/product.html">
                                                     Product
                                                 </a>
-                                                <a class="dropdown-item" href="../application/shop/orders.html">
+                                                <a class="dropdown-item" href="/application/shop/orders.html">
                                                     Orders
                                                 </a>
                                                 <a class="dropdown-item"
-                                                    href="../application/shop/order-description.html">
+                                                    href="/application/shop/order-description.html">
                                                     Order description
                                                 </a>
-                                                <a class="dropdown-item" href="../application/shop/cart.html">
+                                                <a class="dropdown-item" href="/application/shop/cart.html">
                                                     Cart
                                                 </a>
-                                                <a class="dropdown-item" href="../application/shop/sellers.html">
+                                                <a class="dropdown-item" href="/application/shop/sellers.html">
                                                     Sellers
                                                 </a>
-                                                <a class="dropdown-item" href="../application/shop/invoices.html">
+                                                <a class="dropdown-item" href="/application/shop/invoices.html">
                                                     Invoices
                                                 </a>
                                                 <a class="dropdown-item"
-                                                    href="../application/shop/invoice-description.html">
+                                                    href="/application/shop/invoice-description.html">
                                                     Invoice description
                                                 </a>
                                             </div>
@@ -812,20 +812,20 @@
                                                 Utility
                                             </a>
                                             <div class="dropdown-menu"><a class="dropdown-item"
-                                                    href="../application/utility/error-404.html">
+                                                    href="/application/utility/error-404.html">
                                                     Error 404
                                                 </a>
-                                                <a class="dropdown-item" href="../application/utility/error-500.html">
+                                                <a class="dropdown-item" href="/application/utility/error-500.html">
                                                     Error 500
                                                 </a>
                                                 <a class="dropdown-item"
-                                                    href="../application/utility/maintenance-mode.html">
+                                                    href="/application/utility/maintenance-mode.html">
                                                     Maintenance mode
                                                 </a>
-                                                <a class="dropdown-item" href="../application/utility/faq.html">
+                                                <a class="dropdown-item" href="/application/utility/faq.html">
                                                     Faq
                                                 </a>
-                                                <a class="dropdown-item" href="../application/utility/topic.html">
+                                                <a class="dropdown-item" href="/application/utility/topic.html">
                                                     Topic
                                                 </a>
                                             </div>
@@ -835,16 +835,16 @@
                                     <div class="dropdown-menu-links rounded-bottom delimiter-top p-lg-4">
                                         <div class="row">
                                             <div class="col-sm-6">
-                                                <a href="../application/calendar.html"
+                                                <a href="/application/calendar.html"
                                                     class="dropdown-item">Calendar</a>
-                                                <a href="../application/timeline.html"
+                                                <a href="/application/timeline.html"
                                                     class="dropdown-item">Timeline</a>
                                             </div>
                                             <div class="col-sm-6">
-                                                <a href="../application/task/kanban-board.html"
+                                                <a href="/application/task/kanban-board.html"
                                                     class="dropdown-item">Kanban
                                                     board</a>
-                                                <a href="../application/google-map.html" class="dropdown-item">Google
+                                                <a href="/application/google-map.html" class="dropdown-item">Google
                                                     map</a>
                                             </div>
                                         </div>
@@ -852,7 +852,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/application/widgets">
+                                <a class="nav-link" href/application/widgets">
                                     Widgets
                                 </a>
                             </li>
