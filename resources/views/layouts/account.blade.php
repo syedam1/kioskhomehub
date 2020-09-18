@@ -28,7 +28,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/team-1-800x800.jpg"
+                                        <img alt="Image placeholder" src="/assets/img/theme/light/team-1-800x800.jpg"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -46,7 +46,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/team-2-800x800.jpg"
+                                        <img alt="Image placeholder" src="/assets/img/theme/light/team-2-800x800.jpg"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -64,7 +64,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/team-3-800x800.jpg"
+                                        <img alt="Image placeholder" src="/assets/img/theme/light/team-3-800x800.jpg"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -100,7 +100,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/team-5-800x800.jpg"
+                                        <img alt="Image placeholder" src="/assets/img/theme/light/team-5-800x800.jpg"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -118,7 +118,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/team-1-800x800.jpg"
+                                        <img alt="Image placeholder" src="/assets/img/theme/light/team-1-800x800.jpg"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -136,7 +136,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/team-2-800x800.jpg"
+                                        <img alt="Image placeholder" src="/assets/img/theme/light/team-2-800x800.jpg"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -154,7 +154,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/team-3-800x800.jpg"
+                                        <img alt="Image placeholder" src="/assets/img/theme/light/team-3-800x800.jpg"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -190,7 +190,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/team-5-800x800.jpg"
+                                        <img alt="Image placeholder" src="/assets/img/theme/light/team-5-800x800.jpg"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -210,7 +210,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/team-1-800x800.jpg"
+                                        <img alt="Image placeholder" src="/assets/img/theme/light/team-1-800x800.jpg"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -228,7 +228,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/team-2-800x800.jpg"
+                                        <img alt="Image placeholder" src="/assets/img/theme/light/team-2-800x800.jpg"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -246,7 +246,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/team-3-800x800.jpg"
+                                        <img alt="Image placeholder" src="/assets/img/theme/light/team-3-800x800.jpg"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -282,7 +282,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/team-5-800x800.jpg"
+                                        <img alt="Image placeholder" src="/assets/img/theme/light/team-5-800x800.jpg"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -301,7 +301,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/team-1-800x800.jpg"
+                                        <img alt="Image placeholder" src="/assets/img/theme/light/team-1-800x800.jpg"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -319,7 +319,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/team-2-800x800.jpg"
+                                        <img alt="Image placeholder" src="/assets/img/theme/light/team-2-800x800.jpg"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -337,7 +337,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/team-3-800x800.jpg"
+                                        <img alt="Image placeholder" src="/assets/img/theme/light/team-3-800x800.jpg"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -373,7 +373,7 @@
                                 data-title="">
                                 <div>
                                     <div class="avatar-parent-child">
-                                        <img alt="Image placeholder" src="../assets/img/theme/light/team-5-800x800.jpg"
+                                        <img alt="Image placeholder" src="/assets/img/theme/light/team-5-800x800.jpg"
                                             class="avatar  rounded-circle">
                                         <span class="avatar-child avatar-badge bg-warning"></span>
                                     </div>
@@ -886,7 +886,7 @@
                                                     <!-- SVG icon -->
                                                     <figure style="width: 50px;">
                                                         <img alt="Image placeholder"
-                                                            src="../assets/img/icons/essential/detailed/Mobile_UI.svg"
+                                                            src="/assets/img/icons/essential/detailed/Mobile_UI.svg"
                                                             class="svg-inject img-fluid" style="height: 50px;">
                                                     </figure>
                                                     <!-- Media body -->
