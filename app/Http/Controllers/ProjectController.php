@@ -24,10 +24,9 @@ class ProjectController extends Controller
      */
     public function index($param1, $page)
     {
-        //dd($params);
+        //dd($param1,$page);
         $page = preg_replace('/.[^.blade]*$/', '', $page);
         $page = preg_replace('/.[^.]*$/', '', $page);
-        $avatar = (Auth::user()->profile_image) ? '/storage/'.Auth::user()->profile_image : '/assets/img/icons/placeholder_image.png';
-        return view($param1.'/'.$page, ['avatar' => $avatar]);
+        return view($param1.'/'.$page, ['user_data' => $this->customuserdata()]);
     }
 }

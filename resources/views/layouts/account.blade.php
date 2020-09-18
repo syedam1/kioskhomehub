@@ -1190,16 +1190,16 @@
 
     <!-- Scripts -->
     <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
-    <script src="/assets/js/purpose.core.js"></script>
+    <script src="{{asset('assets/js/purpose.core.js')}}"></script>
     <!-- Page JS -->
-    <script src="assets/libs/progressbar.js/dist/progressbar.min.js"></script>
-    <script src="/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-    <script src="/assets/libs/moment/min/moment.min.js"></script>
-    <script src="/assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src="{{asset('assets/libs/progressbar.js/dist/progressbar.min.js')}}"></script>
+    <script src="{{asset('assets/libs/apexcharts/dist/apexcharts.min.js')}}"></script>
+    <script src="{{asset('assets/libs/moment/min/moment.min.js')}}"></script>
+    <script src="{{asset('assets/libs/fullcalendar/dist/fullcalendar.min.js')}}"></script>
     <!-- Purpose JS -->
-    <script src="/assets/js/purpose.js"></script>
+    <script src="{{asset('assets/js/purpose.js')}}"></script>
     <!-- Demo JS - remove it when starting your project -->
-    <script src="/assets/js/demo.js"></script>
+    <script src="{{asset('assets/js/demo.js')}}"></script>
     <!-- EndOfScripts-->
 </body>
 
