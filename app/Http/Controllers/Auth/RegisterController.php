@@ -108,10 +108,10 @@ class RegisterController extends Controller
 
     public function newregister(Request $request){
         $user = new User();
-        $user->username = $request->username;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->verification_code = sha1(time());
+        $user->username             = $request->username;
+        $user->email                = $request->email;
+        $user->password             = Hash::make($request->password);
+        $user->verification_code    = sha1(time());
         $user->save();
 
         if($user !== null){

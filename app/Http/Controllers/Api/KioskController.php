@@ -74,4 +74,8 @@ class KioskController extends Controller
         return response()->json(['user deleted']);        
     }
 
+    public function apiregister(Request $requesst){
+        dd("Hello");
+    }
+
 }

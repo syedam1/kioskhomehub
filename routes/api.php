@@ -27,6 +27,7 @@ Route::get('/verify/{email}/{password}', 'Api\KioskController@verify');
 Route::get('/adduser/{email}/{password}', 'Api\KioskController@adduser');
 
 Route::get('/deleteuser/{id}', 'Api\KioskController@deleteuser');
+Route::post('/api-register', 'Api\KioskController@apiregister')->name('api-register');
 
 
 

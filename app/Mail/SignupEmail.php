@@ -29,6 +29,6 @@ class SignupEmail extends Mailable
     public function build()
     {
         
-        return $this->view('mail.signup-email', ['email_data'=>$this->email_data] );
+        return $this->from(env('MAIL_FROM_ADDRESS'))->subject('Please confirm | Kiosk Registration')->view('mail.signup-email', ['email_data'=>$this->email_data] );
     }
 }
