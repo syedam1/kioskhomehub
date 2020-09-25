@@ -84,7 +84,7 @@
 
                                 <div class="mt-4">
 
-                                    <button type="submit" class="btn btn-sm btn-primary btn-icon rounded-pill">
+                                    <button type="submit" id="kioskLogin" class="btn btn-sm btn-primary btn-icon rounded-pill">
                                         <span class="btn-inner--text">Sign in</span>
                                         <span class="btn-inner--icon"><i class="fas fa-long-arrow-alt-right"></i></span>
                                     </button>
