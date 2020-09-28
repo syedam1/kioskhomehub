@@ -36,14 +36,16 @@
                     @endif
 
                     
-                    
                     <div class="row">
                         <div class="col-md-6">
                         <a href="{{$slack_button_url ?? ''}}"><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
                         </div>
                         <p>{{ $slack_access_token ?? '' }}</p>
                     </div>
-
+                    
+                    
+                    
+                    @if($user_data->detail->slack_access_token)
                     <!-- Check if the user is authorized to create channel and allow -->
                     <form role="form" method="post" action="{{ route('createchannel') }}">
                         @csrf
@@ -59,6 +61,7 @@
                             <button type="submit" class="btn btn-sm btn-primary rounded-pill">Create</button>
                         </div>
                     </form>
+                    @endif
 
                     
                 </div>
