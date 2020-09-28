@@ -39,7 +39,6 @@ class SlackController extends Controller
                 $user = KioskModel::find(Auth::user()->user_id);
                 $user->slack_verification_token = $request->code;
                 $user->save();
-
                 //Step 3 - Exchanging a verification code for an access token
                 $slack_auth_url = "https://slack.com/api/oauth.v2.access?client_id=1332390320279.1383932006806&client_secret=ba7098fb65dfcdc6085c34fa27cd9b94&redirect_uri=".$request->root()."/slack&code=".$request->code;
                 //echo "<a href='".$slack_auth_url."'> Auth </a> </br>";
@@ -72,6 +71,32 @@ class SlackController extends Controller
             }
 
         } 
+
+    }
+
+    public function createchannel(Request $request){
+        
+        
+        $client = new Client;
+        $url    = "https://slack.com/api/conversations.create";
+        $response = $client->post($url, [
+            'headers' => [],
+            'form_params' => [
+                'token'=>$this->customuserdata()->detail->slack_access_token,
+                'name'=>$request->channel_name,
+                'is_private'=>true,
+                'user_scope'=>'groups:write,channels:read,channels:write,chat:write,im:read,im:write',
+                'scope'=>'groups:write,channels:read,channels:write,chat:write,im:read,im:write',
+                'user'=>'channels:write,groups:write,im:write,mpim:write',
+            ],
+        ]);
+
+        $response = json_decode($response->getBody(), true);
+        
+        $request->session()->flash('slack_message.level', 'success');
+        $request->session()->flash('slack_message.content', 'Channel Created successfully');
+        return redirect()->route('settings');
+
 
     }
 

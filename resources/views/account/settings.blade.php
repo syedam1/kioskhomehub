@@ -44,6 +44,22 @@
                         <p>{{ $slack_access_token ?? '' }}</p>
                     </div>
 
+                    <!-- Check if the user is authorized to create channel and allow -->
+                    <form role="form" method="post" action="{{ route('createchannel') }}">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-control-label">Channel Name</label>
+                                    <input class="form-control" type="text" name="channel_name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-sm btn-primary rounded-pill">Create</button>
+                        </div>
+                    </form>
+
                     
                 </div>
             </div>

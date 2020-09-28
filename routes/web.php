@@ -37,7 +37,6 @@ Route::post('/change-password', 'ChangePasswordController@store')->name('change.
 //Route::get('/application/{slug?}/{slug2?}', function () { return file_get_contents(public_path().'/docs/index.html'); });
 
 Route::get('/application/{slug1?}/{slug2?}', 'ProjectController@index')->name('projects');
-
 Route::get('/slack', 'SlackController@obtaintoken');
-
+Route::post('/slack_createchannel', 'SlackController@createchannel')->name('createchannel');
 
