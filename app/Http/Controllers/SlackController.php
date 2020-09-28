@@ -39,7 +39,7 @@ class SlackController extends Controller
                 $user->save();
             
                 $request->session()->flash('slack_message.level', 'success');
-                $request->session()->flash('slack_message.content', 'Access granted.  Token: '.$request->code);
+                $request->session()->flash('slack_message.content', 'Access granted. New Token: '.$request->code);
 
                 return redirect()->route('settings');
             } catch (\Throwable $th) {

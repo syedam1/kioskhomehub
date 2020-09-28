@@ -31,8 +31,12 @@
                     <div class="alert alert-{{ session('slack_message.level') }}">
                         {!! session('slack_message.content') !!}
                     </div>
+                    @else
+                        <div class="alert alert-warning">Current Existing Token : {{$user_data->detail->slack_token}}</div>
                     @endif
 
+                    
+                    
                     <div class="row">
                         <div class="col-md-6">
                         <a href="{{$slack_button_url}}"><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
