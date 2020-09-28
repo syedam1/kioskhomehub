@@ -77,7 +77,6 @@ class AccountController extends Controller
     public function settings(account $account, Request $request)
     {
         
-        $request_code = ($request->exists('code')) ? $request_code = $request->code : null;
         return view('account.settings', ['user_data' => $this->customuserdata()]);
 
     }

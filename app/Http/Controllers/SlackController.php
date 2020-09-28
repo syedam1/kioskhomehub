@@ -35,13 +35,12 @@ class SlackController extends Controller
             try {
 
                 $user = KioskModel::find(Auth::user()->user_id);
-                $user->slac_token = $request->code;
+                $user->slack_token = $request->code;
                 $user->save();
-                $request->session()->flash('message.level', 'success');
-                $request->session()->flash('message.content', 'Profile has been updated successfully!');
-                return redirect()->route('account.settings');
+                return view('account.settings', ['user_data' => $this->customuserdata()]);
             } catch (\Throwable $th) {
                 //throw $th;
+                return view('account.settings', ['user_data' => $this->customuserdata()]);
             }
 
         } 
