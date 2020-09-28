@@ -4,7 +4,7 @@
 <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <!--title and description-->
-<title>{{ config('app.name', 'Laravel') }} | version 2.1.8</title>
+<title>{{ config('app.name', 'Laravel') }} | version 2.2.0</title>
 <meta name="description" content="{{ env('APP_DESCRIPTION') }}">
 <meta name="keywords" content="{{ env('APP_NAME') }}">
 <meta name="author" content="{{ env('APP_URL') }}">
