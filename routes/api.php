@@ -29,6 +29,10 @@ Route::get('/adduser/{email}/{password}', 'Api\KioskController@adduser');
 Route::get('/deleteuser/{id}', 'Api\KioskController@deleteuser');
 Route::post('/api-register', 'Api\KioskController@apiregister')->name('api-register');
 
+Route::get('/api/slack/', 'Api\KioskController@obtaintoken');
+
+
+
 
 
 
