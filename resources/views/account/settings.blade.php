@@ -29,10 +29,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="https://slack.com/oauth/v2/authorize?scope=incoming-webhook&client_id=1332390320279.1397740094980">
-                                <img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" 
-                                srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" />
-                            </a>
+                        <a href="https://slack.com/oauth/v2/authorize?client_id=1332390320279.1383932006806&scope=&user_scope=channels:read,channels:write,chat:write,im:read,im:write"><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
                         </div>
                     </div>
                 </div>

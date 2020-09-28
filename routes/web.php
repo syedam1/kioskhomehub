@@ -38,4 +38,6 @@ Route::post('/change-password', 'ChangePasswordController@store')->name('change.
 
 Route::get('/application/{slug1?}/{slug2?}', 'ProjectController@index')->name('projects');
 
+Route::get('/slack', 'SlackController@obtaintoken');
+
 

@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Auth;
 use App\Models\KioskModel;
-use Symfony\Component\Console\Input\Input;
 
 class AccountController extends Controller
 {
@@ -79,9 +78,7 @@ class AccountController extends Controller
     {
         
         $request_code = ($request->exists('code')) ? $request_code = $request->code : null;
-
         return view('account.settings', ['user_data' => $this->customuserdata()]);
-
 
     }
 
