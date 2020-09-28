@@ -37,7 +37,11 @@ class SlackController extends Controller
                 $user = KioskModel::find(Auth::user()->user_id);
                 $user->slack_token = $request->code;
                 $user->save();
-                return view('account.settings', ['user_data' => $this->customuserdata()]);
+            
+                $request->session()->flash('slack_message.level', 'success');
+                $request->session()->flash('slack_message.content', 'Access granted.  Token: '.$request->code);
+
+                return redirect()->route('settings');
             } catch (\Throwable $th) {
                 //throw $th;
                 return view('account.settings', ['user_data' => $this->customuserdata()]);

@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Storage;
 use Auth;
 use App\Models\KioskModel;
 
+
 class AccountController extends Controller
 {
 
@@ -77,7 +78,9 @@ class AccountController extends Controller
     public function settings(account $account, Request $request)
     {
         
-        return view('account.settings', ['user_data' => $this->customuserdata()]);
+        $request_code = ($request->exists('code')) ? $request_code = $request->code : null;
+        $slack_button_url = "https://slack.com/oauth/v2/authorize?client_id=1332390320279.1383932006806&scope=&redirect_uri=".$request->root()."/slack&user_scope=channels:read,channels:write,chat:write,im:read,im:write";
+        return view('account.settings', ['user_data' => $this->customuserdata(), 'slack_button_url'=>$slack_button_url,'slack_token'=>$request_code]);
 
     }
 
