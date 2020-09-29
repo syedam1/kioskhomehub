@@ -19,7 +19,7 @@
           </ul>
         </div>
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="{{route('home')}}">
+        <a class="navbar-brand" href="/">
           <img alt="Image placeholder" src="{{asset('assets/img/brand/kiosk-black.svg')}}">
         </a>
         <!-- Live preview -->

@@ -17,7 +17,7 @@
             clicking the button below.</p>
         <p><a href="https://www.kioskhomehub.com/docs/licenses" target="_blank">See licenses</a></p>
         <h2 id="purchase-and-download">Download</h2>
-        <p>In order to get started and use Kiosk, you will have to follow the pre-requisits. Click the button below which downloads the installer and then proceed to the next steps.</p>
+        <p>In order to get started and use Kiosk, you will have to follow the prerequisite. Click the button below which downloads the installer and then proceed to the next steps.</p>
         <p>
 
         @if (Auth::check())
