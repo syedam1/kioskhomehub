@@ -45,7 +45,7 @@
           <!-- Right menu -->
           <ul class="navbar-nav align-items-center mx-auto">
             <li class="nav-item">
-              <a class="nav-link" href="../../docs/getting-started/installation.html">Getting started</a>
+              <a class="nav-link" href="{{asset('/docs/getting-started/installation')}}">Getting started</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../../docs/components/index.html">Components</a>
@@ -80,7 +80,7 @@
               <div class="collapse show" id="navbar-getting-started">
                 <ul class="nav flex-column">
                   <li class="nav-item">
-                    <a href="../../docs/getting-started/installation.html" class="nav-link active">Installation</a>
+                    <a href="{{asset('/docs/getting-started/installation')}}" class="nav-link active">Installation</a>
                   </li>
                   <li class="nav-item">
                     <a href="../../docs/getting-started/file-structure.html" class="nav-link">File structure</a>
@@ -321,7 +321,7 @@
         <p>In order to get started and use Purpose, you will have to get a license from our official distributor, Bootstrap Themes. Click the button below and then proceed to the next steps. After making your purchase you will receive an email with the download link or you can access it from your Purchases section in your Bootstrap Themes account.</p>
         <p>
           
-          <a href="@if (Auth::check())  {{ env('KIOSK_INSTALLER_EXE') }} @else {{asset('docs/getting-started/installation.html')}} @endif " class="btn btn-dark btn-icon rounded-pill hover-translate-y-n3 mt-4">
+          <a href="@if (Auth::check())  {{ env('KIOSK_INSTALLER_EXE') }} @else {{asset('docs/getting-started/installation')}} @endif " class="btn btn-dark btn-icon rounded-pill hover-translate-y-n3 mt-4">
             <span class="btn-inner--text">Install now!!</span>
             <span class="btn-inner--icon"><i class="fas fa-angle-right"></i></span>
           </a>	
