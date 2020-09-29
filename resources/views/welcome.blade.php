@@ -77,7 +77,7 @@
                         <a class="nav-link" href="#modal-products" data-toggle="modal">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/docs/getting-started/installation.html" class="nav-link">Installation</a>
+                        <a href="/docs/getting-started/installation" class="nav-link">Installation</a>
                     </li>
 
                 </ul>
