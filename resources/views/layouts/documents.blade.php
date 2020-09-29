@@ -68,7 +68,7 @@
               <div class="collapse show" id="navbar-getting-started">
                 <ul class="nav flex-column">
                   <li class="nav-item">
-                    <a href="../../docs/getting-started/installation.html" class="nav-link active">Installation</a>
+                    <a href="{{asset('/docs/getting-started/installation')}}.html" class="nav-link active">Installation</a>
                   </li>
                   <li class="nav-item">
                     <a href="../../docs/getting-started/file-structure.html" class="nav-link">File structure</a>

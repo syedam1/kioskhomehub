@@ -800,7 +800,7 @@
                   <div class="dropdown-menu-links rounded-bottom delimiter-top p-4">
                     <div class="row">
                       <div class="col-sm-6">
-                        <a href="../../docs/getting-started/installation.blade.php" class="dropdown-item">Installation</a>
+                        <a href="{{asset('/docs/getting-started/installation')}}.blade.php" class="dropdown-item">Installation</a>
                         <a href="../../docs/getting-started/file-structure.blade.php" class="dropdown-item">File structure</a>
                         <a href="../../docs/getting-started/build-tools.blade.php" class="dropdown-item">Build tools</a>
                         <a href="../../docs/getting-started/customization.blade.php" class="dropdown-item">Customization</a>
