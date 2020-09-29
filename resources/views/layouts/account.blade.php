@@ -901,7 +901,7 @@
                                     <div class="dropdown-menu-links rounded-bottom delimiter-top p-4">
                                         <div class="row">
                                             <div class="col-sm-6">
-                                                <a href="{{asset('/docs/getting-started/installation.html')}}"
+                                                <a href="{{asset('/docs/getting-started/installation')}}"
                                                     class="dropdown-item">Installation</a>
                                                 <a href="{{asset('docs/getting-started/file-structure.html')}}"
                                                     class="dropdown-item">File
