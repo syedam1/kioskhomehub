@@ -1,19 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Purpose Application UI is the following chapter we've finished in order to create a complete and robust solution next to the already known Purpose Website UI.">
-  <meta name="author" content="Webpixels">
-  <title>Purpose – Application UI Kit</title>
-  <!-- Favicon -->
-  <link rel="icon" href="../../assets/img/brand/favicon.png" type="image/png">
-  <!-- Font Awesome 5 -->
-  <link rel="stylesheet" href="../../assets/libs/@fortawesome/fontawesome-free/css/all.min.css"><!-- Purpose CSS -->
-  <link rel="stylesheet" href="../../assets/css/purpose.css" id="stylesheet">
-  <!-- Docs CSS - used only for demo -->
-  <link rel="stylesheet" href="../../assets/css/docs.css">
+  @include('layouts.head')
 </head>
 
 <body class="docs">
@@ -31,13 +19,13 @@
           </ul>
         </div>
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="../../docs/index.html">
-          <img alt="Image placeholder" src="/assets/img/brand/kiosk-black.svg">
+        <a class="navbar-brand" href="{{route('home')}}">
+          <img alt="Image placeholder" src="{{asset('assets/img/brand/kiosk-black.svg')}}">
         </a>
         <!-- Live preview -->
         <ul class="navbar-nav flex-row align-items-center d-lg-none">
           <li class="nav-item">
-            <a href="http://themes.getbootstrap.com/preview/?theme_id=23693" class="nav-link nav-link-icon" target="_blank"><i class="fas fa-eye"></i></a>
+            <a href="#" class="nav-link nav-link-icon" target="_blank"><i class="fas fa-eye"></i></a>
           </li>
         </ul>
         <!-- Navbar nav -->
@@ -45,7 +33,7 @@
           <!-- Right menu -->
           <ul class="navbar-nav align-items-center mx-auto">
             <li class="nav-item">
-              <a class="nav-link" href="../../docs/getting-started/installation.html">Getting started</a>
+              <a class="nav-link" href="{{asset('docs/getting-started/installation')}}">Getting started</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../../docs/components/index.html">Components</a>
@@ -58,7 +46,7 @@
             </li>
           </ul>
         </div>
-        <a href="http://themes.getbootstrap.com/preview/?theme_id=23693" class="btn btn-sm btn-primary ml-4 btn-icon d-none d-lg-inline-flex">
+        <a href="" class="btn btn-sm btn-primary ml-4 btn-icon d-none d-lg-inline-flex">
           <span class="btn-inner--icon"><i class="fas fa-eye"></i></span>
           <span class="btn-inner--text">Live preview</span>
         </a>
@@ -297,52 +285,29 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://getbootstrap.com" target="_blank">
-                <i class="fab fa-twitter"></i>Bootstrap
+              <a class="nav-link" href="https://www.twitter.com/kioskhomehub" target="_blank">
+                <i class="fab fa-twitter"></i>Twitter
               </a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <!-- Main content -->
-    <div class="main-content d-flex position-relative pb-5">
-      <div class="docs-content">
-        <!-- Docs title -->
-        <div class="docs-title">
-          <h2 class="mb-4">Installation</h2>
-          <p class="text-muted docs-lead mb-0">Get started with Purpose, a powerful framework based on Bootstrap 4 that follows the latest design system principles so you can supercharge your development and design workflow today.</p>
-        </div>
-        <!-- Docs content -->
-        <h2 id="licenses">Licenses</h2>
-        <p>Currently, on Bootstrap Themes you can get the products with two types of licenses: Single or Extended. If you are making a purchase, be sure to go through the table with the rights and the guidelines, so you can know what is the best fit for you. View the rights table and the description for each license on our by clicking the button below.</p>
-        <p><a href="https://themes.getbootstrap.com/licenses/" target="_blank">See licenses</a></p>
-        <h2 id="purchase-and-download">Purchase and download</h2>
-        <p>In order to get started and use Purpose, you will have to get a license from our official distributor, Bootstrap Themes. Click the button below and then proceed to the next steps. After making your purchase you will receive an email with the download link or you can access it from your Purchases section in your Bootstrap Themes account.</p>
-        <p>
-          
-          <a href="@if (Auth::check())  {{ env('KIOSK_INSTALLER_EXE') }} @else {{asset('docs/getting-started/installation.html')}} @endif " class="btn btn-dark btn-icon rounded-pill hover-translate-y-n3 mt-4">
-            <span class="btn-inner--text">Install now!!</span>
-            <span class="btn-inner--icon"><i class="fas fa-angle-right"></i></span>
-          </a>	
-
-          </p>
-      </div>
-      <div class="docs-sidebar h-100vh border-left pl-4 py-5 py-lg-3 my-lg-3 d-none d-xl-block">
-      </div>
-    </div>
+    @yield('documentcontent')
   </div>
   <!-- Footer -->
   <!-- Scripts -->
-  <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
-  <script src="../../assets/js/purpose.core.js"></script>
-  <!-- Docs JS -->
-  <script src="../../assets/libs/highlightjs/highlight.pack.min.js"></script>
-  <script src="../../assets/libs/clipboard/dist/clipboard.min.js"></script>
-  <!-- Purpose JS -->
-  <script src="../../assets/js/purpose.js"></script>
-  <!-- Demo JS - remove it when starting your project -->
-  <script src="../../assets/js/demo.js"></script>
+    <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
+    <script src="{{asset('assets/js/purpose.core.js')}}"></script>
+    <!-- Docs JS -->
+    <script src="{{asset('assets/libs/highlightjs/highlight.pack.min.js')}}"></script>
+    <script src="{{asset('assets/libs/clipboard/dist/clipboard.min.js')}}"></script>
+    <!-- Purpose JS -->
+    <script src="{{asset('assets/js/purpose.js')}}"></script>
+  
+    <!-- EndOfScripts-->
+
+
 </body>
 
 </html>

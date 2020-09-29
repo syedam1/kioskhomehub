@@ -173,7 +173,7 @@
                         @endif
                         @else
                         <li class="nav-item d-lg-none d-xl-block">
-                            <a class="nav-link" href="/home" >Dashboard</a>
+                            <a class="nav-link" href="/home">Dashboard</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
@@ -218,7 +218,8 @@
                     <a href="#sct-features"
                         class="btn btn-primary rounded-pill hover-translate-y-n3 mt-4 d-none d-sm-inline-block"
                         data-scroll-to>See features</a>
-                    <a href="{{asset('docs/getting-started/installation.html')}}" class="btn btn-dark btn-icon rounded-pill hover-translate-y-n3 mt-4">
+                    <a href="@if (Auth::check())  {{ env('KIOSK_INSTALLER_EXE') }} @else {{asset('docs/getting-started/installation.html')}} @endif "
+                        class="btn btn-dark btn-icon rounded-pill hover-translate-y-n3 mt-4">
                         <span class="btn-inner--text">Install now!!</span>
                         <span class="btn-inner--icon"><i class="fas fa-angle-right"></i></span>
                     </a>
@@ -235,7 +236,7 @@
         </div>
     </section>
     <section class="slice bg-white" id="sct-features">
-    <a name="about-us"></a>
+        <a name="about-us"></a>
         <div class="container">
             <div class="row justify-content-center mb-7">
                 <div class="col-lg-8">
@@ -243,7 +244,7 @@
                         Customize your desktop to reflect your mood by using the next generation Kiosk Home Hub. Quick
                         and easy installation along with the ability to customize the app, allows you to match your
                         device with your environment. Experience your selection of media played on your device through
-                        the mood selector option! <a href="docs/getting-started/installation.html"
+                        the mood selector option! <a href="@if (Auth::check())  {{ env('KIOSK_INSTALLER_EXE') }} @else {{asset('docs/getting-started/installation.html')}} @endif"
                             class="nav-link">Install now</a>
                     </p>
                 </div>

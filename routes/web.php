@@ -40,3 +40,6 @@ Route::get('/application/{slug1?}/{slug2?}', 'ProjectController@index')->name('p
 Route::get('/slack', 'SlackController@obtaintoken');
 Route::post('/slack_createchannel', 'SlackController@createchannel')->name('createchannel');
 
+//Documents
+Route::get('/docs/{slug1?}/{slug2?}', 'DocumentsController@index')->name('documents');
+
