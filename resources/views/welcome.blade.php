@@ -1,7 +1,8 @@
-@extends('layouts.landingpage')
-
-@section('content')
-
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+@include('layouts.head')
+</head>
 <body>
     <!-- Products -->
     <div class="modal fade fixed-right dark" id="modal-products" tabindex="-1" role="dialog" aria-hidden="true">
@@ -841,14 +842,15 @@
             </div>
         </div>
     </footer>
+    <!-- Core SCRIPTS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
     <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
-    <script src="assets/js/purpose.core.js"></script>
+    <script src="{{asset('assets/js/purpose.core.js')}}"></script>
     <!-- Page JS -->
-    <script src="assets/libs/swiper/dist/js/swiper.min.js"></script>
+    <script src="{{asset('assets/libs/swiper/dist/js/swiper.min.js')}}"></script>
     <!-- Purpose JS -->
-    <script src="assets/js/purpose.js"></script>
-    <!-- Demo JS - remove it when starting your project -->
-    <script src="assets/js/demo.js"></script>
-</body>
+    <script src="{{asset('assets/js/purpose.js')}}"></script>
+    <!-- EndOfScripts-->
 
-@endsection
+    
+</body>
+</html>

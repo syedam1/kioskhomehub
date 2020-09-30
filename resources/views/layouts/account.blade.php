@@ -1198,8 +1198,6 @@
     <script src="{{asset('assets/libs/fullcalendar/dist/fullcalendar.min.js')}}"></script>
     <!-- Purpose JS -->
     <script src="{{asset('assets/js/purpose.js')}}"></script>
-    <!-- Demo JS - remove it when starting your project -->
-    <script src="{{asset('assets/js/demo.js')}}"></script>
     <!-- EndOfScripts-->
 </body>
 
