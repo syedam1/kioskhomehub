@@ -218,7 +218,7 @@
                     <a href="#sct-features"
                         class="btn btn-primary rounded-pill hover-translate-y-n3 mt-4 d-none d-sm-inline-block"
                         data-scroll-to>See features</a>
-                    <a href="@if (Auth::check())  {{ env('KIOSK_INSTALLER_EXE') }} @else {{asset('{{asset('/docs/getting-started/installation')}}')}} @endif "
+                    <a href="@if (Auth::check())  {{ env('KIOSK_INSTALLER_EXE') }} @else {{asset('/docs/getting-started/installation')}} @endif "
                         class="btn btn-dark btn-icon rounded-pill hover-translate-y-n3 mt-4">
                         <span class="btn-inner--text">Install now!!</span>
                         <span class="btn-inner--icon"><i class="fas fa-angle-right"></i></span>
@@ -244,7 +244,7 @@
                         Customize your desktop to reflect your mood by using the next generation Kiosk Home Hub. Quick
                         and easy installation along with the ability to customize the app, allows you to match your
                         device with your environment. Experience your selection of media played on your device through
-                        the mood selector option! <a href="@if (Auth::check())  {{ env('KIOSK_INSTALLER_EXE') }} @else {{asset('{{asset('/docs/getting-started/installation')}}')}} @endif"
+                        the mood selector option! <a href="@if (Auth::check())  {{ env('KIOSK_INSTALLER_EXE') }} @else {{asset('/docs/getting-started/installation')}} @endif"
                             class="nav-link">Install now</a>
                     </p>
                 </div>
