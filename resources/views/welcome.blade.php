@@ -249,23 +249,23 @@
     <section class="slice bg-white" id="sct-features">
         <a name="about-us"></a>
         <div class="container">
-            <div class="row justify-content-center mb-7">
+            <div class="row justify-content-center mb-1">
                 <div class="col-lg-8">
                     <p class="h4 text-center lh-160">
                         Customize your desktop to reflect your mood by using the next generation Kiosk Home Hub. Quick
                         and easy installation along with the ability to customize the app, allows you to match your
                         device with your environment. Experience your selection of media played on your device through
                         the mood selector option! 
-                        @if (Auth::check()) 
-                         <a href="{{ env('KIOSK_INSTALLER_EXE') }}"class="nav-link">Install now</a>
-                         @else 
-                         <a href="{{route('login')}}"class="nav-link">Sign-in to install</a>
-                         @endif
-
-                        
                     </p>
                 </div>
             </div>
+            <div class="row justify-content-center mb-7">
+                @if (Auth::check()) 
+                         <a href="{{ env('KIOSK_INSTALLER_EXE') }}"class="btn btn-dark text-light btn-icon rounded-pill">Install now</a>
+                         @else 
+                         <a href="{{route('login')}}"class="btn btn-dark text-light btn-icon rounded-pill">Sign-in to install</a>
+                         @endif
+                </div>
             <div class="row justify-content-center">
                 <div class="col-lg-3 col-sm-6">
                     <div class="card hover-shadow-lg hover-translate-y-n10">
