@@ -809,7 +809,7 @@
                   <div class="dropdown-menu-links rounded-bottom delimiter-top p-4">
                     <div class="row">
                       <div class="col-sm-6">
-                        <a href="{{asset('/docs/getting-started/installation.html')}}" class="dropdown-item">Installation</a>
+                        <a href="{{asset('/{{asset('/docs/getting-started/installation')}}')}}" class="dropdown-item">Installation</a>
                         <a href="{{asset('docs/getting-started/file-structure.html')}}" class="dropdown-item">File structure</a>
                         <a href="{{asset('docs/getting-started/build-tools.html')}}" class="dropdown-item">Build tools</a>
                         <a href="{{asset('docs/getting-started/customization.html')}}" class="dropdown-item">Customization</a>
