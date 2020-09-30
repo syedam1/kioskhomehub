@@ -851,6 +851,5 @@
     <script src="{{asset('assets/js/purpose.js')}}"></script>
     <!-- EndOfScripts-->
 
-    
 </body>
 </html>

@@ -662,6 +662,14 @@
                                     Home
                                 </a>
                             </li>
+
+                            @if (Auth::check())
+                            <li class="nav-item ">
+                                <a class="nav-link pl-lg-0" href="{{ env('KIOSK_INSTALLER_EXE') }}">
+                                    Download
+                                </a>
+                            </li>
+                            @endif
                             <!-- Application menu -->
                             <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
