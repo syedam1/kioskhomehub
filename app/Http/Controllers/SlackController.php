@@ -169,9 +169,13 @@ class SlackController extends Controller
         ]);
 
         $response = json_decode($response->getBody(), true);
-        foreach ($response['channels'] as $key => $value) {
-            $channel_list[] = $value['name'];
+        $channel_list = [];
+        if($response['channels']){
+            foreach ($response['channels'] as $key => $value) {
+                $channel_list[] = $value['name'];
+            }
         }
+        
 
         if(in_array($phone, $channel_list)){
             //Existing channel
