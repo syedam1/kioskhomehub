@@ -81,7 +81,8 @@ class SlackController extends Controller
     public function createchannel(Request $request, $phone = null){
 
         $slack_verification_token = (Auth::check())  ? $this->customuserdata()->detail->slack_access_token : $this->slack_configs['SLACK_BOT_TOKEN'];
-        $request_channel_name = $phone ? $phone : $request->channel_name;
+        $request_channel_name = (isset($phone) && $phone <> null ) ? $phone : $request->channel_name;
+        
         $client = new Client;
         $url    = "https://slack.com/api/conversations.create";
         $response = $client->post($url, [
@@ -97,7 +98,7 @@ class SlackController extends Controller
         ]);
 
         $response = json_decode($response->getBody(), true);
-        
+
         if(Auth::check()){
 
             //Save channel details into db
@@ -133,7 +134,7 @@ class SlackController extends Controller
             'form_params' => [
                 'token'=>$slack_verification_token,
                 'channel'=>$request_channel,
-                'text'=>$request_message,
+                'text'=>"<!channel>".$request_message,
             ],
         ]);
 
@@ -152,7 +153,7 @@ class SlackController extends Controller
                 $request->session()->flash('slack_message.content', 'Message sending failed :(');
                 return redirect()->route('settings');
             } else {
-                return json_encode($response);
+                return json_encode([$response, $request_channel]);
             }
         }
     
@@ -172,6 +173,7 @@ class SlackController extends Controller
         ]);
 
         $response = json_decode($response->getBody(), true);
+
         $channel_list = [];
         if(isset( $response['channels']) ){
             foreach ($response['channels'] as $key => $value) {
@@ -179,7 +181,6 @@ class SlackController extends Controller
             }
         }
         
-
         if(in_array($phone, $channel_list)){
             //Existing channel
             return($phone);
@@ -193,16 +194,18 @@ class SlackController extends Controller
 
     public function getUserTokenByPhone($phone){
 
-        // DEFAULT TOKEN
-        $slack_verification_token = $this->slack_configs['SLACK_BOT_TOKEN'];  
+        // USER BY PHONE TOKEN
+        $slack_verification_token = KioskModel::userDetails(['phone'=>$phone]);
+        if($slack_verification_token){
+            return $slack_verification_token;
+        }
         // LOGGED IN USER TOKEN
         if(Auth::check()){
             $slack_verification_token = $this->customuserdata()->detail->slack_access_token;
             return $slack_verification_token;
         }
-        // USER BY PHONE TOKEN
-        $slack_verification_token = KioskModel::userDetails(['phone'=>$phone]);
-        
+        // DEFAULT TOKEN
+        $slack_verification_token = $this->slack_configs['SLACK_BOT_TOKEN'];  
         return $slack_verification_token;
 
     }
