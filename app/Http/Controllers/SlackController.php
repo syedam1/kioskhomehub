@@ -103,14 +103,14 @@ class SlackController extends Controller
         
         if(Auth::check()){
 
-        //Save channel details into db
-        $user = KioskModel::find(Auth::user()->user_id);
-        $user->channel_info = $response;
-        $user->save();
-        
-        $request->session()->flash('slack_message.level', 'success');
-        $request->session()->flash('slack_message.content', 'Channel Created successfully');
-        return redirect()->route('settings');
+            //Save channel details into db
+            $user = KioskModel::find(Auth::user()->user_id);
+            $user->channel_info = $response;
+            $user->save();
+            
+            $request->session()->flash('slack_message.level', 'success');
+            $request->session()->flash('slack_message.content', 'Channel Created successfully');
+            return redirect()->route('settings');
         } else {
             return json_encode($response);
         }
