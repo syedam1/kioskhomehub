@@ -61,6 +61,25 @@
                             <button type="submit" class="btn btn-sm btn-primary rounded-pill">Create</button>
                         </div>
                     </form>
+
+
+                    <form role="form" method="post" action="{{ route('slackmessage') }}">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-control-label">Post Message</label>
+                                    <input class="form-control" type="text" name="slack_message" placeholder="Message">
+                                    <input class="form-control" type="text" name="phone" placeholder="Phone number">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-sm btn-primary rounded-pill">Post</button>
+                        </div>
+                    </form>
+
+                    <div><p>{{$user_data->detail->channel_info}}</p></div>
                     @endif
 
                     

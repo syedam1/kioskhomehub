@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 use App\Models\KioskModel;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
+use PhpParser\JsonDecoder;
 
 class SlackController extends Controller
 {
 
+    
     /**
      * Create a new controller instance.
      *
@@ -17,7 +19,8 @@ class SlackController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        
+        //$this->middleware('auth');
     }
 
     /**
@@ -74,17 +77,18 @@ class SlackController extends Controller
 
     }
 
-    public function createchannel(Request $request){
-        
-        
+    public function createchannel(Request $request, $phone = null){
+
+        $slack_verification_token = (Auth::check())  ? $this->customuserdata()->detail->slack_access_token : 'xoxp-1332390320279-1332620811703-1398432248836-415fa3e726d1e554cf8b46fa2e5abe16';
+        $request_channel_name = $phone ? $phone : $request->channel_name;
         $client = new Client;
         $url    = "https://slack.com/api/conversations.create";
         $response = $client->post($url, [
             'headers' => [],
             'form_params' => [
-                'token'=>$this->customuserdata()->detail->slack_access_token,
-                'name'=>$request->channel_name,
-                'is_private'=>true,
+                'token'=>$slack_verification_token,
+                'name'=>$request_channel_name,
+                'is_private'=>false,
                 'user_scope'=>'groups:write,channels:read,channels:write,chat:write,im:read,im:write',
                 'scope'=>'groups:write,channels:read,channels:write,chat:write,im:read,im:write',
                 'user'=>'channels:write,groups:write,im:write,mpim:write',
@@ -93,10 +97,90 @@ class SlackController extends Controller
 
         $response = json_decode($response->getBody(), true);
         
+        if(Auth::check()){
+
+        //Save channel details into db
+        $user = KioskModel::find(Auth::user()->user_id);
+        $user->channel_info = $response;
+        $user->save();
+        
         $request->session()->flash('slack_message.level', 'success');
         $request->session()->flash('slack_message.content', 'Channel Created successfully');
         return redirect()->route('settings');
+        } else {
+            return json_encode($response);
+        }
 
+
+    }
+
+    public function postmessage(Request $request){
+        // The method accepts two parameters.  Phone number and message
+        
+        $request_channel = 'channel-30sep2020';
+        //If new user create a new channel
+        $request_channel = $this->getUserChannel($request, $request->phone);
+
+        // //Else use the phone number to identify the channel.
+        // if(json_decode(Auth::user()->channel_info)->channel->name){
+        //     $request_channel = json_decode(Auth::user()->channel_info)->channel->name;
+        // }
+
+        $request_channel = $request->phone ? $request->phone : 'channel-30sep2020';
+        $request_message = $request->slack_message." - ".date("H:i:s");
+        $slack_verification_token = (Auth::check())  ? $this->customuserdata()->detail->slack_access_token : 'xoxp-1332390320279-1332620811703-1398432248836-415fa3e726d1e554cf8b46fa2e5abe16';
+
+        // Post to this channel
+        $client = new Client;
+        $url    = "https://slack.com/api/chat.postMessage";
+        $response = $client->post($url, [
+            'headers' => [],
+            'form_params' => [
+                'token'=>$slack_verification_token,
+                'channel'=>$request_channel,
+                'text'=>$request_message,
+            ],
+        ]);
+
+        $response = json_decode($response->getBody(), true);
+    
+        if (Auth::check()) {
+            $request->session()->flash('slack_message.level', 'success');
+            $request->session()->flash('slack_message.content', 'Message sent successfully');
+            return redirect()->route('settings');
+        } else {
+            return json_encode($response);
+        }
+        
+
+
+    }
+
+    public function getUserChannel(Request $request, $phone){
+        //Obtain channel information
+        $slack_verification_token = (Auth::check()) ? $this->customuserdata()->detail->slack_access_token : 'xoxp-1332390320279-1332620811703-1398432248836-415fa3e726d1e554cf8b46fa2e5abe16';
+        $client = new Client;
+        $url    = "https://slack.com/api/conversations.list";
+        $response = $client->post($url, [
+            'headers' => [],
+            'form_params' => [
+                'token'=>$slack_verification_token,
+            ],
+        ]);
+
+        $response = json_decode($response->getBody(), true);
+        foreach ($response['channels'] as $key => $value) {
+            $channel_list[] = $value['name'];
+        }
+
+        if(in_array($phone, $channel_list)){
+            //Existing channel
+            return($phone);
+        } else {
+            //Create new channel
+            $this->createchannel($request, $phone);
+            return($phone);
+        }
 
     }
 
