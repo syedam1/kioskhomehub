@@ -45,7 +45,7 @@ class SlackController extends Controller
                 $user->save();
 
                 //Step 3 - Exchanging a verification code for an access token
-                $slack_auth_url = "https://slack.com/api/oauth.v2.access?client_id=".env("SLACK_CLIENT_ID")."&client_secret".env("SLACK_CLIENT_SECRET")."&redirect_uri=".$request->root()."/slack&code=".$request->code;
+                $slack_auth_url = "https://slack.com/api/oauth.v2.access?client_id=".env("SLACK_CLIENT_ID")."&client_secret=".env("SLACK_CLIENT_SECRET")."&redirect_uri=".$request->root()."/slack&code=".$request->code;
                 
                    //echo "<a href='".$slack_auth_url."'> Auth </a> </br>";
                 //dd($slack_auth_url);
