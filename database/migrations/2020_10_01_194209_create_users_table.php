@@ -30,7 +30,8 @@ class CreateUsersTable extends Migration {
 			$table->string('bio', 500)->nullable();
 			$table->string('slack_verification_token', 100)->nullable();
 			$table->string('slack_access_token', 100)->nullable();
-			$table->integer('phone')->nullable();
+			$table->string('phone', 50)->nullable();
+			$table->string('channel_info', 1000)->nullable();
 		});
 	}
 
