@@ -170,7 +170,7 @@ class SlackController extends Controller
 
         $response = json_decode($response->getBody(), true);
         $channel_list = [];
-        if($response['channels']){
+        if(isset( $response['channels']) ){
             foreach ($response['channels'] as $key => $value) {
                 $channel_list[] = $value['name'];
             }
