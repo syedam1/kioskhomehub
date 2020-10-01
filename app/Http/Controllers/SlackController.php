@@ -103,6 +103,7 @@ class SlackController extends Controller
             //Save channel details into db
             $user = KioskModel::find(Auth::user()->user_id);
             $user->channel_info = $response;
+            $user->phone = $request_channel_name;
             $user->save();
             
             $request->session()->flash('slack_message.level', 'success');
@@ -116,21 +117,14 @@ class SlackController extends Controller
     }
 
     public function postmessage(Request $request){
-        // The method accepts two parameters.  Phone number and message
         
-        $request_channel = 'channel-30sep2020';
-        //If new user create a new channel
-        $request_channel = $this->getUserChannel($request, $request->phone);
-
-        // //Else use the phone number to identify the channel.
-        // if(json_decode(Auth::user()->channel_info)->channel->name){
-        //     $request_channel = json_decode(Auth::user()->channel_info)->channel->name;
-        // }
-
-        $request_channel = $request->phone ? $request->phone : 'channel-30sep2020';
+        // THE MESSAGE
         $request_message = $request->slack_message." - ".date("H:i:s");
-        $slack_verification_token = (Auth::check())  ? $this->customuserdata()->detail->slack_access_token : env("SLACK_PLACEHOLDER_TOKEN");
-
+        // THE CHANNEL
+        $request_channel = $this->getUserChannel($request, $request->phone);
+        // THE USER/orBOT
+        $slack_verification_token = $this->getUserTokenByPhone($request->phone);
+        
         // Post to this channel
         $client = new Client;
         $url    = "https://slack.com/api/chat.postMessage";
@@ -186,6 +180,22 @@ class SlackController extends Controller
             $this->createchannel($request, $phone);
             return($phone);
         }
+
+    }
+
+    public function getUserTokenByPhone($phone){
+
+        // DEFAULT TOKEN
+        $slack_verification_token = env("SLACK_PLACEHOLDER_TOKEN");  
+        // LOGGED IN USER TOKEN
+        if(Auth::check()){
+            $slack_verification_token = $this->customuserdata()->detail->slack_access_token;
+            return $slack_verification_token;
+        }
+        // USER BY PHONE TOKEN
+        $slack_verification_token = KioskModel::userDetails(['phone'=>$phone]);
+        
+        return $slack_verification_token;
 
     }
 

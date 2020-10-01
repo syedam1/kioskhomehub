@@ -22,6 +22,16 @@ class KioskModel extends Model
      
     }
 
+    public static function userDetails($data){
+      $value=DB::table('users')->where('phone', $data['phone'])->get();
+      if($value->count() == 0){
+        return false;
+      }else{
+         return $value[0]->slack_access_token;
+      }
+   
+    }
+
     public static function deleteuser($id){
         DB::delete('delete from users where user_id = ?',[$id]);
     }
