@@ -32,7 +32,6 @@ class SlackController extends Controller
     public function obtaintoken(Request $request)
     {
         
-        
         if($request->exists('code')){
             $request_code = $request->code;
             
@@ -42,8 +41,13 @@ class SlackController extends Controller
                 $user = KioskModel::find(Auth::user()->user_id);
                 $user->slack_verification_token = $request->code;
                 $user->save();
+
+                
+
                 //Step 3 - Exchanging a verification code for an access token
                 $slack_auth_url = "https://slack.com/api/oauth.v2.access?client_id=1332390320279.1383932006806&client_secret=ba7098fb65dfcdc6085c34fa27cd9b94&redirect_uri=".$request->root()."/slack&code=".$request->code;
+                
+
                 //echo "<a href='".$slack_auth_url."'> Auth </a> </br>";
                 //dd($slack_auth_url);
 
