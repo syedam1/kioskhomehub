@@ -16,8 +16,8 @@ class CreateConfigTable extends Migration {
 		Schema::create('config', function(Blueprint $table)
 		{
 			$table->integer('config_id', true);
-			$table->string('key', 50)->default(')->unique('key');
-			$table->string('value', 100)->default(');
+			$table->string('key', 50)->default('')->unique('key');
+			$table->string('value', 100)->default('');
 		});
 	}
 
