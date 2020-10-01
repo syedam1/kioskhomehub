@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\KioskModel;
+use App\Models\Configurations;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
 use PhpParser\JsonDecoder;
@@ -11,7 +12,7 @@ use PhpParser\JsonDecoder;
 class SlackController extends Controller
 {
 
-    
+    protected $slack_configs;
     /**
      * Create a new controller instance.
      *
@@ -19,8 +20,7 @@ class SlackController extends Controller
      */
     public function __construct()
     {
-        
-        //$this->middleware('auth');
+        $this->slack_configs = Configurations::getConfigDetails();
     }
 
     /**
@@ -80,7 +80,7 @@ class SlackController extends Controller
 
     public function createchannel(Request $request, $phone = null){
 
-        $slack_verification_token = (Auth::check())  ? $this->customuserdata()->detail->slack_access_token : env("SLACK_PLACEHOLDER_TOKEN");
+        $slack_verification_token = (Auth::check())  ? $this->customuserdata()->detail->slack_access_token : $this->slack_configs['SLACK_BOT_TOKEN'];
         $request_channel_name = $phone ? $phone : $request->channel_name;
         $client = new Client;
         $url    = "https://slack.com/api/conversations.create";
@@ -138,22 +138,30 @@ class SlackController extends Controller
         ]);
 
         $response = json_decode($response->getBody(), true);
-    
-        if (Auth::check()) {
-            $request->session()->flash('slack_message.level', 'success');
-            $request->session()->flash('slack_message.content', 'Message sent successfully');
-            return redirect()->route('settings');
+        if($response['ok']){
+            if (Auth::check()) {
+                $request->session()->flash('slack_message.level', 'success');
+                $request->session()->flash('slack_message.content', 'Message sent successfully');
+                return redirect()->route('settings');
+            } else {
+                return json_encode($response);
+            }
         } else {
-            return json_encode($response);
+            if (Auth::check()) {
+                $request->session()->flash('slack_message.level', 'danger');
+                $request->session()->flash('slack_message.content', 'Message sending failed :(');
+                return redirect()->route('settings');
+            } else {
+                return json_encode($response);
+            }
         }
-        
-
+    
 
     }
 
     public function getUserChannel(Request $request, $phone){
         //Obtain channel information
-        $slack_verification_token = (Auth::check()) ? $this->customuserdata()->detail->slack_access_token : env("SLACK_PLACEHOLDER_TOKEN");
+        $slack_verification_token = (Auth::check()) ? $this->customuserdata()->detail->slack_access_token : $this->slack_configs['SLACK_BOT_TOKEN'];
         $client = new Client;
         $url    = "https://slack.com/api/conversations.list";
         $response = $client->post($url, [
@@ -186,7 +194,7 @@ class SlackController extends Controller
     public function getUserTokenByPhone($phone){
 
         // DEFAULT TOKEN
-        $slack_verification_token = env("SLACK_PLACEHOLDER_TOKEN");  
+        $slack_verification_token = $this->slack_configs['SLACK_BOT_TOKEN'];  
         // LOGGED IN USER TOKEN
         if(Auth::check()){
             $slack_verification_token = $this->customuserdata()->detail->slack_access_token;
