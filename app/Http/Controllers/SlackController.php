@@ -79,7 +79,7 @@ class SlackController extends Controller
 
     public function createchannel(Request $request, $phone = null){
 
-        $slack_verification_token = (Auth::check())  ? $this->customuserdata()->detail->slack_access_token : 'xoxp-1332390320279-1332620811703-1398432248836-415fa3e726d1e554cf8b46fa2e5abe16';
+        $slack_verification_token = (Auth::check())  ? $this->customuserdata()->detail->slack_access_token : env("SLACK_PLACEHOLDER_TOKEN");
         $request_channel_name = $phone ? $phone : $request->channel_name;
         $client = new Client;
         $url    = "https://slack.com/api/conversations.create";
@@ -128,7 +128,7 @@ class SlackController extends Controller
 
         $request_channel = $request->phone ? $request->phone : 'channel-30sep2020';
         $request_message = $request->slack_message." - ".date("H:i:s");
-        $slack_verification_token = (Auth::check())  ? $this->customuserdata()->detail->slack_access_token : 'xoxp-1332390320279-1332620811703-1398432248836-415fa3e726d1e554cf8b46fa2e5abe16';
+        $slack_verification_token = (Auth::check())  ? $this->customuserdata()->detail->slack_access_token : env("SLACK_PLACEHOLDER_TOKEN");
 
         // Post to this channel
         $client = new Client;
@@ -158,7 +158,7 @@ class SlackController extends Controller
 
     public function getUserChannel(Request $request, $phone){
         //Obtain channel information
-        $slack_verification_token = (Auth::check()) ? $this->customuserdata()->detail->slack_access_token : 'xoxp-1332390320279-1332620811703-1398432248836-415fa3e726d1e554cf8b46fa2e5abe16';
+        $slack_verification_token = (Auth::check()) ? $this->customuserdata()->detail->slack_access_token : env("SLACK_PLACEHOLDER_TOKEN");
         $client = new Client;
         $url    = "https://slack.com/api/conversations.list";
         $response = $client->post($url, [
