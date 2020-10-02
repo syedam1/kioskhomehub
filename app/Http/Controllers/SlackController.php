@@ -91,7 +91,7 @@ class SlackController extends Controller
             'form_params' => [
                 'token'=>$slack_verification_token,
                 'name'=>$request_channel_name,
-                'is_private'=>false,
+                'is_private'=>true,
                 'user_scope'=>'groups:write,channels:read,channels:write,chat:write,im:read,im:write',
                 'scope'=>'groups:write,channels:read,channels:write,chat:write,im:read,im:write',
                 'user'=>'channels:write,groups:write,im:write,mpim:write',
@@ -99,6 +99,8 @@ class SlackController extends Controller
         ]);
 
         $response = json_decode($response->getBody(), true);
+
+        dd($response);
 
 
 
@@ -128,7 +130,7 @@ class SlackController extends Controller
         // THE USER based on TO RECEIVER TOKEN
         
         $slack_verification_token = $this->getUserTokenByPhone($request->receiver);  // This is the person who will appear to be sending the message
-        $slack_verification_token = $this->slack_configs['SLACK_BOT_TOKEN'];  
+        //$slack_verification_token = $this->slack_configs['SLACK_BOT_TOKEN'];  
         
         // Post to this channel
         $client = new Client;
@@ -144,7 +146,7 @@ class SlackController extends Controller
         ]);
 
         $response = json_decode($response->getBody(), true);
-
+        
         if($response['ok']){
             if (Auth::check()) {
                 $request->session()->flash('slack_message.level', 'success');
@@ -178,6 +180,7 @@ class SlackController extends Controller
             'headers' => [],
             'form_params' => [
                 'token'=>$slack_verification_token,
+                'types'=>'private_channel',
             ],
         ]);
 
@@ -190,7 +193,6 @@ class SlackController extends Controller
             }
         }
         
-
         if(in_array($sender, $channel_list)){
             //Existing channel
             return($sender);
