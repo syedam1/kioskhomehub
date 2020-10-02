@@ -209,4 +209,14 @@ class SlackController extends Controller
 
     }
 
+    public function retrievemessage(Request $request){
+        $content = 123;
+        return response($content)
+            ->withHeaders([
+                'Content-Type' => 'text/plain',
+                'challenge' => 'f40c74e90ef401272e0685de0d769df8',
+            ]);
+        
+    }
+
 }

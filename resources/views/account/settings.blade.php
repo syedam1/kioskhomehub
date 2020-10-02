@@ -63,7 +63,7 @@
                     </form>
 
 
-                    <form role="form" method="post" action="{{ route('slackmessage') }}">
+                    <form role="form" method="post" action="{{ route('slack-message-post') }}">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
