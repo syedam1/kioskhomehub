@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Http\Request;
 use App\Models\KioskModel;
+use Illuminate\Support\Facades\Auth;
 
 
 class KioskController extends Controller
@@ -27,13 +28,26 @@ class KioskController extends Controller
         return response()->json($contents,$statusCode);
     }
 
+    public function getUserbyEmail($email){
+        $contents = KioskModel::get()->where('email', $email);
+        return $contents[0];
+    }
+
     public function verify(Request $request){
         $statusCode = 200;
-        $contents = KioskModel::get()->where('email', '=', $request->email)-> where('password', '=',$request->password);
-        $html = "Email ".$request->email."\n";
-        $html .= "Password ".$request->password."\n";
-        #echo $html;
-        return response()->json($contents,$statusCode);
+    
+        //$user = KioskModel::find(Auth::user()->user_id);
+        $user = $this->getUserbyEmail($request->email);
+        $hasher = app('hash');
+        if ($hasher->check($request->password, $user->password)) {
+            $contents = json_encode(['email'=>$request->email, 'password'=>$request->password,'valid'=>true]);
+            return response()->json($contents,$statusCode);
+        } else {
+            $contents = json_encode(['email'=>$request->email, 'password'=>$request->password,'valid'=>false] );
+            return response()->json($contents,'400');
+        }
+
+        
         
     }
 
