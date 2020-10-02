@@ -100,11 +100,7 @@ class SlackController extends Controller
 
         $response = json_decode($response->getBody(), true);
 
-        dd($response);
-
-
-
-
+        
         if(Auth::check()){
             //Save channel details into db
             $user = KioskModel::find(Auth::user()->user_id);
