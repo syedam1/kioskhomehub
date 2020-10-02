@@ -81,8 +81,16 @@ class SlackController extends Controller
     public function createchannel(Request $request, $sender, $receiver){
 
         $slack_verification_token = (Auth::check())  ? $this->customuserdata()->detail->slack_access_token : $this->slack_configs['SLACK_BOT_TOKEN'];
-        $request_channel_name = (isset($sender) && $sender <> null ) ? $sender : $request->channel_name;
         $slack_verification_token = KioskModel::userDetails(['phone'=>$receiver]);
+
+        //Get unique channel NAME
+        $request_channel_name = (isset($sender) && $sender <> null ) ? $sender : $request->channel_name;
+        $channel_list = $this->getAllUserChannels($receiver);
+
+        //dd($channel_list);
+
+
+
         
         $client = new Client;
         $url    = "https://slack.com/api/conversations.create";
@@ -100,7 +108,8 @@ class SlackController extends Controller
 
         $response = json_decode($response->getBody(), true);
 
-        
+        //dd($response);
+
         if(Auth::check()){
             //Save channel details into db
             $user = KioskModel::find(Auth::user()->user_id);
@@ -166,8 +175,21 @@ class SlackController extends Controller
 
     public function getUserChannel(Request $request, $sender, $receiver){
         //Obtain channel information
-        //$slack_verification_token = (Auth::check()) ? $this->customuserdata()->detail->slack_access_token : $this->slack_configs['SLACK_BOT_TOKEN'];
-        //$slack_verification_token = $this->slack_configs['SLACK_BOT_TOKEN']; //KioskModel::userDetails(['phone'=>$receiver]);
+        $channel_list = $this->getAllUserChannels($receiver);
+        
+        if(in_array($sender, $channel_list)){
+            //Existing channel
+            return($sender);
+        } else {
+            //Create new channel
+            $this->createchannel($request, $sender, $receiver);
+            return($sender);
+        }
+
+    }
+
+
+    public function getAllUserChannels($receiver){
         $slack_verification_token = KioskModel::userDetails(['phone'=>$receiver]);
 
         $client = new Client;
@@ -181,23 +203,18 @@ class SlackController extends Controller
         ]);
 
         $response = json_decode($response->getBody(), true);
+        
+        //dd($response);
 
         $channel_list = [];
         if(isset( $response['channels']) ){
             foreach ($response['channels'] as $key => $value) {
+                //$channel_list[] = (strpos($value['name'], '_') !== false) ? preg_replace('/_[0-9]*$/', $value['name'], '') : $value['name'];
                 $channel_list[] = $value['name'];
             }
         }
-        
-        if(in_array($sender, $channel_list)){
-            //Existing channel
-            return($sender);
-        } else {
-            //Create new channel
-            $this->createchannel($request, $sender, $receiver);
-            return($sender);
-        }
 
+        return $channel_list;
     }
 
     public function getUserTokenByPhone($phone){
