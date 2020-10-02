@@ -29,8 +29,8 @@ class KioskController extends Controller
     }
 
     public function getUserbyEmail($email){
-        $contents = KioskModel::get()->where('email', $email);
-        return $contents[0];
+        $contents = KioskModel::get()->where('email', $email)->first();
+        return $contents;
     }
 
     public function verify(Request $request){
@@ -38,17 +38,15 @@ class KioskController extends Controller
     
         //$user = KioskModel::find(Auth::user()->user_id);
         $user = $this->getUserbyEmail($request->email);
+        
         $hasher = app('hash');
         if ($hasher->check($request->password, $user->password)) {
-            $contents = json_encode(['email'=>$request->email, 'password'=>$request->password,'valid'=>true]);
+            $contents = ['email'=>$request->email, 'password'=>$request->password,'valid'=>true];
             return response()->json($contents,$statusCode);
         } else {
-            $contents = json_encode(['email'=>$request->email, 'password'=>$request->password,'valid'=>false] );
+            $contents = ['email'=>$request->email, 'password'=>$request->password,'valid'=>false];
             return response()->json($contents,'400');
         }
-
-        
-        
     }
 
     public function adduser(Request $request){
