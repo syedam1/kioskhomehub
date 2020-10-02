@@ -23,11 +23,17 @@ class KioskModel extends Model
     }
 
     public static function userDetails($data){
-      $value=DB::table('users')->where('phone', $data['phone'])->get();
-      if($value->count() == 0){
+
+      $value=DB::table('users')
+      //->select('users.id','users.name','profiles.photo')
+      ->join('virtualnumbers','virtualnumbers.user_id','=','users.user_id')
+      ->where(['number' => $data['phone']])
+      ->get()->first();
+
+      if(!$value->user_id){
         return false;
       }else{
-         return $value[0]->slack_access_token;
+         return $value->slack_access_token;
       }
    
     }

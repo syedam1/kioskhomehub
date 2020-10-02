@@ -47,7 +47,7 @@
                     
                     @if($user_data->detail->slack_access_token)
                     <!-- Check if the user is authorized to create channel and allow -->
-                    <form role="form" method="post" action="{{ route('createchannel') }}">
+                    <!--form role="form" method="post" action="{{ route('createchannel') }}">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
@@ -60,7 +60,7 @@
                         <div class="mt-4">
                             <button type="submit" class="btn btn-sm btn-primary rounded-pill">Create</button>
                         </div>
-                    </form>
+                    </form-->
 
 
                     <form role="form" method="post" action="{{ route('slack-message-post') }}">
@@ -69,8 +69,9 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-control-label">Post Message</label>
+                                    <input class="form-control" type="number" name="sender" placeholder="From Phone Number">
+                                    <input class="form-control" type="number" name="receiver" placeholder="To Phone number">
                                     <input class="form-control" type="text" name="slack_message" placeholder="Message">
-                                    <input class="form-control" type="text" name="phone" placeholder="Phone number">
                                 </div>
                             </div>
                         </div>
