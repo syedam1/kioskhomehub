@@ -106,7 +106,10 @@ class SlackController extends Controller
 
         $response = json_decode($response->getBody(), true);
 
-        //dd($response);
+        if(isset($response['channel']['id'])){
+            $this->inviteKioskBot($response['channel']['id']);
+        }
+    
 
         if(Auth::check()){
             //Save channel details into db
@@ -122,6 +125,21 @@ class SlackController extends Controller
         }
 
 
+    }
+
+    public function inviteKioskBot($channel_id){
+        $slack_verification_token = $this->slack_configs['SLACK_BOT_TOKEN'];
+        $client = new Client;
+        $url    = "https://slack.com/api/conversations.invite";
+        $response = $client->post($url, [
+            'headers' => [],
+            'form_params' => [
+                'token'=>$slack_verification_token,
+                'channel'=>$channel_id,
+                'users'=>'B01BGKKC8E6',
+            ],
+        ]);
+        $response = json_decode($response->getBody(), true);
     }
 
     public function postmessage(Request $request){
