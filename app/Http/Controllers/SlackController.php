@@ -230,7 +230,11 @@ class SlackController extends Controller
         ]);
 
         $response = json_decode($response->getBody(), true);
-        return $response['channel']['name'];
+        if(isset($response['channel']['name'])){
+            return $response['channel']['name'];
+        }
+
+        return $channel_id;
     }
 
     public function getUserTokenByPhone($phone){
