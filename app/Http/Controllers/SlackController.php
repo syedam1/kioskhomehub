@@ -150,7 +150,7 @@ class SlackController extends Controller
         // THE USER based on TO RECEIVER TOKEN
         
         $slack_verification_token = $this->getUserTokenByPhone($request->receiver);  // This is the person who will appear to be sending the message
-        //$slack_verification_token = $this->slack_configs['SLACK_BOT_TOKEN'];  
+        $slack_verification_token = $this->slack_configs['SLACK_BOT_TOKEN'];  
         
         // Post to this channel
         $client = new Client;
@@ -164,8 +164,11 @@ class SlackController extends Controller
                 'text'=>"<!channel> ".$request_message,
             ],
         ]);
-
         $response = json_decode($response->getBody(), true);
+
+        Log::debug($slack_verification_token." - ".$request_channel." - ".$request_channel);
+
+
         
         if($response['ok']){
             if (Auth::check()) {
