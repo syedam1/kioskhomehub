@@ -83,6 +83,7 @@ class SlackController extends Controller
 
         $slack_verification_token = (Auth::check())  ? $this->customuserdata()->detail->slack_access_token : $this->slack_configs['SLACK_BOT_TOKEN'];
         $slack_verification_token = KioskModel::userDetails(['phone'=>$receiver]);
+        //$slack_verification_token = $this->slack_configs['SLACK_BOT_TOKEN'];
 
         //Get the list of channels associated with the receiver $receiver;
         $request_channel_name = (isset($sender) && $sender <> null ) ? $sender : $request->channel_name;
@@ -107,8 +108,20 @@ class SlackController extends Controller
         $response = json_decode($response->getBody(), true);
 
         if(isset($response['channel']['id'])){
-            $this->inviteKioskBot($response['channel']['id']);
+            $client = new Client;
+            $url    = "https://slack.com/api/conversations.invite";
+            $response = $client->post($url, [
+                'headers' => [],
+                'form_params' => [
+                    'token'=>$slack_verification_token,
+                    'channel'=>$response['channel']['id'],
+                    'users'=>'U01BDGYM1RB',
+                ],
+            ]);
+            $response = json_decode($response->getBody(), true);
         }
+        Log::debug($slack_verification_token." - ".$response['channel']['id']);
+        Log::debug($response);
     
 
         if(Auth::check()){
@@ -127,20 +140,6 @@ class SlackController extends Controller
 
     }
 
-    public function inviteKioskBot($channel_id){
-        $slack_verification_token = $this->slack_configs['SLACK_BOT_TOKEN'];
-        $client = new Client;
-        $url    = "https://slack.com/api/conversations.invite";
-        $response = $client->post($url, [
-            'headers' => [],
-            'form_params' => [
-                'token'=>$slack_verification_token,
-                'channel'=>$channel_id,
-                'users'=>'B01BGKKC8E6',
-            ],
-        ]);
-        $response = json_decode($response->getBody(), true);
-    }
 
     public function postmessage(Request $request){
         
