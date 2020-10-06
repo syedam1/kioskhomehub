@@ -44,8 +44,6 @@ Route::get('/slack', 'SlackController@obtaintoken');
 Route::post('/slack_createchannel', 'SlackController@createchannel')->name('createchannel');
 Route::post('/slack_post_message', 'SlackController@postmessage')->name('slack-message-post');
 Route::post('/slack_retrieve_message', 'SlackController@retrievemessage')->name('slack-message-retrieve');
-
-
 Route::post('/slack/events', 'SlackController@retrievemessage');
 
 

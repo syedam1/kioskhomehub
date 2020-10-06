@@ -13,6 +13,7 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         //
-        '/slack_post_message'
+        '/slack_post_message',
+        '/slack/events'
     ];
 }

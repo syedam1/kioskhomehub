@@ -8,6 +8,7 @@ use App\Models\Configurations;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
 use PhpParser\JsonDecoder;
+use Illuminate\Support\Facades\Log;
 
 class SlackController extends Controller
 {
@@ -83,14 +84,11 @@ class SlackController extends Controller
         $slack_verification_token = (Auth::check())  ? $this->customuserdata()->detail->slack_access_token : $this->slack_configs['SLACK_BOT_TOKEN'];
         $slack_verification_token = KioskModel::userDetails(['phone'=>$receiver]);
 
-        //Get unique channel NAME
+        //Get the list of channels associated with the receiver $receiver;
         $request_channel_name = (isset($sender) && $sender <> null ) ? $sender : $request->channel_name;
         $channel_list = $this->getAllUserChannels($receiver);
 
         //dd($channel_list);
-
-
-
         
         $client = new Client;
         $url    = "https://slack.com/api/conversations.create";
@@ -130,7 +128,7 @@ class SlackController extends Controller
         
         // THE MESSAGE
         $request_message = $request->slack_message." - ".date("H:i:s");
-        // THE CHANNEL - FROM NUMBER
+        // THE CHANNEL - SENDERs NUMBER 
         $request_channel = $this->getUserChannel($request, $request->sender, $request->receiver);
         // THE USER based on TO RECEIVER TOKEN
         
@@ -209,7 +207,7 @@ class SlackController extends Controller
         $channel_list = [];
         if(isset( $response['channels']) ){
             foreach ($response['channels'] as $key => $value) {
-                //$channel_list[] = (strpos($value['name'], '_') !== false) ? preg_replace('/_[0-9]*$/', $value['name'], '') : $value['name'];
+                //$channel_list[] = preg_replace('/_[0-9]+/s', '', $value['name']);
                 $channel_list[] = $value['name'];
             }
         }
@@ -240,13 +238,10 @@ class SlackController extends Controller
     }
 
     public function retrievemessage(Request $request){
-        $content = 123;
-        return response($content)
-            ->withHeaders([
-                'Content-Type' => 'text/plain',
-                'challenge' => 'f40c74e90ef401272e0685de0d769df8',
-            ]);
-        
+        //dd($request);
+        //Log the message captured on Slack.
+        Log::debug($request->sender ." : ".$request->message);
+
     }
 
 }
