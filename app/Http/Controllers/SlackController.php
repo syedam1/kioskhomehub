@@ -215,6 +215,24 @@ class SlackController extends Controller
         return $channel_list;
     }
 
+
+    public function getChannelInfo($channel_id){
+        $slack_verification_token = $this->slack_configs['SLACK_BOT_TOKEN'];
+
+        $client = new Client;
+        $url    = "https://slack.com/api/conversations.info";
+        $response = $client->post($url, [
+            'headers' => [],
+            'form_params' => [
+                'token'=>$slack_verification_token,
+                'channel'=>$channel_id,
+            ],
+        ]);
+
+        $response = json_decode($response->getBody(), true);
+        return $response['channel']['name'];
+    }
+
     public function getUserTokenByPhone($phone){
 
         // USER BY PHONE TOKEN
@@ -240,7 +258,8 @@ class SlackController extends Controller
     public function retrievemessage(Request $request){
         //dd($request);
         //Log the message captured on Slack.
-        Log::debug($request->sender ." : ".$request->message);
+        $channel_name = $this->getChannelInfo($request->sender);
+        Log::debug($channel_name ." : ".$request->message);
 
     }
 
