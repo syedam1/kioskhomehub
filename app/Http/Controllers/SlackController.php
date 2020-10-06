@@ -155,14 +155,25 @@ class SlackController extends Controller
         // Post to this channel
         $client = new Client;
         $url    = "https://slack.com/api/chat.postMessage";
+
+        $form_params = [
+            'token'=>$slack_verification_token,
+            'channel'=>$request_channel,
+            'username'=>$request_channel,
+            
+        ];
+        if($request->slack_message){
+            $form_params['text'] = "<!channel> ".$request->slack_message;
+        }
+        if($request->attachments){
+            $form_params['attachments'] = '[{"pretext": "", "text": "'.$request->attachments.'"}]';
+        }
+
+        //dd($form_params);
+
         $response = $client->post($url, [
             'headers' => [],
-            'form_params' => [
-                'token'=>$slack_verification_token,
-                'channel'=>$request_channel,
-                'username'=>$request_channel,
-                'text'=>"<!channel> ".$request_message,
-            ],
+            'form_params' => $form_params,
         ]);
         $response = json_decode($response->getBody(), true);
 
