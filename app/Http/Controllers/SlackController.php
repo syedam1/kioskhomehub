@@ -180,9 +180,7 @@ class SlackController extends Controller
         ]);
         $response = json_decode($response->getBody(), true);
 
-        Log::debug($slack_verification_token." - ".$request_channel." - ".$request_channel);
-
-
+        Log::debug("POSTED MESSAGE: ".$slack_verification_token." - ".$request_channel." - ".$request_channel);
         
         if($response['ok']){
             if (Auth::check()) {
