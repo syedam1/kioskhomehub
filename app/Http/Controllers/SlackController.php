@@ -172,7 +172,7 @@ class SlackController extends Controller
             $form_params['attachments'] = '[{"pretext": "", "text": "'.$request->link.'"}]';
         }
 
-        //dd($form_params);
+        Log::debug($form_params);
 
         $response = $client->post($url, [
             'headers' => [],
