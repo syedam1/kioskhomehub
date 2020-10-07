@@ -207,14 +207,11 @@ class SlackController extends Controller
             }
         }
 
-        
-        } catch (Exception $th) {
-            return response(['kiosk_error' => $kiosk_error , 'Err' => dd($th)], 500);
-        }
-        
 
-        
-    
+        } catch (Exception $th) {
+            return response(['Err' => dd($th)], 500);
+        }
+
 
     }
 
