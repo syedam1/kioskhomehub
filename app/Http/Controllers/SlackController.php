@@ -168,6 +168,9 @@ class SlackController extends Controller
         if($request->attachments){
             $form_params['attachments'] = '[{"pretext": "", "text": "'.$request->attachments.'"}]';
         }
+        if($request->link){
+            $form_params['attachments'] = '[{"pretext": "", "text": "'.$request->link.'"}]';
+        }
 
         //dd($form_params);
 
