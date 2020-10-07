@@ -143,6 +143,8 @@ class SlackController extends Controller
 
     public function postmessage(Request $request){
         
+        Log::debug($request);
+
         // THE MESSAGE
         $request_message = $request->slack_message." - ".date("H:i:s");
         // THE CHANNEL - SENDERs NUMBER 
