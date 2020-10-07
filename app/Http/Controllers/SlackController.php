@@ -5,12 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\KioskModel;
 use App\Models\Configurations;
-use Exception;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
 use PhpParser\JsonDecoder;
 use Illuminate\Support\Facades\Log;
-use Symfony\Component\HttpFoundation\Response;
 
 class SlackController extends Controller
 {
@@ -145,49 +143,47 @@ class SlackController extends Controller
 
     public function postmessage(Request $request){
         
+
         Log::debug($request);
 
-        try {
-            // THE MESSAGE
-            $request_message = $request->slack_message." - ".date("H:i:s");
-            // THE CHANNEL - SENDERs NUMBER 
-            $request_channel = $this->getUserChannel($request, $request->sender, $request->receiver);
-            
-            // THE USER based on TO RECEIVER TOKEN
-            
-            $slack_verification_token = $this->getUserTokenByPhone($request->receiver);  // This is the person who will appear to be sending the message
-            $slack_verification_token = $this->slack_configs['SLACK_BOT_TOKEN'];  
-            
-            
-            
-            // Post to this channel
-            $client = new Client;
-            $url    = "https://slack.com/api/chat.postMessage";
+        // THE MESSAGE
+        $request_message = $request->slack_message." - ".date("H:i:s");
+        // THE CHANNEL - SENDERs NUMBER 
+        $request_channel = $this->getUserChannel($request, $request->sender, $request->receiver);
+        // THE USER based on TO RECEIVER TOKEN
+        
+        $slack_verification_token = $this->getUserTokenByPhone($request->receiver);  // This is the person who will appear to be sending the message
+        $slack_verification_token = $this->slack_configs['SLACK_BOT_TOKEN'];  
+        
+        // Post to this channel
+        $client = new Client;
+        $url    = "https://slack.com/api/chat.postMessage";
 
-            $form_params = [
-                'token'=>$slack_verification_token,
-                'channel'=>$request_channel,
-                'username'=>$request_channel, 
-            ];
-            if($request->slack_message){
-                $form_params['text'] = "<!channel> ".$request->slack_message;
-            }
-            if($request->attachments){
-                $form_params['attachments'] = '[{"pretext": "", "text": "'.$request->attachments.'"}]';
-            }
-            if($request->link){
-                $form_params['attachments'] = '[{"pretext": "", "text": "'.$request->link.'"}]';
-            }
+        $form_params = [
+            'token'=>$slack_verification_token,
+            'channel'=>$request_channel,
+            'username'=>$request_channel,
+            
+        ];
+        if($request->slack_message){
+            $form_params['text'] = "<!channel> ".$request->slack_message;
+        }
+        if($request->attachments){
+            $form_params['attachments'] = '[{"pretext": "", "text": "'.$request->attachments.'"}]';
+        }
+        if($request->link){
+            $form_params['attachments'] = '[{"pretext": "", "text": "'.$request->link.'"}]';
+        }
 
-            Log::debug($form_params);
+        Log::debug($form_params);
 
-            $response = $client->post($url, [
-                'headers' => [],
-                'form_params' => $form_params,
-            ]);
-            $response = json_decode($response->getBody(), true);
+        $response = $client->post($url, [
+            'headers' => [],
+            'form_params' => $form_params,
+        ]);
+        $response = json_decode($response->getBody(), true);
 
-            Log::debug("POSTED MESSAGE: ".$slack_verification_token." - ".$request_channel." - ".$request_channel);
+        Log::debug("POSTED MESSAGE: ".$slack_verification_token." - ".$request_channel." - ".$request_channel);
         
         if($response['ok']){
             if (Auth::check()) {
@@ -206,12 +202,7 @@ class SlackController extends Controller
                 return json_encode([$response, 'ERR' => 'Could not post message ', 'Sender'=>$request_channel, 'TOKEN'=>$slack_verification_token]);
             }
         }
-
-
-        } catch (Exception $th) {
-            return response(['Err' => dd($th)], 500);
-        }
-
+    
 
     }
 
@@ -232,36 +223,31 @@ class SlackController extends Controller
 
 
     public function getAllUserChannels($receiver){
-        try {
-            
-            $slack_verification_token = KioskModel::userDetails(['phone'=>$receiver]);
+        $slack_verification_token = KioskModel::userDetails(['phone'=>$receiver]);
 
-            $client = new Client;
-            $url    = "https://slack.com/api/conversations.list";
-            $response = $client->post($url, [
-                'headers' => [],
-                'form_params' => [
-                    'token'=>$slack_verification_token,
-                    'types'=>'private_channel',
-                ],
-            ]);
+        $client = new Client;
+        $url    = "https://slack.com/api/conversations.list";
+        $response = $client->post($url, [
+            'headers' => [],
+            'form_params' => [
+                'token'=>$slack_verification_token,
+                'types'=>'private_channel',
+            ],
+        ]);
 
-            $response = json_decode($response->getBody(), true);
-            
-            //dd($response);
+        $response = json_decode($response->getBody(), true);
+        
+        //dd($response);
 
-            $channel_list = [];
-            if(isset( $response['channels']) ){
-                foreach ($response['channels'] as $key => $value) {
-                    //$channel_list[] = preg_replace('/_[0-9]+/s', '', $value['name']);
-                    $channel_list[] = $value['name'];
-                }
+        $channel_list = [];
+        if(isset( $response['channels']) ){
+            foreach ($response['channels'] as $key => $value) {
+                //$channel_list[] = preg_replace('/_[0-9]+/s', '', $value['name']);
+                $channel_list[] = $value['name'];
             }
-
-            return $channel_list;
-        } catch (Exception $th) {
-            return response(['kiosk_error' => "Could not get channel info" , 'Err' => dd($th)], 500);
         }
+
+        return $channel_list;
     }
 
 
