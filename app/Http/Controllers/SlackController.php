@@ -151,11 +151,7 @@ class SlackController extends Controller
             // THE MESSAGE
             $request_message = $request->slack_message." - ".date("H:i:s");
             // THE CHANNEL - SENDERs NUMBER 
-            try {
-                $request_channel = $this->getUserChannel($request, $request->sender, $request->receiver);
-            } catch (Exception $th) {
-                $kiosk_error[] = "Could not find user channel";
-            }
+            $request_channel = $this->getUserChannel($request, $request->sender, $request->receiver);
             
             // THE USER based on TO RECEIVER TOKEN
             
