@@ -186,12 +186,8 @@ class SlackController extends Controller
                 'form_params' => $form_params,
             ]);
             $response = json_decode($response->getBody(), true);
-        } catch (Exception $th) {
-            return response(['kiosk_error' => $kiosk_error , 'Err' => dd($th)], 500);
-        }
-        
 
-        Log::debug("POSTED MESSAGE: ".$slack_verification_token." - ".$request_channel." - ".$request_channel);
+            Log::debug("POSTED MESSAGE: ".$slack_verification_token." - ".$request_channel." - ".$request_channel);
         
         if($response['ok']){
             if (Auth::check()) {
@@ -210,6 +206,14 @@ class SlackController extends Controller
                 return json_encode([$response, 'ERR' => 'Could not post message ', 'Sender'=>$request_channel, 'TOKEN'=>$slack_verification_token]);
             }
         }
+
+        
+        } catch (Exception $th) {
+            return response(['kiosk_error' => $kiosk_error , 'Err' => dd($th)], 500);
+        }
+        
+
+        
     
 
     }
