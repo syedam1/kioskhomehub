@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
 use PhpParser\JsonDecoder;
 use Illuminate\Support\Facades\Log;
+use GuzzleHttp;
 
 class SlackController extends Controller
 {
@@ -295,11 +296,25 @@ class SlackController extends Controller
     }
 
     public function retrievemessage(Request $request){
-        //dd($request);
-        //Log the message captured on Slack.
-        $channel_name = $this->getChannelInfo($request->sender);
-        Log::debug($channel_name ." : ".$request->message);
+       log::debug("Retrieved ".$request);
+       //Log the message captured on Slack.
+        $channel_name = $this->getChannelInfo($request->channel);
+        Log::debug($channel_name ." : ".$request->receiver." : ".$request->text." : ".json_encode($request->link));
 
+        $client = new Client;
+        $url    = "http://am1.org:92/slack/msg";
+        $response = $client->post($url, [
+            GuzzleHttp\RequestOptions::JSON => ['channel'=> $channel_name,
+            'receiver'=> $channel_name,
+            'text'=>$request->text,
+            'link'=>json_encode($request->link)] 
+            
+        ]);
+
+        $response = json_decode($response->getBody(), true);
+
+        Log::debug($response);
+        
     }
 
 }
